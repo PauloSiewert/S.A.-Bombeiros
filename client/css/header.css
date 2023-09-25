@@ -5,13 +5,11 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  /* margin-bottom: auto; */
 }
 
 .header__container {
   display: flex;
   flex-direction: column;
-  /* background-color: blue; */
   width: 60%;
   height: 100%;
   justify-content: center;
@@ -24,7 +22,6 @@
 }
 
 .header__hamburguer {
-  /* background-color: yellow; */
   height: 100%;
   width: 20%;
   display: flex;
@@ -41,7 +38,6 @@
 }
 
 .header__logo {
-    /* background-color: rgb(43, 255, 0); */
     height: 100%;
     width: 20%;
     display: flex;
@@ -53,6 +49,6 @@
   display: flex;
   justify-content: center;
   text-align: left;
-  width: 57%;
+  width: 55%;
 }
 
