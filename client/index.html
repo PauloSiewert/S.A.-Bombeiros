@@ -133,7 +133,7 @@
   
   </div>
     <div class="mb-3 position-relative py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">Data:</label>
+      <label for="exampleInputEmail1" class="form-label" name="text1">Data:</label>
       <input
         type="date"
         class="form-control"
@@ -144,8 +144,8 @@
 
    
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label"
-        >Nome do Hospital:</label
+      <label for="nomedohospital" class="form-label 2" name="text1">
+        Nome do Hospital:</label
       >
       <input
         type="text"
@@ -160,17 +160,19 @@
     <label class="form-check-label" for="flexCheckDefault"> Sexo: </label>
     <br />
     <input
-      class="form-check-input"
-      type="checkbox"
+      class="form-check-input1"
+      type="radio"
       value=""
-      id="flexCheckDefault"
+      id="flexCheckDefault1"
+      name="check1"
     />
-    <label class="form-check-label" for="flexCheckDefault"> Masculino </label>
+    <label class="form-check-label" for="flexCheckDefault" > Masculino </label>
     <input
-      class="form-check-input"
-      type="checkbox"
+      class="form-check-input1"
+      type="radio"
       value=""
-      id="flexCheckDefault"
+      id="flexCheckDefault1"
+      name="check1"
     />
     <label class="form-check-label" for="flexCheckDefault"> Feminino </label>
     <br /><br />
@@ -179,7 +181,7 @@
 
 
 <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">Nome:</label>
+      <label for="nomepaciente" class="form-label 3 ">Nome:</label>
       <input
         type="text"
         class="form-control"
@@ -190,7 +192,7 @@
     <br /><br /><br />
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">Idade:</label>
+      <label for="idadepaciente" class="form-label 4">Idade:</label>
       <input
         type="number"
         class="form-control"
@@ -201,7 +203,7 @@
     <br /><br /><br />
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">Telefone:</label>
+      <label for="telefonepaciente" class="form-label 5">Telefone:</label>
       <input
         type="number"
         class="form-control"
@@ -212,7 +214,7 @@
     <br /><br /><br />
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">RG/CPF:</label>
+      <label for="rgpaciente" class="form-label 6">RG/CPF:</label>
       <input
         type="number"
         class="form-control"
@@ -223,9 +225,8 @@
     <br /><br /><br />
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label"
-        >Local Da Ocorrência:</label
-      >
+      <label for="localocorrencia" class="form-label 7">
+        Local Da Ocorrência:</label>
       <input
         type="text"
         class="form-control"
@@ -236,9 +237,8 @@
     <br /><br /><br />
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label"
-        >Acompanhante(Nome):</label
-      >
+      <label for="acompanhante" class="form-label 8">
+      </label>Acompanhante(Nome):</label>
       <input
         type="text"
         class="form-control"
@@ -248,7 +248,7 @@
     </div>
     <br /><br /><br />
     <div class="mb-2 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label"
+      <label for="idadeacomp" class="form-label 9"
         >Idade(Acompanhante):</label
       >
       <input
@@ -282,17 +282,19 @@
     <br />
     <div class="mb-3 position-absolute right-50">
       <input
-        class="form-check-input"
-        type="checkbox"
+        class="form-check-input2"
+        type="radio"
         value=""
-        id="flexCheckDefault"
+        id="flexCheckDefault2"
+        name="check2"
       />
       <label class="form-check-label" for="flexCheckDefault"> Sim </label>
       <input
-        class="form-check-input"
-        type="checkbox"
+        class="form-check-input2"
+        type="radio"
         value=""
-        id="flexCheckDefault"
+        id="flexCheckDefault2"
+        name="check2"
       />
       <label class="form-check-label" for="flexCheckDefault"> Não </label>
     </div>
@@ -300,7 +302,7 @@
     <br/><br/><br>
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label"
+      <label for="tempoanamnese" class="form-label 10"
         >A quanto tempo isso Aconteceu?</label
       >
       <input
@@ -314,29 +316,31 @@
 
     <div class="mb-3 position-absolute py-2 px-4"> 
     <label class="form-check-label" for="flexCheckDefault">
-      Aconteceu outras vezes?
+      Possui problema de saúde?
     </label>
     <br />
     <div class="mb-3 position-absolute right-50">
       <input
-        class="form-check-input"
-        type="checkbox"
+        class="form-check-input3"
+        type="radio"
         value=""
-        id="flexCheckDefault"
+        id="flexCheckDefault3"
+        name="check3"
       />
       <label class="form-check-label" for="flexCheckDefault"> Sim </label>
       <input
-        class="form-check-input"
-        type="checkbox"
+        class="form-check-input3"
+        type="radio"
         value=""
-        id="flexCheckDefault"
+        id="flexCheckDefault3"
+        name="check3"
       />
       <label class="form-check-label" for="flexCheckDefault"> Não </label>
     </div></div>
     <br /><br /><br>
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">Se Sim, Quais?</label>
+      <label for="quais1" class="form-label 11">Se Sim, Quais?</label>
       <input
         type="text"
         class="form-control"
@@ -354,17 +358,19 @@
     <br />
     <div class="mb-3 position-absolute right-50">
       <input
-        class="form-check-input"
-        type="checkbox"
+        class="form-check-input3"
+        type="radio"
         value=""
-        id="flexCheckDefault"
+        id="flexCheckDefault3"
+        name="check4"
       />
       <label class="form-check-label" for="flexCheckDefault"> Sim </label>
       <input
-        class="form-check-input"
-        type="checkbox"
+        class="form-check-input3"
+        type="radio"
         value=""
-        id="flexCheckDefault"
+        id="flexCheckDefault3"
+        name="check4"
       />
       <label class="form-check-label" for="flexCheckDefault"> Não </label>
     </div>
@@ -372,7 +378,7 @@
 </div>
 <br><br><br>
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label"
+      <label for="medicacao1" class="form-label 12"
         >Horário da última medicação:</label
       >
       <input
@@ -385,7 +391,7 @@
     <br /><br /><br /><br />
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">Se Sim, Quais?</label>
+      <label for="quais2" class="form-label 13">Se Sim, Quais?</label>
       <input
         type="text"
         class="form-control"
@@ -403,17 +409,19 @@
       <br />
       <div class="mb-3 position-absolute right-50">
         <input
-          class="form-check-input"
-          type="checkbox"
+          class="form-check-input4"
+          type="radio"
           value=""
-          id="flexCheckDefault"
+          id="flexCheckDefault4"
+          name="check5"
         />
         <label class="form-check-label" for="flexCheckDefault"> Sim </label>
         <input
-          class="form-check-input"
-          type="checkbox"
+          class="form-check-input4"
+          type="radio"
           value=""
-          id="flexCheckDefault"
+          id="flexCheckDefault4"
+          name="check5"
         />
         <label class="form-check-label" for="flexCheckDefault"> Não </label>
       </div>
@@ -421,7 +429,7 @@
       <br/><br/><br>
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">Se Sim, Quais?</label>
+      <label for="quais3" class="form-label 14">Se Sim, Quais?</label>
       <input
         type="text"
         class="form-control"
@@ -438,24 +446,26 @@
     <br />
     <div class="mb-3 position-absolute right-50">
       <input
-        class="form-check-input"
-        type="checkbox"
+        class="form-check-input5"
+        type="radio"
         value=""
-        id="flexCheckDefault"
+        id="flexCheckDefault5"
+        name="check6"
       />
       <label class="form-check-label" for="flexCheckDefault"> Sim </label>
       <input
-        class="form-check-input"
-        type="checkbox"
+        class="form-check-input5"
+        type="radio"
         value=""
-        id="flexCheckDefault"
+        id="flexCheckDefault5"
+        name="check6"
       />
       <label class="form-check-label" for="flexCheckDefault"> Não </label>
     </div> </div>
     <br /><br /><br>
 
     <div class="mb-3 position-absolute py-2 px-4">
-      <label for="exampleInputEmail1" class="form-label">Que Horas?</label>
+      <label for="hrsmedicacao" class="form-label">Que Horas?</label>
       <input
         type="time"
         class="form-control"
@@ -472,6 +482,7 @@
       </div>
     </div>
 
+    
 
 
 
