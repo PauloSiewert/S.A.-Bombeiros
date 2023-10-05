@@ -5,7 +5,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 25%;
 }
 
 .title__text {
@@ -25,18 +24,8 @@ height: 70%;
 
 .box__number {
   margin-bottom: 0%;
-  
-}
 
-.nav-item {
-  background-color: aqua;
 }
-/* .AnamneseP{
-  position: absolute;
-  text-align: center;
-  align-items: center;
-  margin-left: 17%;
-} */
 
 .thin__line {
   background-color: #949494;
