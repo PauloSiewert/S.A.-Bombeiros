@@ -56,40 +56,40 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Dados do Paciente </a>
+                  <a class="nav-link" href="#seção1">Dados do Paciente </a>
                 </li>
                 <li class="nav-item1">
-                  <a class="nav-link" href="#">Anamnese de Emergência</a>
+                  <a class="nav-link" href="#seção2">Anamnese de Emergência</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Tipo da Ocorrência</a>
+                  <a class="nav-link" href="#seção3">Tipo da Ocorrência</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Problemas Encontrados</a>
+                  <a class="nav-link" href="#seção4">Problemas Encontrados</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Sinais Vitais</a>
+                  <a class="nav-link" href="#seção5">Sinais Vitais</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Sinais e Sintomas</a>
+                  <a class="nav-link" href="#seção6">Sinais e Sintomas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Glasgow</a>
+                  <a class="nav-link" href="#seção7">Glasgow</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Localização dos Traumas</a>
+                  <a class="nav-link" href="#seção8">Localização dos Traumas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Ferimentos/Fraturas</a>
+                  <a class="nav-link" href="#seção9">Ferimentos/Fraturas</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Queimaduras</a>
+                  <a class="nav-link" href="#seção10">Queimaduras</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Vitima Era:</a>
+                  <a class="nav-link" href="#seção11">Vitima Era:</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">Avaliação de Cinemática</a>
+                  <a class="nav-link" href="#seção12">Avaliação de Cinemática</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Login</a>
@@ -110,7 +110,7 @@
     <br />
     <br />
     <br />
-    <div class="title__bar">
+    <div class="title__bar" id="seção1">
       <p class="title__text">Informações do Paciente</p>
       <div class="title__box">
         <b class="box__number">1</b>
@@ -125,7 +125,7 @@
             <input
               type="date"
               class="form-control"
-              id="number"
+              id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
           </div>
@@ -136,7 +136,7 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="nomedohospital"
               aria-describedby="emailHelp"
             />
           </div>
@@ -144,13 +144,13 @@
 
         <div class="row mt-3">
           <div class="col-lg-6">
-            <label class="form-check-label" for="flexCheckDefault">Sexo:</label>
+            <label class="form-check-label" for="flexCheckDefault01">Sexo:</label>
             <br />
             <input
               class="form-check-input1"
               type="radio"
               value=""
-              id="flexCheckDefault1"
+              id="flexCheckDefault"
               name="check1"
             />
             <label class="form-check-label" for="flexCheckDefault"
@@ -163,7 +163,7 @@
               id="flexCheckDefault1"
               name="check1"
             />
-            <label class="form-check-label" for="flexCheckDefault"
+            <label class="form-check-label" for="flexCheckDefault1"
               >Feminino</label
             >
             <br /><br />
@@ -173,7 +173,7 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="nomepaciente"
               aria-describedby="emailHelp"
             />
           </div>
@@ -185,68 +185,58 @@
             <input
               type="number"
               class="form-control"
-              id="exampleInputEmail1"
+              id="telefone"
               aria-describedby="emailHelp"
             />
           </div>
 
           <div class="col-lg-6">
-            <label for="nomepaciente" class="form-label g-3">RG/CPF:</label>
+            <label for="rgcpf" class="form-label g-3">RG/CPF:</label>
             <input
               type="number"
               class="form-control"
-              id="exampleInputEmail1"
+              id="rgcpf"
               aria-describedby="emailHelp"
             />
           </div>
         </div>
 
         <div class="row mt-3">
-          <div class="col-lg-6">
-            <label for="telefone" class="form-label"
+          <div class="col-lg-12">
+            <label for="local_ocorrencia" class="form-label"
               >Local da Ocorrência:</label
             >
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="local_ocorrencia"
               aria-describedby="emailHelp"
             />
           </div>
 
-          <div class="col-lg-6">
-            <label for="telefone" class="form-label"
-              >Local da Ocorrência:</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-          </div>
+         
 
           <div class="row mt-3">
             <div class="col-lg-6">
-              <label for="telefone" class="form-label"
+              <label for="Acompanhante_paciente" class="form-label"
                 >Acompanhante (se houver):</label
               >
               <input
                 type="text"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="Acompanhante_paciente"
                 aria-describedby="emailHelp"
               />
             </div>
 
             <div class="col-lg-6">
-              <label for="telefone" class="form-label"
+              <label for="idade_acompanhante" class="form-label"
                 >Idade do Acompanhante:</label
               >
               <input
                 type="number"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="idade_acompanhante"
                 aria-describedby="emailHelp"
               />
             </div>
@@ -260,7 +250,7 @@
     <!-- ANAMNESE DE EMERGÊNCIA -->
     <br />
     <br />
-    <div class="title__bar">
+    <div class="title__bar" id="seção2">
       <p class="title__text">Anamnese da Emergência</p>
       <div class="title__box">
         <b class="box__number">2</b>
@@ -268,24 +258,25 @@
     </div>
     <br />
     <div class="container">
-      <div class="row border p-3">
+      <!-- <div class="row border p-3"> -->
         <div class="col-md-25 border p-3">
           <br />
-          <p class="position-absolute fs-3 px-4">O que Aconteceu?</p>
+          <p class="position-absolute fs-3 px-4" for="acontecimento">O que Aconteceu?</p>
           <br /><br />
           <div class="mb-3 position-relative py-2 px-4">
             <input
               type="text"
-              class="form-control text-dark-emphasis"
-              id="exampleInputEmail1"
+              class="form-control text-dark-emphasis border-dark"
+              id="acontecimento"
               aria-describedby="emailHelp"
+             
             />
           </div>
 
           <div class="thin__line"></div>
 
           <div class="mb-3 position-absolute py-2 px-4">
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="outra_vez">
               Aconteceu outras vezes?
             </label>
             <br />
@@ -294,20 +285,20 @@
                 class="form-check-input2"
                 type="radio"
                 value=""
-                id="flexCheckDefault2"
+                id="sim_vez"
                 name="check2"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="sim_vez">
                 Sim
               </label>
               <input
                 class="form-check-input2"
                 type="radio"
                 value=""
-                id="flexCheckDefault2"
+                id="nao_vez"
                 name="check2"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="nao_vez">
                 Não
               </label>
             </div>
@@ -321,14 +312,14 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="tempoanamnese"
               aria-describedby="emailHelp"
             />
           </div>
           <br /><br /><br /><br />
 
           <div class="mb-3 position-absolute py-2 px-4">
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="porblema_previo">
               Possui problema de saúde?
             </label>
             <br />
@@ -337,20 +328,20 @@
                 class="form-check-input3"
                 type="radio"
                 value=""
-                id="flexCheckDefault3"
+                id="sim_previo"
                 name="check3"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="sim_previo">
                 Sim
               </label>
               <input
                 class="form-check-input3"
                 type="radio"
                 value=""
-                id="flexCheckDefault3"
+                id="nao_previo"
                 name="check3"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="nao_previo">
                 Não
               </label>
             </div>
@@ -362,14 +353,14 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="quais1"
               aria-describedby="emailHelp"
             />
           </div>
           <br /><br /><br /><br />
 
           <div class="mb-3 position-absolute py-2 px-4">
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="uso_med">
               Faz uso de medicações?
             </label>
             <br />
@@ -378,20 +369,20 @@
                 class="form-check-input3"
                 type="radio"
                 value=""
-                id="flexCheckDefault3"
+                id="sim_med"
                 name="check4"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="sim_med">
                 Sim
               </label>
               <input
                 class="form-check-input3"
                 type="radio"
                 value=""
-                id="flexCheckDefault3"
+                id="nao_med"
                 name="check4"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="nao_med">
                 Não
               </label>
             </div>
@@ -404,7 +395,7 @@
             <input
               type="time"
               class="form-control"
-              id="exampleInputEmail1"
+              id="medicacao1"
               aria-describedby="emailHelp"
             />
           </div>
@@ -415,14 +406,14 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="quais2"
               aria-describedby="emailHelp"
             />
           </div>
           <br /><br /><br /><br />
 
           <div class="mb-3 position-absolute py-2 px-4">
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="alergia_check">
               Alergias a alguma coisa?
             </label>
             <br />
@@ -431,20 +422,20 @@
                 class="form-check-input4"
                 type="radio"
                 value=""
-                id="flexCheckDefault4"
+                id="sim_aler"
                 name="check5"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="sim_aler">
                 Sim
               </label>
               <input
                 class="form-check-input4"
                 type="radio"
                 value=""
-                id="flexCheckDefault4"
+                id="nao_aler"
                 name="check5"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="nao_aler">
                 Não
               </label>
             </div>
@@ -456,14 +447,14 @@
             <input
               type="text"
               class="form-control"
-              id="exampleInputEmail1"
+              id="quais3"
               aria-describedby="emailHelp"
             />
           </div>
           <br /><br /><br /><br />
 
           <div class="mb-3 position-absolute py-2 px-4">
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="alimento_6hrs">
               Ingeriu alimento ou líquido ≥ 6hrs:
             </label>
             <br />
@@ -472,20 +463,20 @@
                 class="form-check-input5"
                 type="radio"
                 value=""
-                id="flexCheckDefault5"
+                id="sim_aliment"
                 name="check6"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="sim_aliment">
                 Sim
               </label>
               <input
                 class="form-check-input5"
                 type="radio"
                 value=""
-                id="flexCheckDefault5"
+                id="nao_aliment"
                 name="check6"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="nao_aliment">
                 Não
               </label>
             </div>
@@ -497,7 +488,7 @@
             <input
               type="time"
               class="form-control"
-              id="exampleInputEmail1"
+              id="hrsmedicacao"
               aria-describedby="emailHelp"
             />
             <br />
@@ -511,7 +502,7 @@
     <!-- TIPO DE OCORRÊNCIA -->
     <br />
     <br />
-    <div class="title__bar">
+    <div class="title__bar" id="seção3">
       <p class="title__text">Tipo de Ocorrência(Pré-Hospitalar)</p>
       <div class="title__box">
         <b class="box__number">3</b>
@@ -520,7 +511,7 @@
     <br />
 
     <div class="container">
-      <div class="row border p-3">
+     
         <div class="col-md-20 border p-3">
           <h1 class="bold fs-3">A</h1>
           <div class="thin__line"></div>
@@ -529,10 +520,10 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="Afogamento_c"
             name="check1"
           />
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="Afogamento_c">
             Afogamento
           </label>
           <br />
@@ -540,11 +531,11 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="Agressão"
             name="check1"
           />
 
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="Agressão">
             Agressão
           </label>
           <br />
@@ -552,11 +543,11 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="Atropelamento"
             name="check1"
           />
 
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="Atropelamento">
             Atropelamento
           </label>
           <br /><br />
@@ -568,10 +559,10 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="Causado_animais"
             name="check1"
           />
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="Causado_animais">
             Causado Por Animais
           </label>
           <br />
@@ -579,11 +570,11 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="choque"
             name="check1"
           />
 
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="choque">
             Choque Elétrico
           </label>
           <br />
@@ -591,11 +582,11 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="com_meio"
             name="check1"
           />
 
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="com_meio">
             Com Meio de Transporte
           </label>
           <br /><br />
@@ -607,10 +598,10 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="Doméstico"
             name="check1"
           />
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="Doméstico">
             Doméstico
           </label>
           <br />
@@ -618,11 +609,11 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="Desabamento"
             name="check1"
           />
 
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="Desabamento">
             Desabamento
           </label>
           <br />
@@ -630,11 +621,11 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="Deslizamento"
             name="check1"
           />
 
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="Deslizamento">
             Desmoronamento/Deslizamento
           </label>
           <br /><br />
@@ -646,10 +637,10 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="emer_med"
             name="check1"
           />
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="emer_med">
             Emergência Médica
           </label>
           <br />
@@ -657,11 +648,11 @@
             class="form-check-input1"
             type="checkbox"
             value=""
-            id="flexCheckDefault1"
+            id="Esportivo"
             name="check1"
           />
 
-          <label class="form-check-label" for="flexCheckDefault">
+          <label class="form-check-label" for="Esportivo">
             Esportivo
           </label>
 
@@ -675,10 +666,10 @@
               class="form-check-input1"
               type="checkbox"
               value=""
-              id="flexCheckDefault1"
+              id="Intoxicação"
               name="check1"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="Intoxicação">
               Intoxicação
             </label>
             <br />
@@ -692,10 +683,10 @@
                 class="form-check-input1"
                 type="checkbox"
                 value=""
-                id="flexCheckDefault1"
+                id="queda_nivel"
                 name="check1"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="queda_nivel">
                 Queda de nível menor que 2m
               </label>
               <br />
@@ -704,10 +695,10 @@
                 class="form-check-input1"
                 type="checkbox"
                 value=""
-                id="flexCheckDefault1"
+                id="queda_n_m"
                 name="check1"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="queda_n_m">
                 Queda de altura 2m
               </label>
               <br />
@@ -716,10 +707,10 @@
                 class="form-check-input1"
                 type="checkbox"
                 value=""
-                id="flexCheckDefault1"
+                id="queda_propria"
                 name="check1"
               />
-              <label class="form-check-label" for="flexCheckDefault">
+              <label class="form-check-label" for="queda_propria">
                 Queda própria altura
               </label>
               <br />
@@ -728,10 +719,10 @@
                 class="form-check-input1"
                 type="checkbox"
                 value=""
-                id="flexCheckDefault1"
+                id="queda_bike"
                 name="check1"
               />
-              <label class="form-check-label" for="flexCheckDefault"
+              <label class="form-check-label" for="queda_bike"
                 >Queda bicicleta
               </label>
               <br />
@@ -740,10 +731,10 @@
                 class="form-check-input1"
                 type="checkbox"
                 value=""
-                id="flexCheckDefault1"
+                id="queda_moto"
                 name="check1"
               />
-              <label class="form-check-label" for="flexCheckDefault"
+              <label class="form-check-label" for="queda_moto"
                 >Queda moto
               </label>
               <br />
@@ -757,10 +748,10 @@
                   class="form-check-input1"
                   type="checkbox"
                   value=""
-                  id="flexCheckDefault1"
+                  id="tent_sui"
                   name="check1"
                 />
-                <label class="form-check-label" for="flexCheckDefault">
+                <label class="form-check-label" for="tent_sui">
                   Tentativa de suicídio
                 </label>
                 <br />
@@ -769,10 +760,10 @@
                   class="form-check-input1"
                   type="checkbox"
                   value=""
-                  id="flexCheckDefault1"
+                  id="trabs"
                   name="check1"
                 />
-                <label class="form-check-label" for="flexCheckDefault">
+                <label class="form-check-label" for="trabs">
                   Trabalho
                 </label>
                 <br />
@@ -781,10 +772,10 @@
                   class="form-check-input1"
                   type="checkbox"
                   value=""
-                  id="flexCheckDefault1"
+                  id="transfer"
                   name="check1"
                 />
-                <label class="form-check-label" for="flexCheckDefault">
+                <label class="form-check-label" for="transfer">
                   Transferência
                 </label>
                 <br /><br />
@@ -795,8 +786,8 @@
                   <div>
                     <input
                       type="text"
-                      class="form-control"
-                      id="exampleInputEmail1"
+                      class="form-control border-dark"
+                      id="outros_pre_hospitalar"
                       aria-describedby="emailHelp"
                     />
                   </div>
@@ -813,7 +804,7 @@
     <!-- PROBLEMAS ENCONTRADOS SUSPEITOS -->
     <br />
     <br />
-    <div class="title__bar">
+    <div class="title__bar" id="seção4">
       <p class="title__text">Problemas Encontrados Suspeitos</p>
       <div class="title__box">
         <b class="box__number">4</b>
@@ -828,10 +819,10 @@
               class="form-check-input1"
               type="checkbox"
               value=""
-              id="flexCheckDefault1"
+              id="flexCheckDefault13"
               name="check1"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault13">
               Psiquiátrico
             </label>
           </div>
@@ -844,10 +835,10 @@
               class="form-check-input1"
               type="checkbox"
               value=""
-              id="flexCheckDefault1"
+              id="flexCheckDefault14"
               name="check1"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault14">
               Respiratório
             </label>
           </div>
@@ -886,10 +877,10 @@
               class="form-check-input1"
               type="checkbox"
               value=""
-              id="flexCheckDefault1"
+              id="flexCheckDefault15"
               name="check1"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault15">
               Diabetes
             </label>
           </div>
@@ -901,10 +892,11 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
-              value="option1"
+              id="inlineCheckbox00"
+              value="option41"
+              name="Hipoglicemia_check"
             />
-            <label class="form-check-label" for="inlineCheckbox1"
+            <label class="form-check-label" for="inlineCheckbox00"
               >Hipoglicemia</label
             >
           </div>
@@ -912,10 +904,10 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox2"
+              id="inlineCheckbox97"
               value="option2"
             />
-            <label class="form-check-label" for="inlineCheckbox2"
+            <label class="form-check-label" for="inlineCheckbox97"
               >Hiperglicemia</label
             >
           </div>
@@ -928,10 +920,10 @@
               class="form-check-input1"
               type="checkbox"
               value=""
-              id="flexCheckDefault1"
+              id="flexCheckDefault12"
               name="check1"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault12">
               Obstétrico
             </label>
           </div>
@@ -942,10 +934,10 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
+              id="inlineCheckbox16"
               value="option1"
             />
-            <label class="form-check-label" for="inlineCheckbox1"
+            <label class="form-check-label" for="inlineCheckbox16"
               >Parto Emergencial</label
             >
           </div>
@@ -953,10 +945,10 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox2"
+              id="inlineCheckbox17"
               value="option2"
             />
-            <label class="form-check-label" for="inlineCheckbox2"
+            <label class="form-check-label" for="inlineCheckbox17"
               >Gestante</label
             >
           </div>
@@ -966,10 +958,10 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox2"
+              id="inlineCheckbox18"
               value="option2"
             />
-            <label class="form-check-label" for="inlineCheckbox2"
+            <label class="form-check-label" for="inlineCheckbox18"
               >Hemor. Excessiva</label
             >
           </div>
@@ -982,10 +974,10 @@
               class="form-check-input1"
               type="checkbox"
               value=""
-              id="flexCheckDefault1"
+              id="flexCheckDefault19"
               name="check1"
             />
-            <label class="form-check-label" for="flexCheckDefault">
+            <label class="form-check-label" for="flexCheckDefault19">
               Transporte
             </label>
           </div>
@@ -997,19 +989,19 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
+              id="inlineCheckbox20"
               value="option1"
             />
-            <label class="form-check-label" for="inlineCheckbox1">Aéreo</label>
+            <label class="form-check-label" for="inlineCheckbox20">Aéreo</label>
           </div>
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox2"
+              id="inlineCheckbox21"
               value="option2"
             />
-            <label class="form-check-label" for="inlineCheckbox2"
+            <label class="form-check-label" for="inlineCheckbox21"
               >Clínico</label
             >
           </div>
@@ -1018,10 +1010,10 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox2"
+              id="inlineCheckbox22"
               value="option2"
             />
-            <label class="form-check-label" for="inlineCheckbox2"
+            <label class="form-check-label" for="inlineCheckbox22"
               >Emergencial</label
             >
           </div>
@@ -1030,10 +1022,10 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox1"
+              id="inlineCheckbox23"
               value="option1"
             />
-            <label class="form-check-label" for="inlineCheckbox1"
+            <label class="form-check-label" for="inlineCheckbox23"
               >Pós-Trauma</label
             >
           </div>
@@ -1041,20 +1033,20 @@
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox2"
+              id="inlineCheckbox24"
               value="option2"
             />
-            <label class="form-check-label" for="inlineCheckbox2">SAMU</label>
+            <label class="form-check-label" for="inlineCheckbox24">SAMU</label>
           </div>
 
           <div class="form-check form-check-inline">
             <input
               class="form-check-input"
               type="checkbox"
-              id="inlineCheckbox2"
+              id="inlineCheckbox25"
               value="option2"
             />
-            <label class="form-check-label" for="inlineCheckbox2"
+            <label class="form-check-label" for="inlineCheckbox25"
               >Sem Remoção</label
             >
           </div>
@@ -1066,7 +1058,7 @@
           <div>
             <input
               type="text"
-              class="form-control"
+              class="form-control border-dark"
               id="exampleInputEmail1"
               aria-describedby="emailHelp"
             />
@@ -1081,7 +1073,7 @@
 
     <br />
     <br />
-    <div class="title__bar">
+    <div class="title__bar" id="seção5">
       <p class="title__text">Sinais Vitais</p>
       <div class="title__box">
         <b class="box__number">5</b>
@@ -1091,101 +1083,101 @@
       <div class="border p-4">
         <div class="row">
           <div class="col-lg-4">
-            <label for="exampleInputEmail1" class="form-label">Pressão Arterial:</label>
+            <label for="pressao" class="form-label">Pressão Arterial:</label>
             <input
               type="email"
               class="form-control"
-              id="number"
+              id="pressao"
               aria-describedby="emailHelp"
             />
-            <label for="nomedohospital" class="form-label d-flex justify-content-end"
+            <label for="pressao" class="form-label d-flex justify-content-end"
               >mmHg</label
             >
           </div>
           <div class="col-lg-3">
-            <label for="nomedohospital" class="form-label"
+            <label for="pulso" class="form-label"
               >Pulso:</label
             >
             <input
               type="number"
               class="form-control"
-              id="exampleInputEmail1"
+              id="pulso"
               aria-describedby="emailHelp"
             />
-            <label for="nomedohospital" class="form-label d-flex justify-content-end"
+            <label for="pulso" class="form-label d-flex justify-content-end"
               >.</label
             >
           </div>
           
           <div class="col-lg-5">
-            <label for="exampleInputEmail1" class="form-label">BCMP/Respiração:</label>
+            <label for="bcmp" class="form-label">BCMP/Respiração:</label>
             <input
               type="email"
               class="form-control"
-              id="number"
+              id="bcmp"
               aria-describedby="emailHelp"
             />
-            <label for="nomedohospital" class="form-label d-flex justify-content-end"
+            <label for="bcmp" class="form-label d-flex justify-content-end"
               >MRM</label
             ><br>
           </div>
           
           <div class="row">
             <div class="col-lg-3">
-              <label for="exampleInputEmail1" class="form-label">Saturação:</label>
+              <label for="satu" class="form-label">Saturação:</label>
               <input
                 type="number"
                 class="form-control"
-                id="number"
+                id="satu"
                 aria-describedby="emailHelp"
               />
-              <label for="nomedohospital" class="form-label d-flex justify-content-end"
+              <label for="satu" class="form-label d-flex justify-content-end"
                 >%</label
               >
             </div>
             <div class="col-lg-3">
-              <label for="nomedohospital" class="form-label"
+              <label for="hgt" class="form-label"
                 >HGT:</label
               >
               <input
                 type="number"
                 class="form-control"
-                id="exampleInputEmail1"
+                id="hgt"
                 aria-describedby="emailHelp"
               />
-              <label for="nomedohospital" class="form-label d-flex justify-content-end"
+              <label for="hgt" class="form-label d-flex justify-content-end"
               >.</label
             >
             </div>
             
             <div class="col-lg-3">
-              <label for="exampleInputEmail1" class="form-label">Temperatura:</label>
+              <label for="temp_vital" class="form-label">Temperatura:</label>
               <input
                 type="email"
                 class="form-control"
-                id="number"
+                id="temp_vital"
                 aria-describedby="emailHelp"
               />
-              <label for="nomedohospital" class="form-label d-flex justify-content-end"
+              <label for="temp_vital" class="form-label d-flex justify-content-end"
                 >°C</label
               >
             </div>
             
             <div class="col-lg-3">
-              <label for="exampleInputEmail1" class="form-label">Perfusão:</label>
-              <select class="form-select" aria-label="Default select example">
+              <label for="perfusao" class="form-label">Perfusão:</label>
+              <select class="form-select" aria-label="Default select example" id="perfusao">
                 <option selected>Selecione:</option>
                 <option value="1"> Menor que 2seg </option>
                 <option value="2"> Maior que 2seg</option>
               </select>
-              <label for="nomedohospital" class="form-label d-flex justify-content-end"
+              <label for="perfusao" class="form-label d-flex justify-content-end"
                 >.</label
               >
             </div>
             <div class="row justify-content-center">
               <div class="col-lg-4">
-                <label for="exampleInputEmail1" class="form-label">Status:</label>
-                <select class="form-select border-success" aria-label="Default select example">
+                <label for="status_final" class="form-label">Status:</label>
+                <select class="form-select border-dark" aria-label="Default select example" id="status_final">
                   <option selected>Selecione:</option>
                   <option value="1"> Normal </option>
                   <option value="2"> Anormal</option>
@@ -1201,7 +1193,7 @@
 
 <!-- COMEÇO SINAIS E SINTOMAS -->
 
-<div class="title__bar">
+<div class="title__bar" id="seção6">
   <p class="title__text">Sinais e Sintomas:</p>
   <div class="title__box">
     <b class="box__number">6</b>
