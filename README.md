@@ -7,7 +7,7 @@ Documentação: https://docs.google.com/document/d/1N4k1P76KbUPDcuLfnh7aEHiqTzuA
 Créditos: João Fernando Brüske, Paulo César Siewert Carneiro e Victor Hugo Lisboa Borba.
 
 
-Mensagem subliminar:
+Mensagens subliminares:
 
 GitHub ꯐꯥꯏꯌꯔ ꯐꯥꯏꯇꯔꯁꯤꯡꯅꯥ *ꯃꯣꯇꯣꯔꯁꯥꯏꯀꯂꯒꯤ ꯁ꯭ꯄꯤꯟ ꯑꯗꯨ ꯀꯀꯊꯕꯥ ꯍꯧꯔꯦ*꯫
 ꯋꯥ ꯉꯥꯡꯕꯤꯌꯨ... ꯔꯣꯁꯥꯔꯤꯑꯣꯗꯥ ꯍꯥꯌꯕꯤꯌꯨ ꯑꯩꯍꯥꯛ ꯂꯩꯕꯥꯛ ꯑꯁꯤꯒꯤ ꯃꯀꯣꯛꯅꯤ꯫
