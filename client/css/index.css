@@ -1,5 +1,5 @@
 .title__bar {
-  background-color: #000000;
+  background-color: #343a40;
   height: 5%;
   width: 100%;
   display: flex;
@@ -14,18 +14,17 @@
 }
 
 .title__box {
-background-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
-width: 35px;
-height: 70%;
-margin: 5px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 70%;
+  margin: 5px;
 }
 
 .box__number {
   margin-bottom: 0%;
-
 }
 
 .thin__line {
@@ -34,6 +33,19 @@ margin: 5px;
   width: 100%;
   justify-content: center;
   align-items: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
+}
+
+.menu__numbox {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 70%;
+  margin: 5px;
+}
+
+.number__box {
+  margin-bottom: 0%;
 }
