@@ -8,7 +8,6 @@ Créditos: João Fernando Brüske, Paulo César Siewert Carneiro e Victor Hugo L
 
 
 Mensagem subliminar:
-
 GitHub ꯐꯥꯏꯌꯔ ꯐꯥꯏꯇꯔꯁꯤꯡꯅꯥ *ꯃꯣꯇꯣꯔꯁꯥꯏꯀꯂꯒꯤ ꯁ꯭ꯄꯤꯟ ꯑꯗꯨ ꯀꯀꯊꯕꯥ ꯍꯧꯔꯦ*꯫
 ꯋꯥ ꯉꯥꯡꯕꯤꯌꯨ... ꯔꯣꯁꯥꯔꯤꯑꯣꯗꯥ ꯍꯥꯌꯕꯤꯌꯨ ꯑꯩꯍꯥꯛ ꯂꯩꯕꯥꯛ ꯑꯁꯤꯒꯤ ꯃꯀꯣꯛꯅꯤ꯫
 
