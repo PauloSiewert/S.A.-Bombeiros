@@ -2287,7 +2287,159 @@
         <b class="box__number">8</b>
       </div>
     </div>
-    <br>
+    <br><br>
+
+
+
+   
+    <div class="container mt-5 p-3 border">
+      <div class="row mt-3">
+          <div class="col-md-12">
+              <div class="accordion" id="accordion3">
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingThree">
+                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+                              Adulto:
+                          </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion3">
+                          <div class="accordion-body">
+                              <!-- Conteudo Accordion1 -->
+                              <h1 class="bold fs-5 m-0">Arraste o Tipo de Ferimento ao seu Lugar:</h1>
+                              <div class="thin__line"></div>
+                              <div>
+                                <img src="/client/src/assets/corpo__humano.jpg" alt="Corpo__Adulto" class="img-fluid">
+
+
+
+                              </div>
+                               <!-- DIV Arrastável -->
+                                  <div id="mydiv">
+                                <!--Header da DIV arrastável -->
+                                <div id="mydivheader">Hem.</div>
+                              </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+  dragElement(document.getElementById("mydiv"));
+  
+  function dragElement(elmnt) {
+    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+    if (document.getElementById(elmnt.id + "header")) {
+      // if present, the header is where you move the DIV from:
+      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
+      document.getElementById(elmnt.id + "header").ontouchstart = dragMouseDown; // for mobile
+    } else {
+      // otherwise, move the DIV from anywhere inside the DIV:
+      elmnt.onmousedown = dragMouseDown;
+      elmnt.ontouchstart = dragMouseDown; // for mobile
+    }
+  
+    function dragMouseDown(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // get the touch or mouse cursor position at startup:
+      pos3 = e.type === "touchstart" ? e.touches[0].pageX : e.clientX;
+      pos4 = e.type === "touchstart" ? e.touches[0].pageY : e.clientY;
+      document.onmouseup = closeDragElement;
+      document.ontouchend = closeDragElement; // for mobile
+      // call a function whenever the cursor moves:
+      document.onmousemove = elementDrag;
+      document.ontouchmove = elementDrag; // for mobile
+    }
+  
+    function elementDrag(e) {
+      e = e || window.event;
+      e.preventDefault();
+      // calculate the new cursor position:
+      pos1 = pos3 - (e.type === "touchmove" ? e.touches[0].pageX : e.clientX);
+      pos2 = pos4 - (e.type === "touchmove" ? e.touches[0].pageY : e.clientY);
+      pos3 = e.type === "touchmove" ? e.touches[0].pageX : e.clientX;
+      pos4 = e.type === "touchmove" ? e.touches[0].pageY : e.clientY;
+      // set the element's new position:
+      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+    }
+  
+    function closeDragElement() {
+      // stop moving when mouse button or touch is released:
+      document.onmouseup = null;
+      document.onmousemove = null;
+      document.ontouchend = null; // for mobile
+      document.ontouchmove = null; // for mobile
+    }
+  }
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

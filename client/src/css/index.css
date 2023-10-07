@@ -49,3 +49,19 @@
 .number__box {
   margin-bottom: 0%;
 }
+
+#mydiv {
+  position: absolute;
+  z-index: 9;
+  cursor: move;
+  border: 1px solid #d3d3d3;
+  background-color: #f1f1f1;
+}
+
+#mydivheader {
+  padding: 2px;
+  z-index: 10;
+  cursor: move;
+  background-color: #57a9eb;
+  color: #fff;
+}
