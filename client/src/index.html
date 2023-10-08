@@ -22,6 +22,21 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      />
+      <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+        crossorigin="anonymous"
+      />
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      />
   </head>
 
   <body>
@@ -2291,136 +2306,317 @@
 
 
 
-   
-    <div class="container mt-5 p-3 border">
-      <div class="row mt-3">
-          <div class="col-md-12">
-              <div class="accordion" id="accordion3">
-                  <div class="accordion-item">
-                      <h2 class="accordion-header" id="headingThree">
-                          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-                              Adulto:
-                          </button>
-                      </h2>
-                      <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordion3">
-                          <div class="accordion-body">
-                              <!-- Conteudo Accordion1 -->
-                              <h1 class="bold fs-5 m-0">Arraste o Tipo de Ferimento ao seu Lugar:</h1>
-                              <div class="thin__line"></div>
-                              <div>
-                                <img src="/client/src/assets/corpo__humano.jpg" alt="Corpo__Adulto" class="img-fluid">
 
-
-
-                              </div>
-                               <!-- DIV Arrastável -->
-                                  <div id="mydiv">
-                                <!--Header da DIV arrastável -->
-                                <div id="mydivheader">Hem.</div>
-                              </div>
-                          </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+<!-- Bootstrap Accordion -->
+<div class="container mt-5 p-3 border">
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <div class="accordion" id="accordion3">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+              Adulto:
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse show" aria-labelledby="headingThree" data-parent="#accordion3">
+            <div class="accordion-body">
+              <!-- Conteudo Accordion1 -->
+              <h1 class="bold fs-5 m-0">Arraste o Tipo de Ferimento ao seu Lugar:</h1>
+              <div class="thin__line"></div>
+              <div>
+                <img src="/client/src/assets/corpo__humano.jpg" alt="Corpo__Adulto" class="img-fluid">
               </div>
+              <!-- DIV Arrastável -->
+              <!-- Create 9 divs with the same class but different content -->
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>Hemorragia</div>
+              <br><br><br><br>
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>Amputação</div>
+              <br><br><br><br>
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>Lux/Fratu/Entorse</div>
+              <br><br><br><br>
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>FAB/FAP</div>
+              <br><br><br><br>
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>Evisceração</div>
+              <br><br><br><br>
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>Ferim.Diversos</div>
+              <br><br><br><br>
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>Queima.1°Grau</div>
+              <br><br><br><br>
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>Queima.2°Grau</div>
+              <br><br><br><br>
+              <div class="cloneable-div" onclick="cloneAndMakeMovable(event, this)"><br>Queima.3°Grau</div>
             </div>
           </div>
         </div>
       </div>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    </div>
+  </div>
+</div>
+<br><br>
+<!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 <script>
-  dragElement(document.getElementById("mydiv"));
-  
-  function dragElement(elmnt) {
-    var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
-    if (document.getElementById(elmnt.id + "header")) {
-      // if present, the header is where you move the DIV from:
-      document.getElementById(elmnt.id + "header").onmousedown = dragMouseDown;
-      document.getElementById(elmnt.id + "header").ontouchstart = dragMouseDown; // for mobile
-    } else {
-      // otherwise, move the DIV from anywhere inside the DIV:
-      elmnt.onmousedown = dragMouseDown;
-      elmnt.ontouchstart = dragMouseDown; // for mobile
-    }
-  
-    function dragMouseDown(e) {
-      e = e || window.event;
-      e.preventDefault();
-      // get the touch or mouse cursor position at startup:
-      pos3 = e.type === "touchstart" ? e.touches[0].pageX : e.clientX;
-      pos4 = e.type === "touchstart" ? e.touches[0].pageY : e.clientY;
-      document.onmouseup = closeDragElement;
-      document.ontouchend = closeDragElement; // for mobile
-      // call a function whenever the cursor moves:
-      document.onmousemove = elementDrag;
-      document.ontouchmove = elementDrag; // for mobile
-    }
-  
-    function elementDrag(e) {
-      e = e || window.event;
-      e.preventDefault();
-      // calculate the new cursor position:
-      pos1 = pos3 - (e.type === "touchmove" ? e.touches[0].pageX : e.clientX);
-      pos2 = pos4 - (e.type === "touchmove" ? e.touches[0].pageY : e.clientY);
-      pos3 = e.type === "touchmove" ? e.touches[0].pageX : e.clientX;
-      pos4 = e.type === "touchmove" ? e.touches[0].pageY : e.clientY;
-      // set the element's new position:
-      elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
-      elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
-    }
-  
-    function closeDragElement() {
-      // stop moving when mouse button or touch is released:
-      document.onmouseup = null;
-      document.onmousemove = null;
-      document.ontouchend = null; // for mobile
-      document.ontouchmove = null; // for mobile
-    }
+  function cloneAndMakeMovable(event, element) {
+    // Clone the original div
+    var originalDiv = element;
+    var clonedDiv = originalDiv.cloneNode(true);
+
+    // Set a unique ID for each cloned div
+    var uniqueID = "clone-" + new Date().getTime();
+    clonedDiv.id = uniqueID;
+
+    // Set initial position for the cloned div at the mouse click position
+    var mouseX = event.clientX;
+    var mouseY = event.clientY;
+
+    clonedDiv.style.position = 'absolute';
+    clonedDiv.style.left = mouseX + 'px';
+    clonedDiv.style.top = mouseY + 'px';
+
+    // Add a class to identify cloned divs
+    clonedDiv.classList.add("cloned");
+
+    // Append the cloned div to the body or any other container
+    document.body.appendChild(clonedDiv);
+
+    // Add event listeners for mouse and touch events
+    clonedDiv.addEventListener("mousedown", startDrag);
+    clonedDiv.addEventListener("touchstart", startDrag, { passive: false });
   }
-  </script>
+
+  function startDrag(event) {
+    var draggedElement = event.target;
+    var offsetX, offsetY;
+
+    if (event.type === "mousedown") {
+      offsetX = event.clientX - draggedElement.getBoundingClientRect().left;
+      offsetY = event.clientY - draggedElement.getBoundingClientRect().top;
+    } else if (event.type === "touchstart") {
+      var touch = event.touches[0];
+      offsetX = touch.clientX - draggedElement.getBoundingClientRect().left;
+      offsetY = touch.clientY - draggedElement.getBoundingClientRect().top;
+    }
+
+    // Add a class to the dragged element for styling
+    draggedElement.classList.add("dragging");
+
+    // Move the element with the mouse
+    function dragMove(moveEvent) {
+      if (moveEvent.type === "mousemove") {
+        draggedElement.style.left = moveEvent.clientX - offsetX + 'px';
+        draggedElement.style.top = moveEvent.clientY - offsetY + 'px';
+      } else if (moveEvent.type === "touchmove") {
+        var touch = moveEvent.touches[0];
+        draggedElement.style.left = touch.clientX - offsetX + 'px';
+        draggedElement.style.top = touch.clientY - offsetY + 'px';
+      }
+    }
+
+    // Remove the class and event listeners when the drag ends
+    function dragEnd() {
+      draggedElement.classList.remove("dragging");
+      document.removeEventListener("mousemove", dragMove);
+      document.removeEventListener("mouseup", dragEnd);
+      document.removeEventListener("touchmove", dragMove);
+      document.removeEventListener("touchend", dragEnd);
+    }
+
+    // Add event listeners for mouse and touch events during drag
+    document.addEventListener("mousemove", dragMove);
+    document.addEventListener("mouseup", dragEnd);
+    document.addEventListener("touchmove", dragMove, { passive: false });
+    document.addEventListener("touchend", dragEnd);
+
+    // Prevent default behavior to avoid issues with certain browsers
+    event.preventDefault();
+  }
+</script>
+<!-- FIM TELA CORPO  -->
+  
+  <!-- COMEÇO TELA FERIMENTOS/LUXAÇÕES -->
+<div class="title__bar" id="seção9">
+  <p class="title__text">Ferimentos/Fraturas/Entorses/Luxação/Contusão</p>
+  <div class="title__box">
+    <b class="box__number">9</b>
+  </div>
+</div>
+<br><br>
+
+
+
+<div class="container2 mt-5">
+  <div class="border p-4">
+    <div class="container mt-5">
+  <div class="border p-4">
+    <div class="row">
+      <div class="col-lg-6">
+        <label for="face__ferim" class="form-label">Face:</label>
+        <input
+          type="text"
+          class="form-control"
+          id="face__ferim"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="col-lg-6">
+        <label for="local__ferim" class="form-label"
+          >Local:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="local__ferim"
+          aria-describedby="emailHelp"
+        />
+      </div>
+    </div>
+
+    <div class="row mt-3">
+      <div class="col-lg-6 mt-3">
+        <label class="form-check-label" for="lado__ferim"
+          >Lado:</label
+        >
+        <br />
+        <input
+          class="form-check-input1"
+          type="radio"
+          value=""
+          id="Esquerdo__lado"
+          name="check1"
+        />
+        <label class="form-check-label" for="Esquerdo__lado"
+          >Esquerdo</label
+        >
+        <input
+          class="form-check-input1"
+          type="radio"
+          value=""
+          id="direito__lado"
+          name="check1"
+        />
+        <label class="form-check-label" for="direito__lado"
+          >Direito</label
+        >
+        <br/><br/>
+      </div>
+
+      
+        <div class="col-lg-4">
+          <label for="tipo__ferim" class="form-label">Tipo:</label>
+          <select
+            class="form-select border"
+            aria-label="Default select example"
+            id="tipo__ferim"
+          >
+            <option selected>Selecione:</option>
+            <option value="1">Ferimentos</option>
+            <option value="2">Fraturas</option>
+            <option value="3">Entorses</option>
+            <option value="4">Luxação</option>
+            <option value="5">Contusão</option>
+
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- Button to clone the container -->
+    <button class="btn btn-primary row d-flex justify-content-end" id="cloneContainerBtn">+</button>
+  </div>
+</div>
+
+<!-- Script to handle container cloning -->
+<script>
+  document.getElementById('cloneContainerBtn').addEventListener('click', function () {
+    // Clone the container
+    const originalContainer = document.querySelector('.container2');
+    const clonedContainer = originalContainer.cloneNode(true);
+
+    // Remove the button from the cloned container
+    const clonedButton = clonedContainer.querySelector('#cloneContainerBtn');
+    clonedButton.parentNode.removeChild(clonedButton);
+
+    // Generate a unique identifier to append to the original IDs
+    const uniqueId = new Date().getTime();
+
+    // Update IDs and corresponding 'for' attributes in the cloned container
+    updateElementIds(clonedContainer, uniqueId);
+
+    // Append the cloned container after the original container
+    originalContainer.parentNode.appendChild(clonedContainer);
+  });
+
+  // Function to update element IDs and corresponding 'for' attributes with a unique identifier
+  function updateElementIds(container, uniqueId) {
+    const elements = container.querySelectorAll('[id]');
+    elements.forEach(element => {
+      const originalId = element.id;
+      const newId = originalId + '_' + uniqueId;
+      element.id = newId;
+
+      // Check if the element has a corresponding 'for' attribute
+      if (element.tagName.toLowerCase() === 'label') {
+        const forAttribute = element.getAttribute('for');
+        if (forAttribute) {
+          const newForAttribute = forAttribute + '_' + uniqueId;
+          element.setAttribute('for', newForAttribute);
+        }
+      }
+
+      // Check if the element is an input radio
+      if (element.tagName.toLowerCase() === 'input' && element.type === 'radio') {
+        // Update the 'for' attribute in the label associated with the radio
+        const radioLabel = container.querySelector(`label[for="${originalId}"]`);
+        if (radioLabel) {
+          const newRadioForAttribute = radioLabel.getAttribute('for') + '_' + uniqueId;
+          radioLabel.setAttribute('for', newRadioForAttribute);
+        }
+      }
+    });
+  }
+</script>
+
+<!-- FIM TELA FERIMENTOS/LUXAÇÕES  -->
+  <br><br>
+  <!-- COMEÇO TELA QUEIMADURAS -->
+  <div class="title__bar" id="seção10">
+    <p class="title__text">Queimaduras</p>
+    <div class="title__box">
+      <b class="box__number">10</b>
+    </div>
+  </div>
+  <br><br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eUHJxqJlD9hAnvvT3KqkOOH9JGIszWgF8gZ97RvN9N7W1OmGGJHTtXe8UnN9/ZI" crossorigin="anonymous"></script>
+
+
+
+</div>
+</div>
+<br><br>
 
 
 
@@ -2444,13 +2640,7 @@
 
 
 
-
-
-
-
-
-
-    <!-- FIM TELA GLASGOW -->
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
