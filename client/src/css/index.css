@@ -66,29 +66,8 @@
   margin-bottom: 0%;
 }
 
-
-.canvasMain {
-  padding-left: 100px;
-  width: 50%;
-}
-
-.sidenav {
-  width: 100px;
-  position: fixed;
-  top: 40px;
-  left: 0px;
-}
-
-.sidenav button {
-  padding-top: 10px;
-  margin-top: 10px;
-  border: 1px solid #75E6DA;
-  font-size: 20px;
-  width: 100px;
-  color: #189AB4;
-  display: block;
-}
-
-.sidenav button:hover {
-  color: #75E6DA;
+.header__title {
+  color: white;
+  font-size: 15px;
+  margin: 0px;
 }
