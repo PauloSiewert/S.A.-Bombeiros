@@ -50,21 +50,29 @@
   margin-bottom: 0%;
 }
 
-.cloneable-div {
+
+.canvasMain {
+  padding-left: 100px;
+  width: 50%;
+}
+
+.sidenav {
   width: 100px;
-  height: 50px;
-  background-color: lightblue;
-  margin: 10px;
-  cursor: pointer;
-  position: relative; /* Set to relative */
+  position: fixed;
+  top: 40px;
+  left: 0px;
 }
 
-.movable-div {
-  cursor: move;
+.sidenav button {
+  padding-top: 10px;
+  margin-top: 10px;
+  border: 1px solid #75E6DA;
+  font-size: 20px;
+  width: 100px;
+  color: #189AB4;
+  display: block;
 }
 
-/* Add styles for better visibility when dragging */
-.movable-div.dragging {
-  opacity: 0.7;
-  border: 2px dashed red;
+.sidenav button:hover {
+  color: #75E6DA;
 }
