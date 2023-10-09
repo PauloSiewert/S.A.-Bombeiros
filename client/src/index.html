@@ -2514,7 +2514,7 @@
 
 
 
-<div class="container2 mt-5">
+<div class="container mt-5" id="container2">
   <div class="border p-4">
     <div class="container mt-5">
   <div class="border p-4">
@@ -2599,7 +2599,7 @@
 <script>
   document.getElementById('cloneContainerBtn').addEventListener('click', function () {
     // Clone the container
-    const originalContainer = document.querySelector('.container2');
+    const originalContainer = document.querySelector('#container2');
     const clonedContainer = originalContainer.cloneNode(true);
 
     // Remove the button from the cloned container
@@ -2656,19 +2656,413 @@
     </div>
   </div>
   <br><br>
+<div class="container border p-3">
+  <div class="row">
+  <div class="col-lg-6">
+    <label for="local__queimadura" class="form-label">Local da Queimadura:</label>
+    <select
+      class="form-select border"
+      aria-label="Default select example"
+      id="local__queimadura"
+    >
+      <option selected>Selecione:</option>
+      <option value="1">Cabeça</option>
+      <option value="2">Pescoço</option>
+      <option value="3">T.Ant</option>
+      <option value="4">T.Pos</option>
+      <option value="5">Genit</option>
+      <option value="6">M.I.D</option>
+      <option value="7">M.I.E</option>
+      <option value="6">M.S.E</option>
+      <option value="7">M.S.D</option>
+    </select>
+  </div><br>
+  <div class="container">
+  <div class="col-lg-6 mt-4 d-flex">
+    <div class="form-check form-check-inline mb-3 position-relative py-2 px-4">
+      
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="grau__queim"
+              value="option1"
+            />
+            <label class="form-check-label" for="grau__queim">1°Grau</label>
+          </div>
+
+          <div class="form-check form-check-inline mb-3 position-relative py-2 px-4">
+            <input
+              class="form-check-input"
+              type="checkbox"
+              id="grau__queim2"
+              value="option2"
+            />
+            <label class="form-check-label" for="grau__queim2"
+              >2°Grau</label
+            >
+          </div>
+<div class="form-check form-check-inline mb-3 position-relative py-2 px-4">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    id="grau__queim3"
+    value="option2"
+  />
+  <label class="form-check-label" for="grau__queim3"
+    >3°Grau</label
+  >
+</div>
+</div>
+</div>
+</div>
+</div>
 
 
+<!-- FIM TELA QUEIMADURAS  -->
+<br><br>
+<!-- COMEÇO TELA VITIMA ERA: -->
+<div class="title__bar" id="seção11">
+  <p class="title__text">Vítima Era:</p>
+  <div class="title__box">
+    <b class="box__number">11</b>
+  </div>
+</div>
+<br><br>
 
 
+<div class="container mt-5">
+  <div class="border p-4">
+    <div class="row">
+      <div class="col-lg-12">
+        <h1> Vítima Era:</h1>
+        <div class="thin__line"></div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="vitima1"
+          name="check1"
+        />
+        <label class="form-check-label" for="vitima1">
+          Ciclista
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="vitima2"
+        name="check1"
+      />
+      <label class="form-check-label" for="vitima2">
+        Condutor de Moto
+      </label>
+
+      </div>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="vitima3"
+          name="check1"
+        />
+        <label class="form-check-label" for="vitima3">
+          Gestante
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="vitima4"
+        name="check1"
+      />
+      <label class="form-check-label" for="vitima4">
+        Pass. Banco da Frente
+      </label>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="vitima5"
+          name="check1"
+        />
+        <label class="form-check-label" for="vitima5">
+          Condutor Carro
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="vitima6"
+        name="check1"
+      />
+      <label class="form-check-label" for="vitima6">
+        Pass. Moto
+      </label>
+
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="vitima7"
+          name="check1"
+        />
+        <label class="form-check-label" for="vitima7">
+          Clínico
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="vitima8"
+        name="check1"
+      />
+      <label class="form-check-label" for="vitima8">
+        Trauma
+      </label>
+
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="vitima9"
+          name="check1"
+        />
+        <label class="form-check-label" for="vitima9">
+          Pass. Banco de Trás
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="vitima10"
+        name="check1"
+      />
+      <label class="form-check-label" for="vitima10">
+        Pedestre
+      </label>
+
+      </div>
+    </div> 
+</div>
+</div> 
+</div>
+
+<!-- FIM TELA VITIMA ERA  -->
+<br><br>
+<!-- COMEÇO TELA VITIMA ERA: -->
+<div class="title__bar" id="seção12">
+  <p class="title__text">Avaliação da Cinemática:</p>
+  <div class="title__box">
+    <b class="box__number">12</b>
+  </div>
+</div>
+<br><br>
 
 
+<div class="container mt-5">
+  <div class="border p-4">
+    <div class="row">
+      <div class="col-lg-12 ">
+        <h1> Avaliação da Cinemática:</h1>
+        <div class="thin__line"></div>
+<br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="cine1"
+          name="check1"
+        />
+        <label class="form-check-label" for="cine1">
+          Distúrbio de Comportamento
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="cine2"
+        name="check1"
+      />
+      <label class="form-check-label" for="cine2">
+        Encontrado de Capacete
+      </label>
+
+      </div>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="cine3"
+          name="check1"
+        />
+        <label class="form-check-label" for="cine3">
+          Encontrado de Cinto
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="cine4"
+        name="check1"
+      />
+      <label class="form-check-label" for="cine4">
+        Para-Brisas Avariado 
+      </label>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="cine5"
+          name="check1"
+        />
+        <label class="form-check-label" for="cine5">
+          Caminhando na Cena
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="cine6"
+        name="check1"
+      />
+      <label class="form-check-label" for="cine6">
+        Painel Avariado
+      </label>
+
+      </div>
+    </div> 
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="cine7"
+          name="check1"
+        />
+        <label class="form-check-label" for="cine7">
+          Volante Torcido
+        </label>
+      </div>
+      </div>
+    </div> 
+</div>
+</div> 
+</div>
+ 
+<!-- FIM TELA AVALIAÇAO DA CINEMATICA  -->
+<br><br>
+<!-- COMEÇO TELA FORMA DE CONDUÇÃO: -->
+<div class="title__bar" id="seção13">
+  <p class="title__text">Forma de Condução:</p>
+  <div class="title__box">
+    <b class="box__number">13</b>
+  </div>
+</div>
+<br><br>
 
 
-
-
-
-
-
+<div class="container mt-5">
+  <div class="border p-4">
+    <div class="row">
+      <div class="col-lg-12 ">
+        <h1> Forma de Condução:</h1>
+        <div class="thin__line"></div>
+<br>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="conducao1"
+          name="check1"
+        />
+        <label class="form-check-label" for="conducao1">
+          Deitada
+        </label>
+      </div>
+      <div class="col-lg-6">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="conducao2"
+        name="check1"
+      />
+      <label class="form-check-label" for="conducao2">
+        Semi-Deitada
+      </label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="conducao3"
+          name="check1"
+        />
+        <label class="form-check-label" for="conducao3">
+          Sentada
+        </label>
+      </div>
 
 
 
