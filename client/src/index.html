@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/client/src/css/index.css" />
     <link rel="stylesheet" href="/client/src/css/reset.css" />
     <link rel="stylesheet" href="/client/src/javascript/sample.js" />
+    
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
@@ -22,25 +23,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-    <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-      />
-      <link
-        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-        crossorigin="anonymous"
-      />
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-      />
-      <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+
+  <!-- Bootstrap JS and Popper.js -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
   </head>
 
   <body>
@@ -3147,7 +3135,7 @@
           type="radio"
           value=""
           id="sim__prenatal"
-          name="check1"
+          name="sim__prenatal"
         />
         <label class="form-check-label" for="sim__prenatal"
           >Sim</label
@@ -3157,7 +3145,7 @@
           type="radio"
           value=""
           id="nao__prenatal"
-          name="check1"
+          name="sim__prenatal"
         />
         <label class="form-check-label" for="nao__prenatal"
           >Não</label
@@ -3165,7 +3153,7 @@
         <br /><br />
       </div>
       <div class="col-lg-6 mt-3">
-        <label class="form-check-label" for="prenatal"
+        <label class="form-check-label" for="compli__natal"
           >Existe Possibilidade de Complicação?</label
         >
         <br/>
@@ -3174,7 +3162,7 @@
           type="radio"
           value=""
           id="compli__natal"
-          name="check1"
+          name="compli__natal"
         />
         <label class="form-check-label" for="compli__natal"
           >Sim</label
@@ -3184,7 +3172,7 @@
           type="radio"
           value=""
           id="compli__natal2"
-          name="check1"
+          name="compli__natal"
         />
         <label class="form-check-label" for="compli__natal2"
           >Não</label
@@ -3193,7 +3181,7 @@
     </div>
 
     <div class="col-lg-6 mt-3">
-      <label class="form-check-label" for="prenatal"
+      <label class="form-check-label" for="prim__filho"
         >É o Primeiro Filho?</label
       >
       <br/>
@@ -3202,7 +3190,7 @@
         type="radio"
         value=""
         id="prim__filho"
-        name="check1"
+        name="radio__prim"
       />
       <label class="form-check-label" for="prim__filho"
         >Sim</label
@@ -3212,7 +3200,7 @@
         type="radio"
         value=""
         id="prim__filho2"
-        name="check1"
+        name="radio__prim"
       />
       <label class="form-check-label" for="prim__filho2"
         >Não</label
@@ -3227,17 +3215,19 @@
           class="form-control"
           id="qnts__filhos"
           aria-describedby="emailHelp"
+        
         />
       </div>
     </div>
     <div class="row">
       <div class="col-lg-4">
-        <label for="hrs__cont" class="form-label g-3">Que Hrs Iniciaram as Contrações</label>
+        <label for="hrs__cont" class="form-label g-3">Que Hrs Iniciaram as Contrações?</label>
         <input
           type="time"
           class="form-control"
           id="hrs__cont"
           aria-describedby="emailHelp"
+          
         />
       </div>
       <div class="col-lg-4">
@@ -3260,76 +3250,611 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-lg-6 mt-3">
-        <label class="form-check-label" for="press__quad"
-          >Sente Pressão ou Vontade de Evacuar</label
+      <div class="col-lg-4 mt-3">
+        <label class="form-check-label" for="evacuar__"
+          >Sente Pressão ou Vontade de Evacuar?</label
         >
         <br/>
         <input
           class="form-check-input1"
           type="radio"
           value=""
-          id="press__quad"
-          name="check1"
+          id="evacuar__"
+          name="radio__evacu"
         />
-        <label class="form-check-label" for="press__quad"
+        <label class="form-check-label" for="evacuar__"
           >Sim</label
         >
         <input
           class="form-check-input1"
           type="radio"
           value=""
-          id="nao__prenatal"
-          name="check1"
+          id="evacuar__2"
+          name="radio__evacu"
         />
-        <label class="form-check-label" for="nao__prenatal"
+        <label class="form-check-label" for="evacuar__2"
           >Não</label
         >
         <br /><br />
       </div>
+      <div class="col-lg-4 mt-3">
+        <label class="form-check-label" for="ruptura__"
+          >Já Houve Ruptura da Bolsa?</label
+        >
+        <br/>
+        <input
+          class="form-check-input1"
+          type="radio"
+          value=""
+          id="ruptura__"
+          name="rupt__radio"
+        />
+        <label class="form-check-label" for="ruptura__"
+          >Sim</label
+        >
+        <input
+          class="form-check-input1"
+          type="radio"
+          value=""
+          id="ruptura__2"
+          name="rupt__radio"
+        />
+        <label class="form-check-label" for="ruptura__2"
+          >Não</label
+        >
+        <br/><br/>
+      </div>
+      <div class="col-lg-4 mt-3">
+        <label class="form-check-label" for="inspec__"
+          >Foi Feita Inspeção Visual?</label
+        >
+        <br/>
+        <input
+          class="form-check-input1"
+          type="radio"
+          value=""
+          id="inspec__"
+          name="inspec__radio"
+        />
+        <label class="form-check-label" for="inspec__"
+          >Sim</label
+        >
+        <input
+          class="form-check-input1"
+          type="radio"
+          value=""
+          id="inspec__2"
+          name="inspec__radio"
+        />
+        <label class="form-check-label" for="inspec__2"
+          >Não</label
+        >
+        <br/><br/>
+      </div>
 
 
+      <div class="row justify-content-center">
+        <div class="col-lg-2 mt-3">
+          <label class="form-check-label" for="parto__"
+            >Parto Realizado?</label
+          >
+          <br/>
+          <input
+            class="form-check-input1"
+            type="radio"
+            value=""
+            id="parto__"
+            name="radio__part"
+          />
+          <label class="form-check-label" for="parto__"
+            >Sim</label
+          >
+          <input
+            class="form-check-input1"
+            type="radio"
+            value=""
+            id="parto__2"
+            name="radio__part"
+          />
+          <label class="form-check-label" for="parto__2"
+            >Não</label
+          ><br/><br/>
+        </div>
+          <div class="col-lg-3 mt-3 ml-0">
+            <label class="form-check-label" for="sx__bebe"
+              >Sexo do Bebê:</label
+            >
+            <br/>
+            <input
+              class="form-check-input1"
+              type="radio"
+              value=""
+              id="sx__bebe"
+              name="radio__sx"
+            />
+            <label class="form-check-label" for="sx__bebe"
+              >Feminino</label
+            >
+            <input
+              class="form-check-input1"
+              type="radio"
+              value=""
+              id="sx__bebe2"
+              name="radio__sx"
+            />
+            <label class="form-check-label" for="sx__bebe2"
+              >Masculino</label
+            >
+            <br /><br />
+          </div>
+          <div class="col-lg-2 mt-2">
+            <label class="form-check-label" for="hrs__parto"
+              >Hora Parto:</label
+            >
+            <br/>
+            <input
+              class="form-check-input1"
+              type="time"
+              value=""
+              id="hrs__parto"
+              name="check1"
+            /> 
+           </div>
+        </div>
+          
+         <div class="col-lg-12 mt-2">
+          <label for="Nome_do_Bebê" class="form-label g-3">Nome do Bebê:</label>
+          <input
+            type="text"
+            class="form-control"
+            id="Nome_do_Bebê"
+            aria-describedby="emailHelp"
+          />
+        </div>
+      </div>
 
-
-
-
-<!-- Bootstrap JS and Popper.js -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eUHJxqJlD9hAnvvT3KqkOOH9JGIszWgF8gZ97RvN9N7W1OmGGJHTtXe8UnN9/ZI" crossorigin="anonymous"></script>
-
-
-
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 </div>
 <br><br>
 
 
+<!-- FIM TELA GESTACIONAL  -->
+<br><br>
+<!-- COMEÇO TELA ANAMNESE GESTACIONAL -->
+<div class="title__bar" id="seção16">
+  <p class="title__text">Procedimentos Efetuados:</p>
+  <div class="title__box">
+    <b class="box__number">16</b>
+  </div>
+</div>
+<br><br>
 
 
+<div class="container">
+  <div class="col-md-12 border p-3">
+    <h1 class="bold fs-3 m-0">A</h1>
+    <div class="thin__line"></div>
+    <div>
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="aspiracao"
+        name="check1"
+      />
+      <label class="form-check-label" for="aspiracao">
+        Aspiração
+      </label>
+      <br />
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Avaliação Inicial"
+        name="check1"
+      />
 
+      <label class="form-check-label" for="Avaliação Inicial">
+        Avaliação Inicial
+      </label>
+      <br />
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Avaliação Dirigida"
+        name="check1"
+      />
 
+      <label class="form-check-label" for="Avaliação Dirigida"> Avaliação Dirigida </label>
+      <br />
 
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Avaliação Continuada"
+        name="check1"
+      />
+      <label class="form-check-label" for="Avaliação Continuada"> Avaliação Continuada </label>
+      <br />
+     <br>
+    </div>
+    <h1 class="bold fs-3 m-0">C</h1>
+    <div class="thin__line"></div>
+    
+    <div>
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Chave de Rautek"
+        name="check1"
+      />
+      <label class="form-check-label" for="Chave de Rautek">
+        Chave de Rautek
+      </label>
+      <br />
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Cânula de Guedel"
+        name="check1"
+      />
 
+      <label class="form-check-label" for="Cânula de Guedel">
+        Cânula de Guedel
+      </label>
+      <br />
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Curativos"
+        name="check1"
+      />
 
+      <label class="form-check-label" for="Curativos"> Curativos </label>
+      <br />
 
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Compressão"
+        name="check1"
+      />
+      <label class="form-check-label" for="Compressão">Compressão </label>
+      <br />
 
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Cervical"
+        name="check1"
+      />
+      <label class="form-check-label" for="Cervical">Cervical </label>
+      <br />
+     <br>
+    </div>
+    <h1 class="bold fs-3 m-0">D</h1>
+    <div class="thin__line"></div>
+    
+    <div>
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Desobstrução da VA"
+        name="check1"
+      />
+      <label class="form-check-label" for="Desobstrução da VA">
+        Desobstrução da VA
+      </label>
+      <br />
+      <br>
+    </div>
+    <h1 class="bold fs-3 m-0">E</h1>
+    <div class="thin__line"></div>
+    
+    <div>
+      <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Emprego do DEA"
+        name="check1"
+      />
+      <label class="form-check-label" for="Emprego do DEA">
+        Emprego do DEA
+      </label>
+      <br />
+      <input
+      class="form-check-input1"
+      type="checkbox"
+      value=""
+      id="Encravamento"
+      name="check1"
+    />
+    <label class="form-check-label" for="Encravamento">
+      Encravamento
+    </label>
+    <br />
 
-
-
-
-
-
-
-
-
-
-
+    <br>
+  </div>
+  <h1 class="bold fs-3 m-0">G</h1>
+  <div class="thin__line"></div>
+  
+  <div>
+    <input
+      class="form-check-input1"
+      type="checkbox"
+      value=""
+      id="Gerenciamento de Riscos"
+      name="check1"
+    />
+    <label class="form-check-label" for="Gerenciamento de Riscos">
+      Gerenciamento de Riscos
+    </label>
+    <br />
+    <br>
+  </div>
+  <h1 class="bold fs-3 m-0">I</h1>
+  <div class="thin__line"></div>
+  
+  <div>
+    <input
+      class="form-check-input1"
+      type="checkbox"
+      value=""
+      id="Imobilização"
+      name="check1"
+    />
+    <label class="form-check-label" for="Imobilização">
+      Imobilização
+    </label>
+    <br />
+    <br>
+  </div>
+  <h1 class="bold fs-3 m-0">L</h1>
+  <div class="thin__line"></div>
+  
+  <div>
+    <input
+      class="form-check-input1"
+      type="checkbox"
+      value=""
+      id="Limpeza de Ferimento"
+      name="check1"
+    />
+    <label class="form-check-label" for="Limpeza de Ferimento">
+      Limpeza de Ferimento
+    </label>
+    <br />
+    <br>
+  </div>
+  <h1 class="bold fs-3 m-0">M</h1>
+  <div class="thin__line"></div>
+  
+  <div>
+    <input
+      class="form-check-input1"
+      type="checkbox"
+      value=""
+      id="Membros INF DIR"
+      name="check1"
+    />
+    <label class="form-check-label" for="Membros INF DIR">
+      Membros INF DIR
+    </label>
+    <br />
+    <input
+      class="form-check-input1"
+      type="checkbox"
+      value=""
+      id="Membros INF ESQ"
+      name="check1"
+    />
+    <label class="form-check-label" for="Membros INF ESQ">
+      Membros INF ESQ
+    </label>
+    <br />
+    <input
+    class="form-check-input1"
+    type="checkbox"
+    value=""
+    id="Membros SUP ESQ"
+    name="check1"
+  />
+  <label class="form-check-label" for="Membros SUP ESQ">
+    Membros SUP ESQ
+  </label>
+  <br />
+  <input
+  class="form-check-input1"
+  type="checkbox"
+  value=""
+  id="Membros SUP DIR"
+  name="check1"
+/>
+<label class="form-check-label" for="Membros SUP DIR">
+  Membros SUP DIR
+</label>
+<br />
+<input
+class="form-check-input1"
+type="checkbox"
+value=""
+id="Maca Rígida"
+name="check1"
+/>
+<label class="form-check-label" for="Maca Rígida">
+  Maca Rígida
+</label>
+<br />
+<input
+class="form-check-input1"
+type="checkbox"
+value=""
+id="Maca Sobre Rodas"
+name="check1"
+/>
+<label class="form-check-label" for="Maca Sobre Rodas">
+  Maca Sobre Rodas
+</label>
+<br />
+<input
+class="form-check-input1"
+type="checkbox"
+value=""
+id="Meios Auxiliares"
+name="check1"
+/>
+<label class="form-check-label" for="Meios Auxiliares">
+  Meios Auxiliares
+</label>
+<br />
 
     
+</div>
+<div class="container">
+  <form>
+    <div class="form-group row">
+      <div class="col-sm-10">
+        <div class="ml-3">
+        <input
+        class="form-check-input1 ml2"
+        type="checkbox"
+        value=""
+        id="CELESC"
+        name="check1"
+        />
+        <label class="form-check-label" for="CELESC">
+          CELESC
+        </label>
+        <br /></div>
+        <div class="ml-3">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="CIT"
+        name="check1"
+        />
+        <label class="form-check-label" for="CIT">
+          CIT
+        </label>
+        <br /></div>
+        <div class="ml-3">
+        <input
+        class="form-check-input1"
+        type="checkbox"
+        value=""
+        id="Def.Civil"
+        name="check1"
+        />
+        <label class="form-check-label" for="Def.Civil">
+          Def.Civil
+        </label>
+        <br /></div>
+        <div class="ml-3">
+          <input
+          class="form-check-input1"
+          type="checkbox"
+          value=""
+          id="IGP/PC"
+          name="check1"
+          />
+          <label class="form-check-label" for="IGP/PC">
+            IGP/PC
+          </label>
+          <br /></div>
+        <div class="row">
+        <div class="form-check">
+          <input class="form-check-input1" type="checkbox" id="mainCheckbox" onclick="showAdditionalCheckboxes()">
+          <label class="form-check-label" for="mainCheckbox">Polícia</label>
+        </div>
+      </div>
+    </div>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
+    <!-- Additional Checkboxes -->
+    <div class="form-group row additional-checkboxes" id="additionalCheckboxes" style="display: none;">
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input1" type="checkbox" id="additionalCheckbox1" name="additionalCheckboxes[]" value="option1">
+          <label class="form-check-label" for="additionalCheckbox1">Civil</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input1" type="checkbox" id="additionalCheckbox2" name="additionalCheckboxes[]" value="option2">
+          <label class="form-check-label" for="additionalCheckbox2">Militar</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input1" type="checkbox" id="additionalCheckbox3" name="additionalCheckboxes[]" value="option3">
+          <label class="form-check-label" for="additionalCheckbox3">PRE</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input1" type="checkbox" id="additionalCheckbox4" name="additionalCheckboxes[]" value="option4">
+          <label class="form-check-label" for="additionalCheckbox4">PRF</label>
+        </div>
+      </div>
+    </div>
+  
+      <div class="form-check">
+        <input type="checkbox" class="form-check-input1" id="checkboxPrincipal" onclick="mostrarCheckboxes()">
+        <label class="form-check-label" for="checkboxPrincipal">SAMU</label>
+      </div>
+    
+      <div id="checkboxesAdicionais" class="mt-1" style="display: none;">
+        <!-- Checkboxes adicionais serão adicionadas aqui -->
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input1" id="checkboxesAdicionais1">
+          <label class="form-check-label" for="checkboxesAdicionais1">USA</label>
+        </div>
+        <div class="form-check">
+          <input type="checkbox" class="form-check-input1" id="checkboxesAdicionais2">
+          <label class="form-check-label" for="checkboxesAdicionais2">USB</label>
+        </div>
+      </div>
+    </div>
+
+
+
+
+</div>
+</div>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+  function showAdditionalCheckboxes() {
+    // Toggle the visibility of additional checkboxes
+    var additionalCheckboxes = document.getElementById('additionalCheckboxes');
+    additionalCheckboxes.style.display = additionalCheckboxes.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+<script>
+  function mostrarCheckboxes() {
+    var checkboxesAdicionais = document.getElementById('checkboxesAdicionais');
+    var checkboxPrincipal = document.getElementById('checkboxPrincipal');
+
+    if (checkboxPrincipal.checked) {
+      checkboxesAdicionais.style.display = 'block';
+    } else {
+      checkboxesAdicionais.style.display = 'none';
+    }
+  }
+</script>
+    <!-- Bootstrap JS and Popper.js -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-eUHJxqJlD9hAnvvT3KqkOOH9JGIszWgF8gZ97RvN9N7W1OmGGJHTtXe8UnN9/ZI" crossorigin="anonymous"></script>
+
+
   </body>
 </html>
