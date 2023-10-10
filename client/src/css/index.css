@@ -31,7 +31,7 @@
   width: 7%;
 }
 
-.navbox__num{
+.navbox__num {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,7 +68,35 @@
 
 .header__title {
   color: white;
-  font-size: 15px;
-  margin: 0px;
+  font-size: 100%;
+  margin: 0%;
 }
 
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  width: 40%;
+  height: 400px;
+  margin: 0 auto;
+}
+
+.grid-item {
+  background-color: #3498db;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.emoji__transporte {
+  width: 60%;
+  height: 60%;
+}
+
+.tex {
+  flex-direction: column;
+  display: flex;
+  justify-content: flex-end;
+}
