@@ -77,26 +77,31 @@
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   gap: 20px;
-  width: 40%;
+  width: 500px;
   height: 400px;
   margin: 0 auto;
 }
 
 .grid-item {
-  background-color: #3498db;
-  color: #fff;
+  background-color: #bbe4ff;
+  color: #000000;
   padding: 20px;
   text-align: center;
   font-size: 24px;
+  padding: 0%;
 }
 
 .emoji__transporte {
-  width: 60%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 70%;
   height: 60%;
 }
 
 .tex {
-  flex-direction: column;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  align-items: center;
+  margin: 0%;
+  gap: 3%;
 }
