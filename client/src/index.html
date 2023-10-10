@@ -3135,26 +3135,35 @@
           src="/client/src/assets/cryingemojipng.png"
           alt=""
           for="critico"
+          aria-label="critico"
         />
-        <p class="tex">
+        <label class="tex" for="critico">
           <input
-            class="form-check-input m-0"
+            class="form-check-input form-check-inline m-0"
             type="checkbox"
             value=""
             id="critico"
             name="critico"
           />
           Crítico
-        </p>
+        </label>
       </div>
 
-      <div class="grid-item">
+      <div class="grid-item border-dark" for="instavel">
         <img
           class="emoji__transporte"
           src="/client/src/assets/worriedemojipng.png"
           alt=""
         />
-        <label class="tex">Instável</label>
+        <label class="tex" for="instavel">
+        <input
+            class="form-check-input form-check-inline m-0"
+            type="checkbox"
+            value=""
+            id="instavel"
+            name="critico"
+          />
+          Instável</label>
       </div>
 
       <div class="grid-item">
@@ -3163,7 +3172,16 @@
           src="/client/src/assets/neutralfaceemojipng.png"
           alt=""
         />
-        <p class="tex">Potêncialmente Instável</p>
+        <label class="tex" for="Potencial__instavel">
+          <input
+            class="form-check-input form-check-inline"
+            type="checkbox"
+            value=""
+            id="Potencial__instavel"
+            name="critico"
+          />
+          
+          Potêncialmente Instável</label>
       </div>
 
       <div class="grid-item">
@@ -3172,6 +3190,7 @@
           src="/client/src/assets/smileemojipng.png"
           alt=""
         />
+        
         <p class="tex">Estável</p>
       </div>
     </div>
@@ -3180,10 +3199,7 @@
     <br /><br /><br /><br />
     <br /><br /><br />
     <br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br /><br /><br /><br /><br />
-    <br /><br /><br />
+
     <!-- COMEÇO TELA ANAMNESE GESTACIONAL -->
     <div class="title__bar" id="seção15">
       <p class="title__text">Anamnese Gestacional:</p>
