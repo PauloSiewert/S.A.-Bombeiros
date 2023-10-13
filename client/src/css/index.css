@@ -107,6 +107,13 @@
 }
 
 #custom-textarea {
-  background-color: #bbbbd7; /* Set your desired background color */
+  background-color: #ceceed; /* Set your desired background color */
   border-radius: 5px ;
+  border-style: solid;
+}
+
+#custom-textarea2 {
+  background-color: #ceceed; /* Set your desired background color */
+  border-radius: 5px ;
+  border-style: solid;
 }
