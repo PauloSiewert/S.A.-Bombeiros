@@ -130,3 +130,12 @@
 .btn {
   margin-right: 5px; /* Adjust the margin to your preference */
 }
+
+.draggable {
+  position: absolute;
+  cursor: move;
+  border: 1px solid #000000;
+  padding: 10px;
+  background-color: #c67272;
+  
+}

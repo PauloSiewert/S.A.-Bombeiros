@@ -1,40 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Ficha de Ocorrência</title>
-    <link rel="icon" href="/client/src/assets/noarlogo.png" />
-    <link rel="stylesheet" href="/client/src/css/index.css" />
-    <link rel="stylesheet" href="/client/src/css/reset.css" />
-    <link rel="stylesheet" href="/client/src/javascript/sample.js" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ficha de Ocorrência</title>
+  <link rel="icon" href="/client/src/assets/noarlogo.png" />
+  <link rel="stylesheet" href="/client/src/css/index.css" />
+  <link rel="stylesheet" href="/client/src/css/reset.css" />
+  <link rel="stylesheet" href="/client/src/javascript/sample.js" />
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  </head>
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  
+</head>
 
   <body>
     <!-- COMEÇO DA HEADER -->
@@ -2477,121 +2463,50 @@
     </div>
     <br /><br />
 
-    <!-- Bootstrap Accordion -->
-    <div class="container mt-5 p-3 border">
+    <div class="container mt-5 p-3 border" id="container__1">
       <div class="row mt-3">
-        <div class="col-md-12">
-          <div class="accordion" id="accordion3">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingThree">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseThree"
-                  aria-expanded="true"
-                  aria-controls="collapseThree"
-                >
-                  Adulto:
-                </button>
-              </h2>
-              <div
-                id="collapseThree"
-                class="accordion-collapse collapse show"
-                aria-labelledby="headingThree"
-                data-parent="#accordion3"
-              >
-                <div class="accordion-body">
-                  <!-- Conteudo Accordion1 -->
-                  <h1 class="bold fs-5 m-0">
-                    Arraste o Tipo de Ferimento ao seu Lugar:
-                  </h1>
-                  <div class="thin__line"></div>
-                  <div>
-                    <img
-                      src="/client/src/assets/corpo__humano.jpg"
-                      alt="Corpo__Adulto"
-                      class="img-fluid"
-                    />
-                  </div>
-                  <!-- DIV Arrastável -->
-                  <!-- Create 9 divs with the same class but different content -->
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />Hemorragia
-                  </div>
-                  <br /><br /><br /><br />
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />Amputação
-                  </div>
-                  <br /><br /><br /><br />
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />Lux/Fratu/Entorse
-                  </div>
-                  <br /><br /><br /><br />
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />FAB/FAP
-                  </div>
-                  <br /><br /><br /><br />
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />Evisceração
-                  </div>
-                  <br /><br /><br /><br />
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />Ferim.Diversos
-                  </div>
-                  <br /><br /><br /><br />
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />Queima.1°Grau
-                  </div>
-                  <br /><br /><br /><br />
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />Queima.2°Grau
-                  </div>
-                  <br /><br /><br /><br />
-                  <div
-                    class="cloneable-div"
-                    onclick="cloneAndMakeMovable(event, this)"
-                  >
-                    <br />Queima.3°Grau
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="col-md-12" id="container__2">
+          <button onclick="addTextbox()">Adicionar Trauma:</button>
+        </div>
+        <div class="col-md-12" id="container__3">
+          <img src="/client/src/assets/corpo__humano.jpg" alt="" class="img-fluid" id="draggableImage">
         </div>
       </div>
     </div>
+    
+   
+    
+    <script>
+      function addTextbox() {
+        const id = 'textbox' + new Date().getTime();
+        const textbox = $('<div>', {
+          id: id,
+          class: 'draggable',
+          contentEditable: true,
+          text: '<--', // Default text for the textbox
+        });
+    
+        textbox.appendTo('#container__3');
+    
+        // Make the textbox draggable
+        textbox.draggable({
+          containment: '#container__3', // Keep the textboxes inside the parent container
+          scroll: false,
+          start: function (event, ui) {
+            $(this).css('cursor', 'grabbing');
+          },
+          stop: function (event, ui) {
+            $(this).css('cursor', 'grab');
+          },
+          touch: true, // Enable touch support
+        });
+      }
+    </script>
+    
+    
+   
     <br /><br />
-    <!-- Bootstrap JS and Popper.js (required for Bootstrap) -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <!-- Bootstrap JS -->
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    
     <script>
       function cloneAndMakeMovable(event, element) {
         // Clone the original div
@@ -3182,6 +3097,18 @@
             />
             <label class="form-check-label" for="conducao1"> Deitada </label>
           </div>
+          <div class="row">
+          <div class="col-lg-4">
+            <input
+              class="form-check-input1"
+              type="checkbox"
+              value=""
+              id="conducao3"
+              name="check1"
+            />
+            <label class="form-check-label" for="conducao3"> Sentada </label>
+          </div>
+        </div>
           <div class="col-lg-4">
             <input
               class="form-check-input1"
@@ -3195,18 +3122,7 @@
             </label>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <input
-              class="form-check-input1"
-              type="checkbox"
-              value=""
-              id="conducao3"
-              name="check1"
-            />
-            <label class="form-check-label" for="conducao3"> Sentada </label>
-          </div>
-        </div>
+        
       </div>
     </div>
     <br />
@@ -5096,9 +5012,7 @@ function toggleReanimador() {
       }
     }
   </script>
-            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+           
 
             <script>
               function showAdditionalCheckboxes() {
@@ -5127,12 +5041,8 @@ function toggleReanimador() {
                 }
               }
             </script>
-            <!-- Bootstrap JS and Popper.js -->
-            <script
-              src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-              integrity="sha384-eUHJxqJlD9hAnvvT3KqkOOH9JGIszWgF8gZ97RvN9N7W1OmGGJHTtXe8UnN9/ZI"
-              crossorigin="anonymous"
-            ></script>
+          
+            
           </form>
         </div>
       </div>
