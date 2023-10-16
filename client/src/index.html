@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,12 +8,12 @@
   <link rel="icon" href="/client/src/assets/noarlogo.png" />
   <link rel="stylesheet" href="/client/src/css/index.css" />
   <link rel="stylesheet" href="/client/src/css/reset.css" />
-  <link rel="stylesheet" href="/client/src/javascript/sample.js" />
-
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <!--CSS and Font Awesome, Bootstrap, etc. links -->
 
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
@@ -20,6 +21,9 @@
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   
+  <script src="/client/src/javascript/html2pdf.js"></script>
+  <!--  custom script -->
+  <script src="/client/src/javascript/sample.js"></script>
 </head>
 
   <body>
@@ -265,7 +269,7 @@
     </div>
 
     <!-- FIM DA HEADER -->
-
+    <div id="contentpdf">
     <!-- INFORMAÇÕES DO PACIENTE -->
     <br />
     <br />
@@ -307,7 +311,7 @@
 
         <div class="row mt-3">
           <div class="col-lg-6 mt-3">
-            <label class="form-check-label" for="flexCheckDefault01"
+            <label class="form-check-label" for="flexCheckDefault"
               >Sexo:</label
             >
             <br />
@@ -447,7 +451,7 @@
         </div>
 
         <div class="mb-3 position-absolute py-2 px-4">
-          <label class="form-check-label" for="outra_vez">
+          <label class="form-check-label" for="sim_vez">
             Aconteceu outras vezes?
           </label>
           <br />
@@ -486,7 +490,7 @@
         <br /><br /><br /><br />
 
         <div class="mb-3 position-absolute py-2 px-4">
-          <label class="form-check-label" for="porblema_previo">
+          <label class="form-check-label" for="sim_previo">
             Possui problema de saúde?
           </label>
           <br />
@@ -523,7 +527,7 @@
         <br /><br /><br /><br />
 
         <div class="mb-3 position-absolute py-2 px-4">
-          <label class="form-check-label" for="uso_med">
+          <label class="form-check-label" for="sim_med">
             Faz uso de medicações?
           </label>
           <br />
@@ -572,7 +576,7 @@
         <br /><br /><br /><br />
 
         <div class="mb-3 position-absolute py-2 px-4">
-          <label class="form-check-label" for="alergia_check">
+          <label class="form-check-label" for="sim_aler">
             Alergias a alguma coisa?
           </label>
           <br />
@@ -609,7 +613,7 @@
         <br /><br /><br /><br />
 
         <div class="mb-3 position-absolute py-2 px-4">
-          <label class="form-check-label" for="alimento_6hrs">
+          <label class="form-check-label" for="sim_aliment">
             Ingeriu alimento ou líquido ≥ 6hrs:
           </label>
           <br />
@@ -648,7 +652,7 @@
     </div>
 
     <!-- FIM ANAMNESE DE EMERGÊNCIA -->
-
+    <div class="page-break"></div>
     <!-- TIPO DE OCORRÊNCIA -->
     <br />
     <br />
@@ -1994,7 +1998,7 @@
     <br /><br /><br />
 
     <!-- FIM SINAIS E SINTOMAS -->
-
+    <div class="page-break"></div>
     <!-- COMEÇO TELA GLASGOW  -->
 
     <div class="title__bar" id="seção7">
@@ -2621,7 +2625,7 @@
 
             <div class="row mt-3">
               <div class="col-lg-6 mt-3 m-0">
-                <label class="form-check-label" for="lado__ferim">Lado:</label>
+                <label class="form-check-label" for="Esquerdo__lado">Lado:</label>
                 <br />
                 <input
                   class="form-check-input1"
@@ -2736,6 +2740,7 @@
 
     <!-- FIM TELA FERIMENTOS/LUXAÇÕES  -->
     <br /><br />
+    <div class="page-break"></div>
     <!-- COMEÇO TELA QUEIMADURAS -->
     <div class="title__bar" id="seção10">
       <p class="title__text">Queimaduras</p>
@@ -3128,6 +3133,7 @@
     <br />
     <!-- FIM TELA FORMA DE CONDUÇÃO  -->
     <br /><br />
+    <div class="page-break"></div>
     <!-- COMEÇO TELA DECISÃO DE CONDUÇÃO: -->
     <div class="title__bar" id="seção14">
       <p class="title__text">Decisão do Transporte:</p>
@@ -3192,7 +3198,7 @@
 
         <div class="row">
           <div class="col-lg-6 mt-3">
-            <label class="form-check-label" for="prenatal"
+            <label class="form-check-label" for="sim__prenatal"
               >Fez Pré-Natal?</label
             >
             <br />
@@ -4735,7 +4741,7 @@ function toggleReanimador() {
   <td><input
     type="number"
     class="form-control col-lg-3"
-    id="qntd__canu"
+    id="outros__tabela"
     aria-describedby="emailHelp"
     />
   </td>
@@ -4754,7 +4760,7 @@ function toggleReanimador() {
 
 <br><br><br>
 
-
+<div class="page-break"></div>
 <div class="title__bar" id="seção18">
   <p class="title__text">Objetos Recolhidos:</p>
   <div class="title__box">
@@ -4839,6 +4845,7 @@ function toggleReanimador() {
 <br><br><br>
 
 
+<div class="page-break"></div>
 
 <div class="title__bar" id="seção21">
   <p class="title__text">Equipe de Atendimento:</p>
@@ -4960,12 +4967,41 @@ function toggleReanimador() {
         
   </div>
 </div>
+
+<button id="btnCrearPdf">Click aquí</button>
+
+<script>
+ 
+ const $elementoParaConvertir = document.body; // <-- Aquí puedes elegir cualquier elemento del DOM
+html2pdf()
+    .set({
+        margin: 1,
+        filename: 'Ficha.pdf',
+        image: {
+            type: 'jpeg',
+            quality: 0.98
+        },
+        html2canvas: {
+            scale: 3, // A mayor escala, mejores gráficos, pero más peso
+            letterRendering: true,
+        },
+        jsPDF: {
+            unit: "in",
+            format: "a3",
+            orientation: 'portrait' // landscape o portrait
+        }
+    })
+    .from($elementoParaConvertir)
+    .save()
+    .catch(err => console.log(err));
+</script>
+
 </div></div>
 <br><br><br>
 
 
 
-
+</div>
 
 
 

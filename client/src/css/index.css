@@ -139,3 +139,7 @@
   background-color: #c67272;
   
 }
+
+.page-break {
+  page-break-before: always;
+}
