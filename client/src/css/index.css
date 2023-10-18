@@ -143,3 +143,19 @@
 .page-break {
   page-break-before: always;
 }
+
+@media print{
+
+  body {
+    font-size: 12pt;
+    color: #000;
+  }
+
+  .print-header {
+    display: block;
+  }
+
+  .no-print {
+    display: none;
+  }
+}
