@@ -2522,8 +2522,8 @@
 
     <div class="container mt-5 p-3 border" id="container__1">
       <div class="row mt-3">
-        <div class="col-md-12" id="container__2">
-          <button onclick="addTextbox()">Adicionar Trauma:</button>
+        <div class="col-md-12 justify-content-center" id="container__2">
+          <button onclick="addTextbox()"  class="btn btn-primary row d-flex justify-content-end">Adicionar Trauma:</button>
         </div>
         <div class="col-md-12" id="container__3">
           <img src="/client/src/assets/corpo__humano.jpg" alt="" class="img-fluid" id="draggableImage">
@@ -2535,111 +2535,42 @@
     
     <script>
       function addTextbox() {
-        const id = 'textbox' + new Date().getTime();
-        const textbox = $('<div>', {
-          id: id,
-          class: 'draggable',
-          contentEditable: true,
-          text: '<--', // Default text for the textbox
-        });
-    
-        textbox.appendTo('#container__3');
-    
-        // Make the textbox draggable
-        textbox.draggable({
-          containment: '#container__3', // Keep the textboxes inside the parent container
-          scroll: false,
-          start: function (event, ui) {
-            $(this).css('cursor', 'grabbing');
-          },
-          stop: function (event, ui) {
-            $(this).css('cursor', 'grab');
-          },
-          touch: true, // Enable touch support
-        });
+          const id = 'textbox' + new Date().getTime();
+          const textbox = $('<div>', {
+              id: id,
+              class: 'draggable',
+              contentEditable: true,
+              text: '->', // Default text for the textbox
+          });
+
+          textbox.appendTo('#container__2');
+
+          // Make the textbox draggable
+          textbox.draggable({
+              containment: '#container__3', // Keep the textboxes inside the parent container
+              scroll: false,
+              start: function (event, ui) {
+                  $(this).css('cursor', 'grabbing');
+              },
+              stop: function (event, ui) {
+                  $(this).css('cursor', 'grab');
+              },
+              touch: true, // Enable touch support
+          });
+
+          // Center the textbox initially
+          const containerWidth = $('#container__3').width();
+          const textboxWidth = textbox.width();
+          const initialLeft = (containerWidth - textboxWidth) / 2;
+          textbox.css('left', initialLeft);
       }
-    </script>
+  </script>
     
     
    
     <br /><br />
     
-    <script>
-      function cloneAndMakeMovable(event, element) {
-        // Clone the original div
-        var originalDiv = element;
-        var clonedDiv = originalDiv.cloneNode(true);
-
-        // Set a unique ID for each cloned div
-        var uniqueID = "clone-" + new Date().getTime();
-        clonedDiv.id = uniqueID;
-
-        // Set initial position for the cloned div at the mouse click position
-        var mouseX = event.clientX;
-        var mouseY = event.clientY;
-
-        clonedDiv.style.position = "absolute";
-        clonedDiv.style.left = mouseX + "px";
-        clonedDiv.style.top = mouseY + "px";
-
-        // Add a class to identify cloned divs
-        clonedDiv.classList.add("cloned");
-
-        // Append the cloned div to the body or any other container
-        document.body.appendChild(clonedDiv);
-
-        // Add event listeners for mouse and touch events
-        clonedDiv.addEventListener("mousedown", startDrag);
-        clonedDiv.addEventListener("touchstart", startDrag, { passive: false });
-      }
-
-      function startDrag(event) {
-        var draggedElement = event.target;
-        var offsetX, offsetY;
-
-        if (event.type === "mousedown") {
-          offsetX = event.clientX - draggedElement.getBoundingClientRect().left;
-          offsetY = event.clientY - draggedElement.getBoundingClientRect().top;
-        } else if (event.type === "touchstart") {
-          var touch = event.touches[0];
-          offsetX = touch.clientX - draggedElement.getBoundingClientRect().left;
-          offsetY = touch.clientY - draggedElement.getBoundingClientRect().top;
-        }
-
-        // Add a class to the dragged element for styling
-        draggedElement.classList.add("dragging");
-
-        // Move the element with the mouse
-        function dragMove(moveEvent) {
-          if (moveEvent.type === "mousemove") {
-            draggedElement.style.left = moveEvent.clientX - offsetX + "px";
-            draggedElement.style.top = moveEvent.clientY - offsetY + "px";
-          } else if (moveEvent.type === "touchmove") {
-            var touch = moveEvent.touches[0];
-            draggedElement.style.left = touch.clientX - offsetX + "px";
-            draggedElement.style.top = touch.clientY - offsetY + "px";
-          }
-        }
-
-        // Remove the class and event listeners when the drag ends
-        function dragEnd() {
-          draggedElement.classList.remove("dragging");
-          document.removeEventListener("mousemove", dragMove);
-          document.removeEventListener("mouseup", dragEnd);
-          document.removeEventListener("touchmove", dragMove);
-          document.removeEventListener("touchend", dragEnd);
-        }
-
-        // Add event listeners for mouse and touch events during drag
-        document.addEventListener("mousemove", dragMove);
-        document.addEventListener("mouseup", dragEnd);
-        document.addEventListener("touchmove", dragMove, { passive: false });
-        document.addEventListener("touchend", dragEnd);
-
-        // Prevent default behavior to avoid issues with certain browsers
-        event.preventDefault();
-      }
-    </script>
+  
     <!-- FIM TELA CORPO  -->
 
     <!-- COMEÇO TELA FERIMENTOS/LUXAÇÕES -->
@@ -2734,62 +2665,62 @@
     <!-- Script to handle container cloning -->
     <script>
       document
-        .getElementById("cloneContainerBtn")
-        .addEventListener("click", function () {
-          // Clone the container
-          const originalContainer = document.querySelector("#container2");
-          const clonedContainer = originalContainer.cloneNode(true);
-
-          // Remove the button from the cloned container
-          const clonedButton =
-            clonedContainer.querySelector("#cloneContainerBtn");
-          clonedButton.parentNode.removeChild(clonedButton);
-
-          // Generate a unique identifier to append to the original IDs
-          const uniqueId = new Date().getTime();
-
-          // Update IDs and corresponding 'for' attributes in the cloned container
-          updateElementIds(clonedContainer, uniqueId);
-
-          // Append the cloned container after the original container
-          originalContainer.parentNode.appendChild(clonedContainer);
-        });
-
+          .getElementById("cloneContainerBtn")
+          .addEventListener("click", function () {
+              // Clone the container
+              const originalContainer = document.querySelector("#container2");
+              const clonedContainer = originalContainer.cloneNode(true);
+  
+              // Remove the button from the cloned container
+              const clonedButton =
+                  clonedContainer.querySelector("#cloneContainerBtn");
+              clonedButton.parentNode.removeChild(clonedButton);
+  
+              // Generate a unique identifier to append to the original IDs
+              const uniqueId = new Date().getTime();
+  
+              // Update IDs and corresponding 'for' attributes in the cloned container
+              updateElementIds(clonedContainer, uniqueId);
+  
+              // Append the cloned container inside the original container
+              originalContainer.appendChild(clonedContainer);
+          });
+  
       // Function to update element IDs and corresponding 'for' attributes with a unique identifier
       function updateElementIds(container, uniqueId) {
-        const elements = container.querySelectorAll("[id]");
-        elements.forEach((element) => {
-          const originalId = element.id;
-          const newId = originalId + "_" + uniqueId;
-          element.id = newId;
-
-          // Check if the element has a corresponding 'for' attribute
-          if (element.tagName.toLowerCase() === "label") {
-            const forAttribute = element.getAttribute("for");
-            if (forAttribute) {
-              const newForAttribute = forAttribute + "_" + uniqueId;
-              element.setAttribute("for", newForAttribute);
-            }
-          }
-
-          // Check if the element is an input radio
-          if (
-            element.tagName.toLowerCase() === "input" &&
-            element.type === "radio"
-          ) {
-            // Update the 'for' attribute in the label associated with the radio
-            const radioLabel = container.querySelector(
-              `label[for="${originalId}"]`
-            );
-            if (radioLabel) {
-              const newRadioForAttribute =
-                radioLabel.getAttribute("for") + "_" + uniqueId;
-              radioLabel.setAttribute("for", newRadioForAttribute);
-            }
-          }
-        });
+          const elements = container.querySelectorAll("[id]");
+          elements.forEach((element) => {
+              const originalId = element.id;
+              const newId = originalId + "_" + uniqueId;
+              element.id = newId;
+  
+              // Check if the element has a corresponding 'for' attribute
+              if (element.tagName.toLowerCase() === "label") {
+                  const forAttribute = element.getAttribute("for");
+                  if (forAttribute) {
+                      const newForAttribute = forAttribute + "_" + uniqueId;
+                      element.setAttribute("for", newForAttribute);
+                  }
+              }
+  
+              // Check if the element is an input radio
+              if (
+                  element.tagName.toLowerCase() === "input" &&
+                  element.type === "radio"
+              ) {
+                  // Update the 'for' attribute in the label associated with the radio
+                  const radioLabel = container.querySelector(
+                      `label[for="${originalId}"]`
+                  );
+                  if (radioLabel) {
+                      const newRadioForAttribute =
+                          radioLabel.getAttribute("for") + "_" + uniqueId;
+                      radioLabel.setAttribute("for", newRadioForAttribute);
+                  }
+              }
+          });
       }
-    </script>
+  </script>
 
     <!-- FIM TELA FERIMENTOS/LUXAÇÕES  -->
     <br /><br />
@@ -2802,17 +2733,11 @@
       </div>
     </div>
     <br /><br />
-    <div class="container border p-3">
+    <div class="container border p-3" id="container__4">
       <div class="row">
         <div class="col-lg-6">
-          <label for="local__queimadura" class="form-label"
-            >Local da Queimadura:</label
-          >
-          <select
-            class="form-select border"
-            aria-label="Default select example"
-            id="local__queimadura"
-          >
+          <label for="local__queimadura" class="form-label">Local da Queimadura:</label>
+          <select class="form-select border" aria-label="Default select example" id="local__queimadura">
             <option selected>Selecione:</option>
             <option value="1">Cabeça</option>
             <option value="2">Pescoço</option>
@@ -2821,51 +2746,66 @@
             <option value="5">Genit</option>
             <option value="6">M.I.D</option>
             <option value="7">M.I.E</option>
-            <option value="6">M.S.E</option>
-            <option value="7">M.S.D</option>
+            <option value="8">M.S.E</option>
+            <option value="9">M.S.D</option>
           </select>
         </div>
         <br />
         <div class="container">
           <div class="col-lg-6 mt-4 d-flex justify-content-center">
-            <div
-              class="form-check form-check-inline mb-3 position-relative py-2 px-4"
-            >
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="grau__queim"
-                value="option1"
-              />
+            <div class="form-check form-check-inline mb-3 position-relative py-2 px-4">
+              <input class="form-check-input" type="checkbox" id="grau__queim" value="option1"/>
               <label class="form-check-label" for="grau__queim">1°Grau</label>
             </div>
-
-            <div
-              class="form-check form-check-inline mb-3 position-relative py-2 px-4"
-            >
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="grau__queim2"
-                value="option2"
-              />
+            <div class="form-check form-check-inline mb-3 position-relative py-2 px-4">
+              <input class="form-check-input" type="checkbox" id="grau__queim2" value="option2"/>
               <label class="form-check-label" for="grau__queim2">2°Grau</label>
             </div>
-            <div
-              class="form-check form-check-inline mb-3 position-relative py-2 px-4"
-            >
-              <input
-                class="form-check-input"
-                type="checkbox"
-                id="grau__queim3"
-                value="option2"
-              />
+            <div class="form-check form-check-inline mb-3 position-relative py-2 px-4">
+              <input class="form-check-input" type="checkbox" id="grau__queim3" value="option3"/>
               <label class="form-check-label" for="grau__queim3">3°Grau</label>
             </div>
           </div>
         </div>
       </div>
     </div>
+    <button id="cloneContainerBtn">Clone and Modify</button>
+
+    <script>
+      document.getElementById("cloneContainerBtn").addEventListener("click", function () {
+        // Clone the container
+        const originalContainer = document.querySelector("#container__4");
+        const clonedContainer = originalContainer.cloneNode(true);
+  
+        // Generate a unique identifier to append to the original IDs
+        const uniqueId = new Date().getTime();
+  
+        // Update IDs and corresponding 'for' attributes in the cloned container
+        updateElementIds(clonedContainer, uniqueId);
+  
+        // Append the cloned container after the original container
+        originalContainer.parentNode.insertBefore(clonedContainer, originalContainer.nextSibling);
+      });
+  
+      // Function to update element IDs and corresponding 'for' attributes with a unique identifier
+      function updateElementIds(container, uniqueId) {
+        const elements = container.querySelectorAll("[id]");
+        elements.forEach((element) => {
+          const originalId = element.id;
+          const newId = originalId + "_" + uniqueId;
+          element.id = newId;
+  
+          // Check if the element has a corresponding 'for' attribute
+          if (element.tagName.toLowerCase() === "label") {
+            const forAttribute = element.getAttribute("for");
+            if (forAttribute) {
+              const newForAttribute = forAttribute.replace(/_[0-9]+$/, "") + "_" + uniqueId;
+              element.setAttribute("for", newForAttribute);
+            }
+          }
+        });
+      }
+    </script>
 
     <!-- FIM TELA QUEIMADURAS  -->
     <br /><br />

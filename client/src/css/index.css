@@ -135,10 +135,15 @@
   position: absolute;
   cursor: move;
   border: 1px solid #000000;
-  padding: 10px;
-  background-color: #c67272;
-  
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 1px;
+  background-color: #6199ff;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
 }
+
+    
 
 .page-break {
   page-break-before: always;
