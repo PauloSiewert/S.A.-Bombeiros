@@ -66,19 +66,3 @@ function toggleInput() {
 
 //Mais checkbox
 
-// Adiciona um ouvinte de evento à checkbox
-document.getElementById("UsoDeColar").addEventListener("change", function () {
-  // Obtém o elemento de input de texto
-  var tamanhoInput = document.getElementById("Tamanho");
-  // Obtém o elemento da label
-  var tamanhoLabel = document.getElementById("TamanhoLabel");
-
-  // Se a checkbox estiver marcada, exibe o input de texto, caso contrário, oculta
-  if (this.checked) {
-    tamanhoInput.style.display = "block";
-    tamanhoLabel.style.display = "block";
-  } else {
-    tamanhoInput.style.display = "none";
-    tamanhoLabel.style.display = "none";
-  }
-});
