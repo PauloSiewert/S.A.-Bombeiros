@@ -23,6 +23,19 @@
   
   <!--  custom script -->
   <script src="/client/src/javascript/sample.js"></script>
+
+  <script>
+   
+        // Script to generate pdf
+        
+        function GeneratePdf() {
+            console.log("GeneratePdf function called");
+            var element = document.getElementById('form-print');
+            html2pdf(element);
+        }
+    ;
+</script>
+
 </head>
 
   <body>
@@ -269,8 +282,9 @@
 
     <!-- FIM DA HEADER -->
    
-    <form id ="form-print" enctype="text/plain"
-        class="form-control">
+       <!-- Form encrypted as text -->
+       <form id ="form-print" enctype="text/plain"
+       class="form-control">
 
     <!-- INFORMAÇÕES DO PACIENTE -->
     <br />
@@ -4955,12 +4969,7 @@ function toggleReanimador() {
   <div class="border p-4">
     <div class="row">
       <div class="col-lg-12 mt-2">
-       
-      </form>
-      <input type="button" class="btn btn-primary"
-      onclick="GeneratePdf();" value="GeneratePdf">   
-        
-  </div>
+     </div>
 </div>
 
 
@@ -4968,6 +4977,17 @@ function toggleReanimador() {
 <br><br><br>
 
 </div>
+  
+      </form>
+     
+  
+      <input type="button" class="btn btn-primary"
+      onclick="GeneratePdf();" value="GeneratePdf">   
+      
+      
+
+
+
 
     <script>
       // Adiciona um ouvinte de evento à checkbox
@@ -5031,13 +5051,7 @@ function toggleReanimador() {
               }
             </script>
           
-          <script>        
-            // Function to GeneratePdf
-            function GeneratePdf() {
-                var element = document.getElementById('form-print');
-                html2pdf(element);
-            }
-          </script>
+         
 
   </body>
 </html>
