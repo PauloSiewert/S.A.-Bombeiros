@@ -28,13 +28,6 @@
 
  <script src="/client/src/javascript/index.js"></script> 
 
-  <script>
-    function GeneratePdf() {
-      console.log("GeneratePdf function called");
-      var element = document.getElementById("form-print");
-      html2pdf(element);
-    }
-    </script>
 </head>
 
   <body>
@@ -280,12 +273,9 @@
     </div>
 
     <!-- FIM DA HEADER -->
-   
-       <!-- Form encrypted as text -->
-       <form id ="form-print" enctype="text/plain"
-       class="form-control">
 
     <!-- INFORMAÇÕES DO PACIENTE -->
+
     <br />
     <br />
     <br />
@@ -4976,14 +4966,6 @@ function toggleReanimador() {
 <br><br><br>
 
 </div>
-  
-
-
-<input type="button" class="btn btn-primary"
-onclick="GeneratePdf();" value="GeneratePdf">   
-</form>
-
-
 
 <script>
 // Adiciona um ouvinte de evento à checkbox
