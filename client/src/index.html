@@ -4975,6 +4975,15 @@ function toggleReanimador() {
 onclick="GeneratePdf();" value="GeneratePdf">   
 </form>
 
+<!-- Script para gerar pdf -->
+
+<script>
+function GeneratePdf() {
+  console.log("GeneratePdf function called");
+  var element = document.getElementById("form-print");
+  html2pdf(element);
+}
+</script>
 
   </body>
 </html>
