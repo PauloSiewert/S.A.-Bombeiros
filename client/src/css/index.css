@@ -154,15 +154,14 @@
   #element-to-hide {
       display: none;
   }
-  #seção2 {
-    background-color: #343a40;
-    height: 5%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+ 
+  @page {
+    size: letter landscape;
+    size: A3;
   }
-  
+  body {
+    page-break-inside: avoid;
+  }
 }
 
 .container-wrapper {
