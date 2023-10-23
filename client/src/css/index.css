@@ -1,5 +1,5 @@
 .title__bar {
-  background-color: #343a40;
+  background: #343a40;
   height: 5%;
   width: 100%;
   display: flex;
@@ -162,6 +162,11 @@
   body {
     page-break-inside: avoid;
   }
+
+  .title__bar {
+    display: flex;
+  }
+  
 }
 
 .container-wrapper {
