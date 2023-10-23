@@ -2,9 +2,9 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Tempo de geração: 11-Out-2023 às 13:46
--- Versão do servidor: 8.0.21
+-- Host: 127.0.0.1:3307
+-- Tempo de geração: 23-Out-2023 às 13:27
+-- Versão do servidor: 10.4.22-MariaDB
 -- versão do PHP: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -24,46 +24,70 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `user`
+-- Estrutura da tabela `pdf`
 --
 
-CREATE TABLE `user` (
-  `id_user` int NOT NULL,
-  `cpf` varchar(50) NULL,
-  `senha` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `nome` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+CREATE TABLE `pdf` (
+  `id` int(11) NOT NULL,
+  `file_name` varchar(100) NOT NULL,
+  `type` varchar(100) NOT NULL,
+  `size` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
 
 --
--- Extraindo dados da tabela `user`
+-- Estrutura da tabela `users`
 --
 
-INSERT INTO `user` (`id_user`, `cpf`, `senha`, `nome`) VALUES
-(7, 46213214291, 'y3thf9jk', 'Henrie Ollarenshaw'),
-(8, 58503142022, 'i92o30p2', 'Bili Benditt'),
-(9, 12344200070, 'r57gemnvf', 'Pauli Groll'),
-(10, 17208174059, 'k9jvq0f6s', 'Deloria Ivachyov'),
-(11, 55195553098, 'j8cupbkw', 'Sky Segges');
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `usertype` varchar(100) NOT NULL DEFAULT 'user',
+  `email` varchar(100) NOT NULL,
+  `cpf` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `password`, `usertype`, `email`, `cpf`) VALUES
+(2, 'admin', '1234', 'admin', 'admin@gmail.com', '11111111111'),
+(3, 'user', '1234', 'user', 'user@gmail.com', '22222222222');
 
 --
 -- Índices para tabelas despejadas
 --
 
 --
--- Índices para tabela `user`
+-- Índices para tabela `pdf`
 --
-ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+ALTER TABLE `pdf`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Índices para tabela `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT de tabela `user`
+-- AUTO_INCREMENT de tabela `pdf`
 --
-ALTER TABLE `user`
-  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+ALTER TABLE `pdf`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de tabela `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
