@@ -2585,10 +2585,12 @@
     </div>
     <br /><br />
 
+    <div id="container-wrapper" class="container-wrapper">
     <div class="container mt-5" id="container2">
       <div class="border p-4">
         <div class="container mt-5">
           <div class="border p-4">
+            <div id="container2" class="container">
             <div class="row">
               <div class="col-lg-6">
                 <label for="face__ferim" class="form-label">Face:</label>
@@ -2664,31 +2666,31 @@
         </button>
       </div>
     </div>
+</div>
+</div>
+
 
     <!-- Script to handle container cloning -->
     <script>
-      document
-          .getElementById("cloneContainerBtn")
-          .addEventListener("click", function () {
-              // Clone the container
-              const originalContainer = document.querySelector("#container2");
-              const clonedContainer = originalContainer.cloneNode(true);
-  
-              // Remove the button from the cloned container
-              const clonedButton =
-                  clonedContainer.querySelector("#cloneContainerBtn");
-              clonedButton.parentNode.removeChild(clonedButton);
-  
-              // Generate a unique identifier to append to the original IDs
-              const uniqueId = new Date().getTime();
-  
-              // Update IDs and corresponding 'for' attributes in the cloned container
-              updateElementIds(clonedContainer, uniqueId);
-  
-              // Append the cloned container inside the original container
-              originalContainer.appendChild(clonedContainer);
-          });
-  
+      document.getElementById("cloneContainerBtn").addEventListener("click", function () {
+          // Clone the container
+          const originalContainer = document.querySelector("#container2");
+          const clonedContainer = originalContainer.cloneNode(true);
+
+          // Remove the button from the cloned container
+          const clonedButton = clonedContainer.querySelector("#cloneContainerBtn");
+          clonedButton.parentNode.removeChild(clonedButton);
+
+          // Generate a unique identifier to append to the original IDs
+          const uniqueId = new Date().getTime();
+
+          // Update IDs and corresponding 'for' attributes in the cloned container
+          updateElementIds(clonedContainer, uniqueId);
+
+          // Append the cloned container to the container wrapper
+          document.getElementById("container-wrapper").appendChild(clonedContainer);
+      });
+
       // Function to update element IDs and corresponding 'for' attributes with a unique identifier
       function updateElementIds(container, uniqueId) {
           const elements = container.querySelectorAll("[id]");
@@ -2696,7 +2698,7 @@
               const originalId = element.id;
               const newId = originalId + "_" + uniqueId;
               element.id = newId;
-  
+
               // Check if the element has a corresponding 'for' attribute
               if (element.tagName.toLowerCase() === "label") {
                   const forAttribute = element.getAttribute("for");
@@ -2705,19 +2707,16 @@
                       element.setAttribute("for", newForAttribute);
                   }
               }
-  
+
               // Check if the element is an input radio
               if (
                   element.tagName.toLowerCase() === "input" &&
                   element.type === "radio"
               ) {
                   // Update the 'for' attribute in the label associated with the radio
-                  const radioLabel = container.querySelector(
-                      `label[for="${originalId}"]`
-                  );
+                  const radioLabel = container.querySelector(`label[for="${originalId}"]`);
                   if (radioLabel) {
-                      const newRadioForAttribute =
-                          radioLabel.getAttribute("for") + "_" + uniqueId;
+                      const newRadioForAttribute = radioLabel.getAttribute("for") + "_" + uniqueId;
                       radioLabel.setAttribute("for", newRadioForAttribute);
                   }
               }
