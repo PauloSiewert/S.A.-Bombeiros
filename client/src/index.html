@@ -2614,11 +2614,11 @@
 
             <div class="row mt-3">
               <div class="col-lg-6 mt-3 m-0">
-                <label class="form-check-label" for="Esquerdo__lado">Lado:</label>
+                <label class="form-check-label" for="">Lado:</label>
                 <br />
                 <input
                   class="form-check-input1"
-                  type="radio"
+                  type="checkbox"
                   value=""
                   id="Esquerdo__lado"
                   name="check1"
@@ -2628,7 +2628,7 @@
                 >
                 <input
                   class="form-check-input1"
-                  type="radio"
+                  type="checkbox"
                   value=""
                   id="direito__lado"
                   name="check1"
@@ -2672,56 +2672,67 @@
 
     <!-- Script to handle container cloning -->
     <script>
-      document.getElementById("cloneContainerBtn").addEventListener("click", function () {
-          // Clone the container
-          const originalContainer = document.querySelector("#container2");
-          const clonedContainer = originalContainer.cloneNode(true);
+   document.getElementById("cloneContainerBtn").addEventListener("click", function () {
+    // Clone the container
+    const originalContainer = document.querySelector("#container2");
+    const clonedContainer = originalContainer.cloneNode(true);
 
-          // Remove the button from the cloned container
-          const clonedButton = clonedContainer.querySelector("#cloneContainerBtn");
-          clonedButton.parentNode.removeChild(clonedButton);
+    // Remove the button from the cloned container
+    const clonedButton = clonedContainer.querySelector("#cloneContainerBtn");
+    clonedButton.parentNode.removeChild(clonedButton);
 
-          // Generate a unique identifier to append to the original IDs
-          const uniqueId = new Date().getTime();
+    // Generate a unique identifier to append to the original IDs
+    const uniqueId = new Date().getTime();
 
-          // Update IDs and corresponding 'for' attributes in the cloned container
-          updateElementIds(clonedContainer, uniqueId);
+    // Update IDs and corresponding 'for' attributes in the cloned container
+    updateElementIds(clonedContainer, uniqueId);
 
-          // Append the cloned container to the container wrapper
-          document.getElementById("container-wrapper").appendChild(clonedContainer);
-      });
+    // Append the cloned container to the container wrapper
+    document.getElementById("container-wrapper").appendChild(clonedContainer);
+});
 
-      // Function to update element IDs and corresponding 'for' attributes with a unique identifier
-      function updateElementIds(container, uniqueId) {
-          const elements = container.querySelectorAll("[id]");
-          elements.forEach((element) => {
-              const originalId = element.id;
-              const newId = originalId + "_" + uniqueId;
-              element.id = newId;
+// Function to update element IDs and corresponding 'for' attributes with a unique identifier
+function updateElementIds(container, uniqueId) {
+    const elements = container.querySelectorAll("[id]");
+    elements.forEach((element) => {
+        const originalId = element.id;
+        const newId = originalId + "_" + uniqueId;
+        element.id = newId;
 
-              // Check if the element has a corresponding 'for' attribute
-              if (element.tagName.toLowerCase() === "label") {
-                  const forAttribute = element.getAttribute("for");
-                  if (forAttribute) {
-                      const newForAttribute = forAttribute + "_" + uniqueId;
-                      element.setAttribute("for", newForAttribute);
-                  }
-              }
+        // Check if the element has a corresponding 'for' attribute
+        if (element.tagName.toLowerCase() === "label") {
+            const forAttribute = element.getAttribute("for");
+            if (forAttribute) {
+                const newForAttribute = forAttribute + "_" + uniqueId;
+                element.setAttribute("for", newForAttribute);
+            }
+        }
 
-              // Check if the element is an input radio
-              if (
-                  element.tagName.toLowerCase() === "input" &&
-                  element.type === "radio"
-              ) {
-                  // Update the 'for' attribute in the label associated with the radio
-                  const radioLabel = container.querySelector(`label[for="${originalId}"]`);
-                  if (radioLabel) {
-                      const newRadioForAttribute = radioLabel.getAttribute("for") + "_" + uniqueId;
-                      radioLabel.setAttribute("for", newRadioForAttribute);
-                  }
-              }
-          });
-      }
+        // Check if the element is an input checkbox
+        if (
+            element.tagName.toLowerCase() === "input" &&
+            element.type === "checkbox"
+        ) {
+            // Check if it's the "esquerdo" checkbox
+            if (element.id.includes("Esquerdo__lado")) {
+                // Give a specific treatment for the "esquerdo" checkbox
+                const checkBLabel = container.querySelector(`label[for="${originalId}"]`);
+                if (checkBLabel) {
+                    const newCheckBoxForAttribute = newId; // Use the newId for the 'for' attribute
+                    checkBLabel.setAttribute("for", newCheckBoxForAttribute);
+                }
+            } else {
+                // For other checkboxes, update the 'for' attribute in the label associated with the checkbox
+                const checkBLabel = element.previousElementSibling; // Get the previous sibling (label)
+                if (checkBLabel && checkBLabel.tagName.toLowerCase() === "label") {
+                    const newCheckBoxForAttribute = newId; // Use the newId for the 'for' attribute
+                    checkBLabel.setAttribute("for", newCheckBoxForAttribute);
+                }
+            }
+        }
+    });
+}
+
   </script>
 
     <!-- FIM TELA FERIMENTOS/LUXAÇÕES  -->
@@ -2735,8 +2746,11 @@
       </div>
     </div>
     <br /><br />
+
+    <div id="container-wrapper2" class="container-wrapper2">
     <div class="container border p-3" id="container__4">
-      <div class="row">
+      <div id="container22" class="container border mt-4">
+      <div class="row mt-4">
         <div class="col-lg-6">
           <label for="local__queimadura" class="form-label">Local da Queimadura:</label>
           <select class="form-select border" aria-label="Default select example" id="local__queimadura">
@@ -2768,44 +2782,62 @@
               <label class="form-check-label" for="grau__queim3">3°Grau</label>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-    <button id="cloneContainerBtn">Clone and Modify</button>
+          <button id="btn__clone" class="btn btn-primary d-flex justify-content-end"> + </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+      <script>
+      document.getElementById("btn__clone").addEventListener("click", function () {
+          // Clone the container
+          const originalContainer = document.querySelector("#container22");
+          const clonedContainer = originalContainer.cloneNode(true);
 
-    <script>
-      document.getElementById("cloneContainerBtn").addEventListener("click", function () {
-        // Clone the container
-        const originalContainer = document.querySelector("#container__4");
-        const clonedContainer = originalContainer.cloneNode(true);
-  
-        // Generate a unique identifier to append to the original IDs
-        const uniqueId = new Date().getTime();
-  
-        // Update IDs and corresponding 'for' attributes in the cloned container
-        updateElementIds(clonedContainer, uniqueId);
-  
-        // Append the cloned container after the original container
-        originalContainer.parentNode.insertBefore(clonedContainer, originalContainer.nextSibling);
+          // Remove the button from the cloned container
+          const clonedButton = clonedContainer.querySelector("#btn__clone");
+          clonedButton.parentNode.removeChild(clonedButton);
+
+          // Generate a unique identifier to append to the original IDs
+          const uniqueId = new Date().getTime();
+
+          // Update IDs and corresponding 'for' attributes in the cloned container
+          updateElementIds(clonedContainer, uniqueId);
+
+          // Append the cloned container to the container wrapper
+          document.getElementById("container-wrapper2").appendChild(clonedContainer);
       });
-  
+
       // Function to update element IDs and corresponding 'for' attributes with a unique identifier
       function updateElementIds(container, uniqueId) {
-        const elements = container.querySelectorAll("[id]");
-        elements.forEach((element) => {
-          const originalId = element.id;
-          const newId = originalId + "_" + uniqueId;
-          element.id = newId;
-  
-          // Check if the element has a corresponding 'for' attribute
-          if (element.tagName.toLowerCase() === "label") {
-            const forAttribute = element.getAttribute("for");
-            if (forAttribute) {
-              const newForAttribute = forAttribute.replace(/_[0-9]+$/, "") + "_" + uniqueId;
-              element.setAttribute("for", newForAttribute);
-            }
-          }
-        });
+          const elements = container.querySelectorAll("[id]");
+          elements.forEach((element) => {
+              const originalId = element.id;
+              const newId = originalId + "_" + uniqueId;
+              element.id = newId;
+
+              // Check if the element has a corresponding 'for' attribute
+              if (element.tagName.toLowerCase() === "label") {
+                  const forAttribute = element.getAttribute("for");
+                  if (forAttribute) {
+                      const newForAttribute = forAttribute + "_" + uniqueId;
+                      element.setAttribute("for", newForAttribute);
+                  }
+              }
+
+              // Check if the element is an input radio
+              if (
+                  element.tagName.toLowerCase() === "input" &&
+                  element.type === "checkbox"
+              ) {
+                  // Update the 'for' attribute in the label associated with the radio
+                  const radioLabel = container.querySelector(`label[for="${originalId}"]`);
+                  if (radioLabel) {
+                      const newRadioForAttribute = radioLabel.getAttribute("for") + "_" + uniqueId;
+                      radioLabel.setAttribute("for", newRadioForAttribute);
+                  }
+              }
+          });
       }
     </script>
 
