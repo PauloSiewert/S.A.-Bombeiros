@@ -149,20 +149,20 @@
   page-break-before: always;
 }
 
-@media print{
-
-  body {
-    font-size: 12pt;
-    color: #000;
+ /* Styles specific for print */
+ @media print {
+  #element-to-hide {
+      display: none;
   }
-
-  .print-header {
-    display: block;
+  #seção2 {
+    background-color: #343a40;
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-
-  .no-print {
-    display: none;
-  }
+  
 }
 
 .container-wrapper {
