@@ -268,8 +268,9 @@
                 </a>
               </li>
 
+              
               <li class="nav-item">
-                <a class="nav-link" href="#seção23">
+                <a class="nav-link bg-light" href="#seção24">
                   <div class="box__nav">
                     <b class="navbox__num">23</b>
                   </div>
@@ -5002,7 +5003,7 @@ function toggleReanimador() {
     <div class="row">
       <div class="col-lg-12 mt-2">
     
-        <div class="container mt-5">
+        <div>
           <h2>Termo de Recusa:</h2>
           
           <form>
@@ -5020,24 +5021,78 @@ function toggleReanimador() {
 
       </div></div></div></div>
       <br><br>
-<div class="title__bar" id="seção23">
-  <p class="title__text">Finalizar:</p>
-  <div class="title__box">
-    <b class="box__number">23</b>
-  </div>
-</div>
-<br /><br />
+
+    <div id="element-to-hide">
+      <div class="title__bar" id="seção24">
+      <p class="title__text">Finalizar:</p>
+      <div class="title__box">
+        <b class="box__number">23</b>
+      </div>
+      </div>
+      <br /><br />
 
 
+      
 <div class="container">
   <div class="border p-4">
     <div class="row">
       <div class="col-lg-12 mt-2">
-        
-        <div>
-        <button onclick="window.print()" id="btn__print" class="btn btn-outline-success">Gerar PDF</button>
-           
-      </div>
+
+  <h4>Salvar PDF</h4>
+  <form>
+    <div class="form-group">
+      <label for="btn__print">Gerar Relatório:</label>
+  <button onclick="window.print()" id="btn__print" class="btn btn-outline-secondary btn-sm">Gerar PDF</button>
+  <br><br>
+</div>
+<br>
+</form>
+  <h4>Enviar PDF</h4>
+  <form>
+    <div class="form-group">
+      <label for="pdfInput">Escolha o PDF:</label>
+      <input type="file" class="form-control-file" id="pdfInput" accept=".pdf" onchange="updateIndicator()">
+    </div>
+    <div id="pdfIndicator" style="display: none;" class="alert alert-success mt-2">
+      PDF Anexado!
+    </div>
+    <br><br>
+    <button type="button" class="btn btn-primary btn-lg" onclick="uploadPDF()">Finalizar</button>
+  </form>
+</div></div></div></div>
+</div>
+<script>
+  function updateIndicator() {
+    var input = document.getElementById('pdfInput');
+    var indicator = document.getElementById('pdfIndicator');
+    
+    if (input.files.length > 0 && input.files[0].type === 'application/pdf') {
+      indicator.style.display = 'block';
+    } else {
+      indicator.style.display = 'none';
+    }
+  }
+
+  function uploadPDF() {
+    var input = document.getElementById('pdfInput');
+    
+    // Check if a file is selected
+    if (input.files.length > 0) {
+      var file = input.files[0];
+      
+      // Check if the selected file is a PDF
+      if (file.type === 'application/pdf') {
+        // You can perform further actions here, such as uploading the file to a server
+        alert('PDF Recebido!');
+      } else {
+        alert('Por Favor Selecione Um Arquivo em PDF');
+      }
+    } else {
+      alert('Por Favor Selecione Um Arquivo');
+    }
+  }
+</script>
+
            <script>
               document.getElementById("btn__print").addEventListener("change", function() {
                 window.print
