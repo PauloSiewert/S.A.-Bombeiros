@@ -54,6 +54,8 @@
       </header>
     </div>
 
+    <!-- FIM DA HEADER -->
+
     <br /><br /><br /><br /><br /><br />
     <div class="container mt-12">
       <div class="border p-4">
@@ -65,31 +67,16 @@
 
           <div class="col-lg-12">
             <label for="numero" class="form-label m-0">CPF:</label>
+
+            
             <input
             oninput="mascara(this)"
               type="text"
               class="form-control"
               id="numero"
-              aria-describedby="emailHelp"
-             
+              aria-describedby="emailHelp"   
             />
-            <script>
-            // função mascara do login
-              function mascara(i){
-                 
-                  var v = i.value;
-                  
-                  if(isNaN(v[v.length-1])){ // impede entrar outro caractere que não seja número
-                     i.value = v.substring(0, v.length-1);
-                     return;
-                  }
-                  
-                  i.setAttribute("maxlength", "14");
-                  if (v.length == 3 || v.length == 7) i.value += ".";
-                  if (v.length == 11) i.value += "-";
-               
-               }
-               </script>
+            <input type="password" name="password" required>
           </div>
 
           <!-- FIM USUÁRIO -->
@@ -102,13 +89,7 @@
           <!-- SENHA -->
 
           <div class="col-lg-12">
-            <label for="senha_login" class="form-label m-0">Senha:</label>
-            <input
-              type="password"
-              class="form-control"
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
+            <label  for="senha_login" class="form-label m-0">Senha: </label>    
           </div>
 
           <!-- FIM SENHA -->
@@ -119,17 +100,8 @@
 
           <!-- CONFIMAR -->
 
-          <div class="row-sm-2">
-            <div class="col-sm-12">
-              <br /><br />
-              <div class="d-flex justify-content-center">
-                <button type="button" class="btn btn-dark fw-bold p-3">
-                  Confirmar
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
+          <input type="submit" value="login">
+            
 
         <script
           src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
