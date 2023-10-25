@@ -65,10 +65,10 @@
           
           <!-- USUÁRIO -->
 
-          <div class="col-lg-12">
-            <label for="numero" class="form-label m-0">CPF:</label>
+          <div <input type="password" name="name" required> >
+            <label for="numero" class="form-label m-0">CPF: </label>
 
-            
+           
             <input
             oninput="mascara(this)"
               type="text"
@@ -76,7 +76,7 @@
               id="numero"
               aria-describedby="emailHelp"   
             />
-            <input type="password" name="password" required>
+
           </div>
 
           <!-- FIM USUÁRIO -->
