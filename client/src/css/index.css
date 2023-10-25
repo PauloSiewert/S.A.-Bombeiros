@@ -154,7 +154,10 @@
   #element-to-hide {
       display: none;
   }
- 
+  #btn__print{
+    display: none;
+  }
+
   @page {
     size: letter landscape;
     size: A3;
@@ -180,3 +183,4 @@
   margin-top: 2px;
   
 }
+
