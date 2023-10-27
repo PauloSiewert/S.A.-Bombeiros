@@ -31,7 +31,8 @@ CREATE TABLE `pdf` (
   `id` int(11) NOT NULL,
   `file_name` varchar(100) NOT NULL,
   `type` varchar(100) NOT NULL,
-  `size` varchar(100) NOT NULL
+  `file_data` LONGBLOB,
+  `file_name` VARCHAR(255)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------

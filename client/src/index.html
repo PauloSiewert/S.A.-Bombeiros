@@ -5047,50 +5047,73 @@ function toggleReanimador() {
 </div>
 <br>
 </form>
-  <h4>Enviar PDF</h4>
-  <form>
+<h4>Enviar PDF</h4>
+<form action="/upload" method="post" enctype="multipart/form-data">
     <div class="form-group">
-      <label for="pdfInput">Escolha o PDF:</label>
-      <input type="file" class="form-control-file" id="pdfInput" accept=".pdf" onchange="updateIndicator()">
+        <label for="pdfInput">Escolha o PDF:</label>
+        <input type="file" class="form-control-file" id="pdfInput" accept=".pdf" onchange="updateIndicator()">
     </div>
     <div id="pdfIndicator" style="display: none;" class="alert alert-success mt-2">
-      PDF Anexado!
+        PDF Anexado!
     </div>
     <br><br>
-    <button type="button" class="btn btn-primary btn-lg" onclick="uploadPDF()">Finalizar</button>
-  </form>
-</div></div></div></div>
-</div>
-<script>
-  function updateIndicator() {
-    var input = document.getElementById('pdfInput');
-    var indicator = document.getElementById('pdfIndicator');
-    
-    if (input.files.length > 0 && input.files[0].type === 'application/pdf') {
-      indicator.style.display = 'block';
-    } else {
-      indicator.style.display = 'none';
-    }
-  }
+    <button type="submit" class="btn btn-primary btn-lg">Finalizar</button>
+</form>
 
-  function uploadPDF() {
-    var input = document.getElementById('pdfInput');
-    
-    // Check if a file is selected
-    if (input.files.length > 0) {
-      var file = input.files[0];
-      
-      // Check if the selected file is a PDF
-      if (file.type === 'application/pdf') {
-        // You can perform further actions here, such as uploading the file to a server
-        alert('PDF Recebido!');
-      } else {
-        alert('Por Favor Selecione Um Arquivo em PDF');
-      }
-    } else {
-      alert('Por Favor Selecione Um Arquivo');
+<script>
+    function updateIndicator() {
+        var input = document.getElementById('pdfInput');
+        var indicator = document.getElementById('pdfIndicator');
+
+        if (input.files.length > 0 && input.files[0].type === 'application/pdf') {
+            indicator.style.display = 'block';
+        } else {
+            indicator.style.display = 'none';
+        }
     }
-  }
+</script>
+
+<script>
+    function uploadPDF() {
+        var input = document.getElementById('pdfInput');
+
+        // Check if a file is selected
+        if (input.files.length > 0) {
+            var file = input.files[0];
+
+            // Check if the selected file is a PDF
+            if (file.type === 'application/pdf') {
+                // Create FormData object to send the file
+                var formData = new FormData();
+                formData.append('pdfFile', file);
+
+                // Create and configure the XMLHttpRequest object
+                var xhr = new XMLHttpRequest();
+                xhr.open('POST', '/upload', true);
+
+                // Event handler for successful upload
+                xhr.onload = function () {
+                    if (xhr.status === 200) {
+                        alert('PDF uploaded successfully!');
+                    } else {
+                        alert('Error uploading PDF. Please try again.');
+                    }
+                };
+
+                // Event handler for errors
+                xhr.onerror = function () {
+                    alert('Error uploading PDF. Please try again.');
+                };
+
+                // Send the FormData object to the server
+                xhr.send(formData);
+            } else {
+                alert('Please select a PDF file.');
+            }
+        } else {
+            alert('Please select a file.');
+        }
+    }
 </script>
 
            <script>
