@@ -1,82 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Ficha de Ocorrência</title>
-    <link rel="icon" href="/client/src/assets/noarlogo.png" />
-    <link rel="stylesheet" href="/client/src/css/index.css" />
-    <link rel="stylesheet" href="/client/src/css/reset.css" />
-    <link rel="stylesheet" href="/client/src/javascript/sample.js" />
 
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ficha de Ocorrência</title>
 
-    <!-- Bootstrap JS and Popper.js -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-      crossorigin="anonymous"
-    ></script>
-  </head>
+  <!-- Demais folders -->
+  <link rel="icon" href="/client/src/assets/noarlogo.png" />
+  <link rel="stylesheet" href="/client/src/css/index.css" />
+  <link rel="stylesheet" href="/client/src/css/reset.css" />
 
-  <body>
-    <!-- COMEÇO DA HEADER -->
+  <!--CSS and Font Awesome, Bootstrap, etc. links -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-    <div class="container-fluid m-0 p-0">
-      <header class="fixed-top">
-        <nav class="navbar navbar-dark bg-dark">
-          <div class="container">
-            <div class="header__container">
-              <b class="header__title">Bombeiros Voluntários</b>
-              <p class="header__title">
-                Assoc. de Serviços Sociais Voluntários de Guaramirim
-              </p>
-            </div>
+  <!--CSS and Font Awesome, Bootstrap, etc. links -->
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+    integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="/client/src/javascript/index.js"></script>
 
-            <img src="/client/src/assets/noarlogo (1).png" alt="logo" />
+</head>
+
+<body>
+  <!-- COMEÇO DA HEADER -->
+
+  <div class="container-fluid m-0 p-0" id="element-to-hide">
+    <header class="fixed-top">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+
+          <div class="header__container">
+            <b class="header__title">Bombeiros Voluntários</b>
+            <p class="header__title">
+              Assoc. de Serviços Sociais Voluntários de Guaramirim
+            </p>
           </div>
-        </nav>
-      </header>
-    </div>
 
-    <!-- FIM DA HEADER -->
+          <img src="/client/src/assets/noarlogo (1).png" alt="logo" />
+        </div>
+      </nav>
 
-    <br /><br /><br /><br /><br /><br />
-    <div class="container mt-12">
-      <div class="border p-4">
-        <p class="fs-3 fw-bold justify-content-center text-center">Login</p>
-        <br />
-        <div class="row">
-          
-          <!-- USUÁRIO -->
+    </header>
+  </div>
 
-          <div <input type="password" name="name" required> >
-            <label for="numero" class="form-label m-0">CPF: </label>
+  <!-- FIM DA HEADER -->
 
-           
-            <input
-            oninput="mascara(this)"
-              type="text"
-              class="form-control"
-              id="numero"
-              aria-describedby="emailHelp"   
-            />
+  <br /><br /><br /><br /><br /><br />
+  <div class="container mt-12">
+    <div class="border p-4">
+      <p class="fs-3 fw-bold justify-content-center text-center">Login</p>
+      <br />
+      <div class="row">
 
+        <!-- USUÁRIO -->
+
+        <form>
+
+          <div class="col-lg-12">
+            <label for="numero" class="form-label m-0">CPF:</label>
+            <input type="text" name="password" required oninput="mascara(this)" class="form-control" id="numero"
+              aria-describedby="emailHelp" />
           </div>
 
           <!-- FIM USUÁRIO -->
@@ -88,49 +83,54 @@
 
           <!-- SENHA -->
 
-          <div class="col-lg-12">
-            <label  for="senha_login" class="form-label m-0">Senha: </label>    
+          <div class="col-lg-12 mt-3">
+            <label for="numero" class="form-label m-0">Senha: </label>
+
+
+            <input type="password" name="password" required class="form-control" id="numero" />
           </div>
 
           <!-- FIM SENHA -->
 
-          <div class="row-sm-2">
-            <div class="col-sm-6"></div>
+
+          <!-- Login -->
+
+          <div class="container mt-5">
+            <div class="row justify-content-center">
+              <div class="col-6 ">
+                <input type="submit" value="Login" class="fw-bold bnt-block btn btn-dark w-100" />
+              </div>
+            </div>
           </div>
 
-          <!-- CONFIMAR -->
+        </form>
 
-          <input type="submit" value="login">
-            
+        <!-- <input type="submit" value="Login"> -->
 
-        <script
-          src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-          crossorigin="anonymous"
-        ></script>
+          crossorigin="anonymous"></script>
 
         <script>
-          function formatarNumero(input) {
-            // Remove hífens e pontos
-            input.value = input.value.replace(/[-.]/g, '');
-          
-            // Formata o número
-            let formattedNumber = '';
-            const numero = input.value;
-          
-            for (let i = 0; i < numero.length; i++) {
-              if (i === 2 || i === 5) {
-                formattedNumber += '-';
-              }
-              formattedNumber += numero[i];
+          function mascara(i) {
+
+            var v = i.value;
+
+            if (isNaN(v[v.length - 1])) { // impede entrar outro caractere que não seja número
+              i.value = v.substring(0, v.length - 1);
+              return;
             }
-          
-            input.value = formattedNumber;
+
+            i.setAttribute("maxlength", "14");
+            if (v.length == 3 || v.length == 7) i.value += ".";
+            if (v.length == 11) i.value += "-";
+
           }
-          </script>
-          
+        </script>
 
       </div>
     </div>
-  </body>
+
+</body>
+
 </html>
