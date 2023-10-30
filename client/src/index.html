@@ -10,23 +10,22 @@
   <link rel="icon" href="/client/src/assets/noarlogo.png" />
   <link rel="stylesheet" href="/client/src/css/index.css" />
   <link rel="stylesheet" href="/client/src/css/reset.css" />
-    
-  <!--CSS and Font Awesome, Bootstrap, etc. links -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+   <!--CSS and Font Awesome, Bootstrap, etc. links -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
-  <!--CSS and Font Awesome, Bootstrap, etc. links -->
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  
+<!--CSS and Font Awesome, Bootstrap, etc. links -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
- <script src="/client/src/javascript/index.js"></script> 
+<script src="/client/src/javascript/index.js"></script>
+ 
 
 </head>
 
@@ -2534,57 +2533,53 @@
     </div>
     <br /><br />
 
-    <div class="container mt-5 p-3 border" id="container__1">
-      <div class="row mt-3">
-        <div class="col-md-12 justify-content-center" id="container__2">
-          <button onclick="addTextbox()"  class="btn btn-primary row d-flex justify-content-end">Adicionar Trauma:</button>
-        </div>
-        <div class="col-md-12" id="container__3">
-          <img src="/client/src/assets/corpo__humano.jpg" alt="" class="img-fluid" id="draggableImage">
-        </div>
-      </div>
+    
+<div class="container mt-5 p-3 border" id="container__1">
+  <div class="row mt-3">
+    <div class="col-md-12 justify-content-center" id="container__2">
+      <img src="/client/src/assets/corpo__humano.jpg" alt="Corpo" usemap="#corpo" id="map-image" class="img-fluid"> 
+     
+      <map name="corpo">
+
+        <script type="text/javascript">
+          $(document).ready(function() {
+            $('#map-image').maphilight();
+          });
+        </script>
+
+       <!-- Partes da frente do corpo -->
+       <area shape="circle" coords='176,70,43' alt="Rosto"  href="#">
+       <area shape="poly" coords="132,135,222,135,196,122,196,105,184,116,167,116,157,109,157,122" alt="Pescoço" href="#">
+       <area shape="circle" coords="178,179,50" alt="Peito" href="#">
+       <area shape="circle" coords="177,268,40" alt="Quadril" href="#">
+       <area shape="circle" coords="176,325,17" alt="Genitais" href="#">
+       <area shape="circle" coords="197,433,20" alt="Joelho Esquerdo" href="#">
+       <area shape="circle" coords="157,434,20" alt="Joelho Direito" href="#">
+       <area shape="rect" coords="216,453,178,541" alt="Canela Esquerda" href="#">
+       <area shape="rect" coords="136,453,174,541" alt="Canela Direita" href="#">
+       <area shape="rect" coords="219,546,177,588" alt="Pé Esquerdo" href="#">
+       <area shape="rect" coords="174,546,133,588" alt="Pé Direito" href="#">
+       <area shape="poly" coords="129,271,125,413,172,413,172,346,160,341,152,320,165,308,149,303" alt="Coxa Direita" href="#">
+       <area shape="poly" coords="223,281,223,409,179,409,179,343,196,329,195,316,186,308,199,306" alt="Coxa Esquerda" href="#">
+       <area shape="rect" coords="262,137,229,196" alt="Ombro Esquerdo" href="#">
+       <area shape="rect" coords="122,139,89,193" alt="Ombro Direito" href="#">
+       <area shape="rect" coords="267,198,230,270" alt="Antebraço Esquerdo" href="#">
+       <area shape="rect" coords="124,254,86,195" alt="Antebraço Direito" href="#">
+       <area shape="rect" coords="236,303,280,272" alt="Pulso Esquerdo" href="#">
+       <area shape="rect" coords="120,256,75,301" alt="Pulso Direito" href="#">
+       <area shape="rect" coords="299,309,241,368" alt="Mão Esquerda" href="#">
+       <area shape="rect" coords="106,372,56,306" alt="Mão Direita" href="#">
+
+       <!-- Partes de Trás do corpo -->
+
+      </map></div>
     </div>
-    
-   
-    
-    <script>
-      function addTextbox() {
-          const id = 'textbox' + new Date().getTime();
-          const textbox = $('<div>', {
-              id: id,
-              class: 'draggable',
-              contentEditable: true,
-              text: '->', // Default text for the textbox
-          });
+  </div>
+</div>
 
-          textbox.appendTo('#container__2');
 
-          // Make the textbox draggable
-          textbox.draggable({
-              containment: '#container__3', // Keep the textboxes inside the parent container
-              scroll: false,
-              start: function (event, ui) {
-                  $(this).css('cursor', 'grabbing');
-              },
-              stop: function (event, ui) {
-                  $(this).css('cursor', 'grab');
-              },
-              touch: true, // Enable touch support
-          });
-
-          // Center the textbox initially
-          const containerWidth = $('#container__3').width();
-          const textboxWidth = textbox.width();
-          const initialLeft = (containerWidth - textboxWidth) / 2;
-          textbox.css('left', initialLeft);
-      }
-  </script>
-    
-    
-   
-    <br /><br />
-    
-  
+<br><br>
+            
     <!-- FIM TELA CORPO  -->
 
     <!-- COMEÇO TELA FERIMENTOS/LUXAÇÕES -->
