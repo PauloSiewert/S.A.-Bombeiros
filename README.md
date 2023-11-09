@@ -18,4 +18,9 @@ GitHub ꯐꯥꯏꯌꯔ ꯐꯥꯏꯇꯔꯁꯤꯡꯅꯥ *ꯃꯣꯇꯣꯔꯁꯥꯏ�
 
 
 
-Ribamar Vasco
+Formulário: 
+V² = Vo²+2aΔs 
+
+P.v = n.R.t 
+
+S = So + VT 
