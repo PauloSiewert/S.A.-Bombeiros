@@ -2070,13 +2070,14 @@
 <div class="your-container">
 
   <h1 class="bold fs-5 m-0">Abertura Ocular</h1>
-  <div class="thin__line"></div>
+  <div class="thin__line__m-0"></div>
   <div>
       <input
           class="form-check-input1"
           type="checkbox"
           value="4"
           id="abdomen1"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="abdomen1">
@@ -2089,6 +2090,7 @@
           type="checkbox"
           value="3"
           id="abdomen3"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="abdomen3">
@@ -2101,6 +2103,7 @@
           type="checkbox"
           value="2"
           id="doloroso"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="doloroso">
@@ -2113,22 +2116,25 @@
           type="checkbox"
           value="1"
           id="nenhuma1"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="nenhuma1">
           Nenhuma - 1
       </label>
       <br />
+      <br />
   </div>
 
   <h1 class="bold fs-5 m-0">Resposta Verbal</h1>
-  <div class="thin__line"></div>
+  <div class="thin__line__m-0"></div>
   <div>
       <input
           class="form-check-input1"
           type="checkbox"
           value="5"
           id="Orientado"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="Orientado">
@@ -2141,6 +2147,7 @@
           type="checkbox"
           value="4"
           id="Confuso"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="Confuso">
@@ -2153,6 +2160,7 @@
           type="checkbox"
           value="3"
           id="Inapropriadas"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="Inapropriadas">
@@ -2165,6 +2173,7 @@
           type="checkbox"
           value="2"
           id="Incompreensíveis"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="Incompreensíveis">
@@ -2177,22 +2186,25 @@
           type="checkbox"
           value="1"
           id="Nenhuma3"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="Nenhuma3">
           Nenhuma - 1
       </label>
       <br />
+      <br />
   </div>
 
   <h1 class="bold fs-5 m-0">Resposta Motora</h1>
-  <div class="thin__line"></div>
+  <div class="thin__line__m-0"></div>
   <div>
       <input
           class="form-check-input1"
           type="checkbox"
           value="6"
           id="comandos"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="comandos">
@@ -2205,6 +2217,7 @@
           type="checkbox"
           value="5"
           id="Dor"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="Dor">
@@ -2217,6 +2230,7 @@
           type="checkbox"
           value="4"
           id="retirada"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="retirada">
@@ -2229,6 +2243,7 @@
           type="checkbox"
           value="3"
           id="flex_anorml"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="flex_anorml">
@@ -2241,6 +2256,7 @@
           type="checkbox"
           value="2"
           id="ext_anorml"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="ext_anorml">
@@ -2253,6 +2269,7 @@
           type="checkbox"
           value="1"
           id="nenhuma4"
+          onclick= calculateSum()
           name="check1"
       />
       <label class="form-check-label" for="nenhuma4">
@@ -2279,8 +2296,7 @@
   </script>
 
   <div>
-      <button  class="btn btn-primary row d-flex justify-content-center" onclick="calculateSum()">Calcular Somas:</button>
-      <br />
+      
       <label for="result">Resultado:</label>
       <input class="form-control" type="text" id="result" readonly>
   </div>
@@ -2320,13 +2336,14 @@
                 <div class="accordion-body">
                   <!-- ConteudoAccordion2 -->
                   <h1 class="bold fs-5 m-0">Abertura Ocular</h1>
-                  <div class="thin__line"></div>
+                  <div class="thin__line__m-0"></div>
                   <div>
                     <input
                       class="form-check-input1"
                       type="checkbox"
                       value="4"
                       id="abdomen2"
+                      onclick= calcularBagos()
                       name="check2"
                     />
                     <label class="form-check-label" for="abdomen2">
@@ -2339,6 +2356,7 @@
                       type="checkbox"
                       value="3"
                       id="abdomen4"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="abdomen4">
@@ -2351,6 +2369,7 @@
                       type="checkbox"
                       value="2"
                       id="doloroso2"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="doloroso2">
@@ -2363,21 +2382,24 @@
                       type="checkbox"
                       value="1"
                       id="nenhuma"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="nenhuma">
                       Nenhuma - 1
                     </label>
                     <br />
+                    <br />
                   </div>
                   <h1 class="bold fs-5 m-0">Resposta Verbal</h1>
-                  <div class="thin__line"></div>
+                  <div class="thin__line__m-0"></div>
                   <div>
                     <input
                       class="form-check-input1"
                       type="checkbox"
                       value="5"
                       id="apropiadas"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="apropiadas">
@@ -2390,6 +2412,7 @@
                       type="checkbox"
                       value="4"
                       id="Inapropriadas1"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="Inapropriadas1">
@@ -2402,6 +2425,7 @@
                       type="checkbox"
                       value="3"
                       id="choro"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="choro">
@@ -2414,6 +2438,7 @@
                       type="checkbox"
                       value="2"
                       id="Incompreensíveis1"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="Incompreensíveis1">
@@ -2426,21 +2451,24 @@
                       type="checkbox"
                       value="1"
                       id="nenhuma5"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="nenhuma5">
                       Nenhuma Resposta Verbal - 1
                     </label>
                     <br />
+                    <br />
                   </div>
                   <h1 class="bold fs-5 m-0">Resposta Motora</h1>
-                  <div class="thin__line"></div>
+                  <div class="thin__line__m-0"></div>
                   <div>
                     <input
                       class="form-check-input1"
                       type="checkbox"
                       value="6"
                       id="obedece1"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="obedece1">
@@ -2452,6 +2480,7 @@
                       type="checkbox"
                       value="5"
                       id="tatil"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="tatil">
@@ -2464,6 +2493,7 @@
                       type="checkbox"
                       value="4"
                       id="segmento"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="segmento">
@@ -2476,6 +2506,7 @@
                       type="checkbox"
                       value="3"
                       id="decorticação"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="decorticação">
@@ -2488,6 +2519,7 @@
                       type="checkbox"
                       value="2"
                       id="Decerebração1"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="Decerebração1">
@@ -2500,6 +2532,7 @@
                       type="checkbox"
                       value="1"
                       id="Nenhuma6"
+                      onclick= calcularBagos()
                       name="check1"
                     />
                     <label class="form-check-label" for="Nenhuma6">
@@ -2523,7 +2556,6 @@
                   </script>
                 <br>
                   <div>
-                      <button  class="btn btn-primary row d-flex justify-content-center" onclick="calcularBagos()">Calcular Somas:</button>
                       <br />
                       <label for="result2">Resultado:</label>
                       <input class="form-control" type="text" id="result2" readonly>
