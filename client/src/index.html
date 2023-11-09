@@ -326,32 +326,27 @@
 
         <div class="row mt-3">
           <div class="col-lg-6 mt-3">
-            <label class="form-check-label" for="flexCheckDefault"
-              >Sexo:</label
-            >
-            <br />
-            <input
-              class="form-check-input1"
-              type="radio"
-              value=""
-              id="flexCheckDefault"
-              name="check1"
-            />
-            <label class="form-check-label" for="flexCheckDefault"
-              >Masculino</label
-            >
-            <input
-              class="form-check-input1"
-              type="radio"
-              value=""
-              id="flexCheckDefault1"
-              name="check1"
-            />
-            <label class="form-check-label" for="flexCheckDefault1"
-              >Feminino</label
-            >
-            <br /><br />
-          </div>
+              <label class="form-check-label" for="masculino__sexo">Sexo:</label><br />
+              <input class="form-check-input1" type="radio" value="" id="masculino__sexo" name="check1" onchange="handleRadioChange()">
+              <label class="form-check-label" for="masculino__sexo">Masculino</label>
+              <input class="form-check-input1" type="radio" value="" id="flexCheckDefault1" name="check1" onchange="handleRadioChange()">
+              <label class="form-check-label" for="flexCheckDefault1">Feminino</label>
+              <br /><br />
+
+              <script>
+                // Function to handle radio button change event
+                function handleRadioChange() {
+                    if ($('#masculino__sexo').is(':checked')) {
+                        $('#myDiv').css('display', 'none');
+                    } else {
+                        $('#myDiv').css('display', '');
+                    }
+                }
+            </script>
+          
+      </div>
+
+
           <div class="col-lg-6">
             <label for="nomepaciente" class="form-label">Nome:</label>
             <input
@@ -408,6 +403,25 @@
             />
           </div>
         </div>
+        <script>
+          $(document).ready(function () {
+              $('#idade_paciente').on('input', function () {
+                  var idadeInput = $(this).val();
+      
+                  // Check if idade is greater than 5
+                  if (idadeInput > 5) {
+                      // Hide accordion1 and show accordion2
+                      $('#accordion22').hide();
+                      $('#accordion11').show();
+                  } else {
+                      // Hide accordion2 and show accordion1
+                      $('#accordion11').hide();
+                      $('#accordion22').show();
+                  }
+              });
+          });
+      </script>
+
         <div class="row mt-3">
           <div class="col-lg-6">
             <label for="Acompanhante_paciente" class="form-label"
@@ -435,7 +449,7 @@
         </div>
       </div>
     </div>
-
+  </div>
     <!-- FIM INFORMAÇÕES DO PACIENTE -->
 
     <!-- ANAMNESE DE EMERGÊNCIA -->
@@ -2026,29 +2040,30 @@
 
     <div class="container mt-5 p-3 border">
       <div class="row">
-        <div class="col-md-12">
-          <!-- First Accordion -->
-          <div class="accordion" id="accordion1">
-            <div class="accordion-item">
-              <h2 class="accordion-header" id="headingOne">
-                <button
-                  class="accordion-button"
-                  type="button"
-                  data-bs-toggle="collapse"
-                  data-bs-target="#collapseOne"
-                  aria-expanded="true"
-                  aria-controls="collapseOne"
-                >
-                  + que 5 anos:
-                </button>
-              </h2>
-              <div
-                id="collapseOne"
-                class="accordion-collapse collapse"
-                aria-labelledby="headingOne"
-                data-bs-parent="#accordion1"
-              >
-                <div class="accordion-body">
+          <div class="col-md-12">
+            <div id="accordion11">
+              <!-- First Accordion -->
+              <div class="accordion" id="accordion1">
+                  <div class="accordion-item">
+                      <h2 class="accordion-header" id="headingOne">
+                          <button
+                              class="accordion-button"
+                              type="button"
+                              data-bs-toggle="collapse"
+                              data-bs-target="#collapseOne"
+                              aria-expanded="true"
+                              aria-controls="collapseOne"
+                          >
+                              + que 5 anos:
+                          </button>
+                      </h2>
+                      <div
+                          id="collapseOne"
+                          class="accordion-collapse collapse show" 
+                          aria-labelledby="headingOne"
+                          data-bs-parent="#accordion1"
+                      >
+                          <div class="accordion-body">
                   <!-- Conteudo Accordion1 -->
 
                  
@@ -2276,7 +2291,10 @@
             </div>
           </div>
         </div>
+      </div>
         <br /><br /><br />
+
+        <div id="accordion22">
         <div class="col-md-12">
           <!-- Second Accordion -->
           <div class="accordion" id="accordion2">
@@ -2295,7 +2313,7 @@
               </h2>
               <div
                 id="collapseTwo"
-                class="accordion-collapse collapse"
+                class="accordion-collapse collapse show"
                 aria-labelledby="headingTwo"
                 data-bs-parent="#accordion2"
               >
@@ -2518,7 +2536,7 @@
         </div>
       </div>
     </div>
-
+  </div>
     <br /><br /><br />
 
     <!-- FIM GLASGOW -->
@@ -3218,7 +3236,7 @@ function updateElementIds(container, uniqueId) {
 
     <!-- FIM TELA DECISÃO DE CONDUÇÃO  -->
    <br><br><br>
-
+   <div id="myDiv">
     <!-- COMEÇO TELA ANAMNESE GESTACIONAL -->
     <div class="title__bar" id="seção15">
       <p class="title__text">Anamnese Gestacional:</p>
@@ -3227,6 +3245,7 @@ function updateElementIds(container, uniqueId) {
       </div>
     </div>
     <br /><br />
+
 
     <div class="container mt-5">
       <div class="border p-4">
@@ -3520,7 +3539,7 @@ function updateElementIds(container, uniqueId) {
       </div>
     </div>
     <br /><br />
-
+  </div>
     <!-- FIM TELA GESTACIONAL  -->
     <br /><br />
     <!-- COMEÇO TELA PROCEDIMENTOS EFETUADOS -->
