@@ -90,7 +90,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             </p>
           </div>
 
-          <img src="/client/src/assets/noarlogo (1).png" alt="logo" />
+          <img src="/client/src/assets/noarlogo_small.png" alt="logo" />
         </div>
       </nav>
 
