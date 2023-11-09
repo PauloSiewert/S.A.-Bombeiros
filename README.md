@@ -19,8 +19,8 @@ GitHub ꯐꯥꯏꯌꯔ ꯐꯥꯏꯇꯔꯁꯤꯡꯅꯥ *ꯃꯣꯇꯣꯔꯁꯥꯏ�
 
 
 Formulário: 
+
+
 V² = Vo²+2aΔs 
-
 P.v = n.R.t 
-
 S = So + VT 
