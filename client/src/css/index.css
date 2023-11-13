@@ -79,9 +79,23 @@
 
 .header__title {
   color: white;
-  
+  font-family: Poppins;
   font-size: 100%;
   margin: 0%;
+}
+
+.container{
+font-family: Poppins;
+}
+
+
+.h1{
+  font-family: Playfair Display;
+  font-weight: bold;
+}
+.form-check-input{
+  height: 200%;
+  width: 200%;
 }
 
 .grid-container {
