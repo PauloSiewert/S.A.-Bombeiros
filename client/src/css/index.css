@@ -209,3 +209,20 @@ font-family: Poppins;
   margin-top: 2px;
   
 }
+
+.form-check-input1{
+  top: .8rem;
+  scale: 1.4;
+  margin-right: 0.3rem;
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+  margin-left: 0.4rem;
+  }
+ 
+
+ .checkbox-xl .form-check-input {
+  top: 1.2rem;
+  scale: 1.7;
+  margin-right: 0.8rem;
+  }
+ 
