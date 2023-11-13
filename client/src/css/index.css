@@ -23,6 +23,8 @@
   margin: 5px;
 }
 
+
+
 .box__nav {
   margin-right: 3%;
   display: inline-block;
@@ -77,6 +79,7 @@
 
 .header__title {
   color: white;
+  
   font-size: 100%;
   margin: 0%;
 }
@@ -116,13 +119,13 @@
 }
 
 #custom-textarea {
-  background-color: #ceceed; /* Set your desired background color */
+  background-color: #dcdcee; /* Set your desired background color */
   border-radius: 5px ;
   border-style: solid;
 }
 
 #custom-textarea2 {
-  background-color: #ceceed; /* Set your desired background color */
+  background-color: #dcdcee; /* Set your desired background color */
   border-radius: 5px ;
   border-style: solid;
 }
