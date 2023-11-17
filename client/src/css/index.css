@@ -236,3 +236,12 @@ font-family: Poppins;
 
     font-weight:bolder;
   }
+
+  #liveToastBtn {
+    color: #fff;
+  }
+
+  #telafinal{
+    height: 3.4rem;
+    width: 3.4rem;
+  }
