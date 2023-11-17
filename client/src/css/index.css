@@ -231,3 +231,8 @@ font-family: Poppins;
   
   }
  
+  #corpo__bagles 
+    option:first-child {
+
+    font-weight:bolder;
+  }

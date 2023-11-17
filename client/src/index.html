@@ -2601,20 +2601,36 @@
           $(document).ready(function() {
             $('#map-image').maphilight();
         
+            var clickedAreas = []; // Array to store clicked areas
+        
             $('area').click(function(e) {
               e.preventDefault();
         
               // Get the alt attribute of the clicked area
               var areaAlt = $(this).attr('alt');
         
+              // Toggle the clicked state for the area
+              var index = clickedAreas.indexOf(areaAlt);
+              if (index === -1) {
+                clickedAreas.push(areaAlt);
+              }
+        
+              // Update maphilight configuration for all areas
+              $('area').each(function() {
+                var areaAlt = $(this).attr('alt');
+                var isClicked = clickedAreas.indexOf(areaAlt) !== -1;
+                $(this).data('maphilight', { alwaysOn: isClicked }).trigger('alwaysOn.maphilight');
+              });
+        
+        
               // Create a new div with a heading and a select element
               var newDiv = $('<div>').append(
-                $('<h3>').text(areaAlt).addClass('mt-3'),
+                $('<h4>').text(areaAlt).addClass('mt-3'),
                 $('<select>').addClass('form-select border').attr({
                   'aria-label': 'Default select example',
                   'id': 'corpo__bagles'
                 }).append(
-                  $('<option>').prop('selected', true).text('Selecione:'),
+                  $('<option>').prop('selected', true).text( 'Selecione:'),
                   $('<option>').val('1').text('Fratura/Luxação/Entorse'),
                   $('<option>').val('2').text('Ferimentos Diversos'),
                   $('<option>').val('3').text('Hemorragia'),
@@ -2636,50 +2652,50 @@
 
 
        <!-- Partes da frente do corpo -->
-       <area shape="circle" coords='176,70,43' alt="Rosto"  href="#">
-       <area shape="poly" coords="132,135,222,135,196,122,196,105,184,116,167,116,157,109,157,122" alt="Pescoço" href="#">
-       <area shape="circle" coords="178,179,50" alt="Peito" href="#">
-       <area shape="circle" coords="177,268,40" alt="Quadril" href="#">
-       <area shape="circle" coords="176,325,17" alt="Genitais" href="#">
-       <area shape="circle" coords="197,433,20" alt="Joelho Esquerdo" href="#">
-       <area shape="circle" coords="157,434,20" alt="Joelho Direito" href="#">
-       <area shape="rect" coords="216,453,178,541" alt="Canela Esquerda" href="#">
-       <area shape="rect" coords="136,453,174,541" alt="Canela Direita" href="#">
-       <area shape="rect" coords="219,546,177,588" alt="Pé Esquerdo" href="#">
-       <area shape="rect" coords="174,546,133,588" alt="Pé Direito" href="#">
-       <area shape="poly" coords="129,271,125,413,172,413,172,346,160,341,152,320,165,308,149,303" alt="Coxa Direita" href="#">
-       <area shape="poly" coords="223,281,223,409,179,409,179,343,196,329,195,316,186,308,199,306" alt="Coxa Esquerda" href="#">
-       <area shape="rect" coords="262,137,229,196" alt="Ombro Esquerdo" href="#">
-       <area shape="rect" coords="122,139,89,193" alt="Ombro Direito" href="#">
-       <area shape="rect" coords="267,198,230,270" alt="Antebraço Esquerdo" href="#">
-       <area shape="rect" coords="124,254,86,195" alt="Antebraço Direito" href="#">
-       <area shape="rect" coords="236,303,280,272" alt="Pulso Esquerdo" href="#">
-       <area shape="rect" coords="120,256,75,301" alt="Pulso Direito" href="#">
-       <area shape="rect" coords="299,309,241,368" alt="Mão Esquerda" href="#">
-       <area shape="rect" coords="106,372,56,306" alt="Mão Direita" href="#">
+       <area shape="circle" coords='176,70,43' alt="Rosto"  href="#" title="Rosto">
+       <area shape="poly" coords="132,135,222,135,196,122,196,105,184,116,167,116,157,109,157,122" alt="Pescoço" href="#" title="Pescoço">
+       <area shape="circle" coords="178,179,50" alt="Peito" href="#" title="Peito">
+       <area shape="circle" coords="177,268,40" alt="Quadril" href="#" title="Quadril">
+       <area shape="circle" coords="176,325,17" alt="Genitais" href="#" title="Genitais">
+       <area shape="circle" coords="197,433,20" alt="Joelho Esquerdo" href="#" title="Joelho Esquerdo">
+       <area shape="circle" coords="157,434,20" alt="Joelho Direito" href="#" title="Joelho Direito">
+       <area shape="rect" coords="216,453,178,541" alt="Canela Esquerda" href="#" title="Canela Esquerda">
+       <area shape="rect" coords="136,453,174,541" alt="Canela Direita" href="#" title="Canela Direita">
+       <area shape="rect" coords="219,546,177,588" alt="Pé Esquerdo" href="#" title="Pé Esquerdo">
+       <area shape="rect" coords="174,546,133,588" alt="Pé Direito" href="#" title="Pé Direito">
+       <area shape="poly" coords="129,271,125,413,172,413,172,346,160,341,152,320,165,308,149,303" alt="Coxa Direita" href="#" title="Coxa Direita">
+       <area shape="poly" coords="223,281,223,409,179,409,179,343,196,329,195,316,186,308,199,306" alt="Coxa Esquerda" href="#" title="Coxa Esquerda">
+       <area shape="rect" coords="262,137,229,196" alt="Ombro Esquerdo" href="#" title="Ombro Esquerdo">
+       <area shape="rect" coords="122,139,89,193" alt="Ombro Direito" href="#" title="Ombro Direito">
+       <area shape="rect" coords="267,198,230,270" alt="Antebraço Esquerdo" href="#" title="Antebraço Esquerdo">
+       <area shape="rect" coords="124,254,86,195" alt="Antebraço Direito" href="#" title="Antebraço Direito">
+       <area shape="rect" coords="236,303,280,272" alt="Pulso Esquerdo" href="#" title="Pulso Esquerdo">
+       <area shape="rect" coords="120,256,75,301" alt="Pulso Direito" href="#" title="Pulso Direito">
+       <area shape="rect" coords="299,309,241,368" alt="Mão Esquerda" href="#"title="Mão Esquerda">
+       <area shape="rect" coords="106,372,56,306" alt="Mão Direita" href="#" title="Mão Direita">
 
        <!-- Partes de Trás do corpo -->
        <area shape="circle" coords='438,71,43' alt="Cabeça"  href="#">
-       <area shape="poly" coords='370,142,418,122,418,107,457,107,457,123,504,142' alt="Nuca"  href="#">
-       <area shape="circle" coords='459,565,23' alt="Pé Direito (Trás)"  href="#">
-       <area shape="circle" coords='415,565,23' alt="Pé Esquerdo (Trás)"  href="#">
-       <area shape="circle" coords='417,438,30' alt="Joelho Esquerdo (Trás)"  href="#">
-       <area shape="circle" coords='458,438,30' alt="Joelho Direito (Trás)"  href="#">
-       <area shape="circle" coords='438,184,50' alt="Costas"  href="#">
-       <area shape="circle" coords='438,251,45' alt="Dorsal"  href="#">
-       <area shape="circle" coords='438,324,45' alt="Glúteo"  href="#">
-       <area shape="rect" coords='485,420,443,372' alt="Coxa Direita (Trás)"  href="#">
-       <area shape="rect" coords='437,419,389,368' alt="Coxa Esquerda (Trás)"  href="#">
-       <area shape="rect" coords='395,540,436,457' alt="Panturrilha Esquerda"  href="#">
-       <area shape="rect" coords='480,541,438,457' alt="Panturrilha Direita"  href="#">
-       <area shape="rect" coords='525,142,485,214' alt="Ombro Direito (Trás)"  href="#">
-       <area shape="rect" coords='390,144,350,213' alt="Ombro Esquerdo (Trás)"  href="#">
-       <area shape="rect" coords='386,215,338,280' alt="Cotovelo Esquerdo"  href="#">
-       <area shape="rect" coords='544,218,488,277' alt="Cotovelo Direito"  href="#">
-       <area shape="rect" coords='380,282,335,317' alt="Pulso Esquerdo (Trás)"  href="#">
-       <area shape="rect" coords='498,279,549,317' alt="Pulso Direito (Trás)"  href="#">
-       <area shape="rect" coords='368,369,317,318' alt="Mão Esquerda (Trás)"  href="#">
-       <area shape="rect" coords='560,318,506,367' alt="Mão Direita (Trás)"  href="#">
+       <area shape="poly" coords='370,142,418,122,418,107,457,107,457,123,504,142' alt="Nuca"  href="#" title="Nuca">
+       <area shape="circle" coords='459,565,23' alt="Pé Direito (Trás)"  href="#" title="Pé Direito (Trás)">
+       <area shape="circle" coords='415,565,23' alt="Pé Esquerdo (Trás)"  href="#" title="Pé Esquerdo (Trás)">
+       <area shape="circle" coords='417,438,30' alt="Joelho Esquerdo (Trás)"  href="#" title="Joelho Esquerdo (Trás)">
+       <area shape="circle" coords='458,438,30' alt="Joelho Direito (Trás)"  href="#" title="Joelho Direito (Trás)">
+       <area shape="circle" coords='438,184,50' alt="Costas"  href="#" title="Costas">
+       <area shape="circle" coords='438,251,45' alt="Dorsal"  href="#" title="Dorsal">
+       <area shape="circle" coords='438,324,45' alt="Glúteo"  href="#" title="Glúteo">
+       <area shape="rect" coords='485,420,443,372' alt="Coxa Direita (Trás)"  href="#" title="Coxa Direita (Trás)">
+       <area shape="rect" coords='437,419,389,368' alt="Coxa Esquerda (Trás)"  href="#" title="Coxa Esquerda (Trás)">
+       <area shape="rect" coords='395,540,436,457' alt="Panturrilha Esquerda"  href="#" title="Panturrilha Esquerda">
+       <area shape="rect" coords='480,541,438,457' alt="Panturrilha Direita"  href="#" title="Panturrilha Direita">
+       <area shape="rect" coords='525,142,485,214' alt="Ombro Direito (Trás)"  href="#" title="Ombro Direito (Trás)">
+       <area shape="rect" coords='390,144,350,213' alt="Ombro Esquerdo (Trás)"  href="#" title="Ombro Esquerdo (Trás)">
+       <area shape="rect" coords='386,215,338,280' alt="Cotovelo Esquerdo"  href="#" title="Cotovelo Esquerdo">
+       <area shape="rect" coords='544,218,488,277' alt="Cotovelo Direito"  href="#" title="Cotovelo Direito">
+       <area shape="rect" coords='380,282,335,317' alt="Pulso Esquerdo (Trás)"  href="#" title="Pulso Esquerdo (Trás)">
+       <area shape="rect" coords='498,279,549,317' alt="Pulso Direito (Trás)"  href="#" title="Pulso Direito (Trás)">
+       <area shape="rect" coords='368,369,317,318' alt="Mão Esquerda (Trás)"  href="#" title="Mão Esquerda (Trás)">
+       <area shape="rect" coords='560,318,506,367' alt="Mão Direita (Trás)"  href="#" title="Mão Direita (Trás)">
       </map>
        </div>
     </div>
