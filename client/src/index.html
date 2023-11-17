@@ -490,7 +490,7 @@
           <br />
           <div class="mb-3 position-absolute right-50">
             <input
-              class="form-check-input2"
+              class="form-check-input1"
               type="radio"
               value=""
               id="sim_vez"
@@ -498,7 +498,7 @@
             />
             <label class="form-check-label" for="sim_vez"> Sim </label>
             <input
-              class="form-check-input2"
+              class="form-check-input1"
               type="radio"
               value=""
               id="nao_vez"
@@ -529,7 +529,7 @@
           <br />
           <div class="mb-3 position-absolute right-50">
             <input
-              class="form-check-input3"
+              class="form-check-input1"
               type="radio"
               value=""
               id="sim_previo"
@@ -537,7 +537,7 @@
             />
             <label class="form-check-label" for="sim_previo"> Sim </label>
             <input
-              class="form-check-input3"
+              class="form-check-input1"
               type="radio"
               value=""
               id="nao_previo"
@@ -566,7 +566,7 @@
           <br />
           <div class="mb-3 position-absolute right-50">
             <input
-              class="form-check-input3"
+              class="form-check-input1"
               type="radio"
               value=""
               id="sim_med"
@@ -574,7 +574,7 @@
             />
             <label class="form-check-label" for="sim_med"> Sim </label>
             <input
-              class="form-check-input3"
+              class="form-check-input1"
               type="radio"
               value=""
               id="nao_med"
@@ -615,7 +615,7 @@
           <br />
           <div class="mb-3 position-absolute right-50">
             <input
-              class="form-check-input4"
+              class="form-check-input1"
               type="radio"
               value=""
               id="sim_aler"
@@ -623,7 +623,7 @@
             />
             <label class="form-check-label" for="sim_aler"> Sim </label>
             <input
-              class="form-check-input4"
+              class="form-check-input1"
               type="radio"
               value=""
               id="nao_aler"
@@ -652,7 +652,7 @@
           <br />
           <div class="mb-3 position-absolute right-50">
             <input
-              class="form-check-input5"
+              class="form-check-input1"
               type="radio"
               value=""
               id="sim_aliment"
@@ -660,7 +660,7 @@
             />
             <label class="form-check-label" for="sim_aliment"> Sim </label>
             <input
-              class="form-check-input5"
+              class="form-check-input1"
               type="radio"
               value=""
               id="nao_aliment"
@@ -2600,8 +2600,40 @@
         <script type="text/javascript">
           $(document).ready(function() {
             $('#map-image').maphilight();
+        
+            $('area').click(function(e) {
+              e.preventDefault();
+        
+              // Get the alt attribute of the clicked area
+              var areaAlt = $(this).attr('alt');
+        
+              // Create a new div with a heading and a select element
+              var newDiv = $('<div>').append(
+                $('<h3>').text(areaAlt).addClass('mt-3'),
+                $('<select>').addClass('form-select border').attr({
+                  'aria-label': 'Default select example',
+                  'id': 'corpo__bagles'
+                }).append(
+                  $('<option>').prop('selected', true).text('Selecione:'),
+                  $('<option>').val('1').text('Fratura/Luxação/Entorse'),
+                  $('<option>').val('2').text('Ferimentos Diversos'),
+                  $('<option>').val('3').text('Hemorragia'),
+                  $('<option>').val('4').text('Evisceração'),
+                  $('<option>').val('5').text('F.A.B / F.A.P'),
+                  $('<option>').val('6').text('Amputação'),
+                  $('<option>').val('5').text('Queimadura 1°Grau'),
+                  $('<option>').val('5').text('Queimadura 2°Grau'),
+                  $('<option>').val('5').text('Queimadura 3°Grau')
+                )
+              );
+        
+              // Append the new div below the image
+              $('#container__2').append(newDiv);
+            });
           });
         </script>
+        
+
 
        <!-- Partes da frente do corpo -->
        <area shape="circle" coords='176,70,43' alt="Rosto"  href="#">
