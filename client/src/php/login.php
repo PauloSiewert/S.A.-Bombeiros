@@ -1,44 +1,34 @@
 <?php
+session_start();
+require_once('conexao.php');
 
-$host="localhost";
-$user="root";
-$password="root";
-$db="noarahbsar";
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
 
-$data=mysqli_connect($host,$user,$password,$db);
+    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    $result = $conn->query($sql);
 
-if($data==false)
-{
-    die("connection erro");
+    if ($result->num_rows == 1) {
+        $row = $result->fetch_assoc();
+        $_SESSION['user_id'] = $row['id'];
+        $_SESSION['is_admin'] = $row['is_admin'];
+
+        if ($_SESSION['is_admin'] == 1) {
+            // Redirect admin to admin panel
+            header('Location: adm.php');
+        } else {
+            // Redirect regular user to user dashboard
+            header('Location: ../index.html');
+        }
+
+        exit();
+    } else {
+        echo "Invalid username or password";
+    }
 }
-
-if($_SERVER["REQUEST_METHOD"]=="POST")
-{
-  $name=$_POST["name"];
-  $password=$_POST["password"];
-
-  $sql="select * from login where name= '".$name."' AND password= '".$password."' ";
-
-  $result=mysqli_query($data,$sql); 
-  $row=mysqli_fetch_array($result);
-
-  if($row ["usertype"]=="user")
-  {
-    echo "user";
-  }
-
-  elseif($row ["usertype"]=="admin")
-  {
-    echo "admin";
-  }
-
-  else
-  {
-    echo "name or password incorrect";
-  }
-}
-
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -101,7 +91,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
   <br /><br /><br /><br /><br /><br />
 
-  <form action="#" method="POST">
+  <form action="login.php" method="POST">
   <div class="container mt-12">
     <div class="border p-4">
       <p class="fs-3 fw-bold justify-content-center text-center">Login</p>
@@ -111,10 +101,14 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
         <!-- USUÁRIO -->
 
           <div class="col-lg-12">
-            <label for="numero" class="form-label m-0">CPF:</label>
-            <input type="text" name="name" required 
-            oninput="mascara(this)" class="form-control" id="numero"
-            aria-describedby="emailHelp" />
+            <label for="numero" class="form-label m-0">Usuário:</label>
+            <input type="text"
+            name="username" 
+            required 
+            
+            class="form-control"
+            id="numero"
+            aria-describedby="emailHelp"/>
           </div>
 
           <!-- FIM USUÁRIO -->

@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `pdf` (
   `id` int(11) NOT NULL,
-  `file_name` varchar(100) NOT NULL,
+  
   `type` varchar(100) NOT NULL,
   `file_data` LONGBLOB,
   `file_name` VARCHAR(255)
