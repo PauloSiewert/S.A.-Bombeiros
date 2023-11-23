@@ -6,29 +6,37 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $_POST['username'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    // Fetch the password from the database based on the provided username
+    $sql = "SELECT id, username, password, is_admin FROM users WHERE username='$username'";
     $result = $conn->query($sql);
 
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
-        $_SESSION['user_id'] = $row['id'];
-        $_SESSION['is_admin'] = $row['is_admin'];
+        $storedPassword = $row['password'];
 
-        if ($_SESSION['is_admin'] == 1) {
-            // Redirect admin to admin panel
-            header('Location: adm.php');
+        // Check if the stored password is hashed
+        if (password_verify($password, $storedPassword)) {
+            $_SESSION['user_id'] = $row['id'];
+            $_SESSION['username'] = $row['username'];  // Add the username to the session
+            $_SESSION['is_admin'] = $row['is_admin'];
+
+            if ($_SESSION['is_admin'] == 1) {
+                // Redirect admin to admin panel
+                header('Location: adm.php');
+            } else {
+                // Redirect regular user to user dashboard
+                header('Location: index.php');
+            }
+
+            exit();
         } else {
-            // Redirect regular user to user dashboard
-            header('Location: ../index.html');
+            echo "Invalid username or password";
         }
-
-        exit();
     } else {
         echo "Invalid username or password";
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">

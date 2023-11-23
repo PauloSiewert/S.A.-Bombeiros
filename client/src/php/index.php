@@ -1,3 +1,10 @@
+<?php 
+session_start();
+var_dump($_SESSION);
+require_once('conexao.php');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -286,14 +293,47 @@
 
     <!-- FIM DA HEADER -->
 
-    <!-- INFORMAÇÕES DO PACIENTE -->
-  <br>
-   <br><br><br>
-    <div class="title__bar mt-2" id="seção1">
-       <p class="title__text lead fw-semibold">Informações do Paciente:</p>
-      <div class="title__box">
-        <b class="box__number">1</b>
+    <br><br>
+    <br>
+    <br><br><br>
+
+      
+  <!-- Container for user information and logout button -->
+  <div class="container-fluid bg-light p-2">
+          <div class="row">
+              <div class="col-md-6">
+                  <?php
+                  // Check if the user is logged in and has a username
+                  if (isset($_SESSION['user_id'], $_SESSION['username'])) {
+                      echo '<p class="mb-0">Welcome, ' . htmlspecialchars($_SESSION['username']) . '!</p>';
+                  } else {
+                      echo '<p class="mb-0">User not logged in</p>';
+                  }
+                  ?>
+              </div>
+              <div class="col-md-6 text-end">
+                  <?php
+                  // Check if the user is logged in
+                  if (isset($_SESSION['user_id'], $_SESSION['username'])) {
+                      echo '<a href="logout.php" class="btn btn-danger">Logout</a>';
+                  } else {
+                      echo '<p class="mb-0">User not logged in</p>';
+                  }
+                  ?>
+              </div>
+          </div>
       </div>
+
+
+    <br>
+    <br><br><br>
+
+
+    <div class="title__bar mt-2" id="seção1">
+        <p class="title__text lead fw-semibold">Informações do Paciente:</p>
+        <div class="title__box">
+            <b class="box__number">1</b>
+        </div>
     </div>
 
     <div class="container mt-5">
