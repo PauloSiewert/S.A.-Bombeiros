@@ -298,26 +298,26 @@ require_once('conexao.php');
     <br><br><br>
 
       
-  <!-- Container for user information and logout button -->
+  <!-- Container das informações do usuario e logout -->
   <div class="container-fluid bg-light p-2">
           <div class="row">
               <div class="col-md-6">
                   <?php
-                  // Check if the user is logged in and has a username
+                  // checa se o usuario tem dados da sessao já estabelecidos
                   if (isset($_SESSION['user_id'], $_SESSION['username'])) {
-                      echo '<p class="mb-0">Welcome, ' . htmlspecialchars($_SESSION['username']) . '!</p>';
+                      echo '<p class="mb-0">Bem-Vindo, ' . htmlspecialchars($_SESSION['username']) . '!</p>';
                   } else {
-                      echo '<p class="mb-0">User not logged in</p>';
+                      echo '<p class="mb-0">Usuário Não Logado</p>';
                   }
                   ?>
               </div>
               <div class="col-md-6 text-end">
                   <?php
-                  // Check if the user is logged in
+                  // checa se o user esta logado
                   if (isset($_SESSION['user_id'], $_SESSION['username'])) {
                       echo '<a href="logout.php" class="btn btn-danger">Logout</a>';
                   } else {
-                      echo '<p class="mb-0">User not logged in</p>';
+                      echo '<p class="mb-0">Usuário Não Logado</p>';
                   }
                   ?>
               </div>

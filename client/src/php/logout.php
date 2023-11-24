@@ -2,19 +2,19 @@
 session_start();
 require_once('conexao.php');
 
-// Check if the user is logged in
+// checa se o usuario esta logado
 if (isset($_SESSION['user_id'], $_SESSION['username'])) {
-    // Unset all session variables
+    // limpa as arrays da sessao
     $_SESSION = array();
 
-    // Destroy the session
+    // finaliza a sessao atual
     session_destroy();
 
-    // Redirect to the login page (adjust the path as needed)
+    // redireciona para login
     header('Location: login.php');
     exit();
 } else {
-    // If the user is not logged in, simply redirect to the login page
+    // se o usuario nao estiver logado sera redirecionado
     header('Location: login.php');
     exit();
 }
