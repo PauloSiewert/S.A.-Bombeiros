@@ -1,6 +1,13 @@
-<?php 
+<?php
 session_start();
-var_dump($_SESSION);
+
+
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit();
+}
+
+
 require_once('conexao.php');
 ?>
 

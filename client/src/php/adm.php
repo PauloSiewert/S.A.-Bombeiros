@@ -40,56 +40,149 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user'])) {
 $sqlUsers = "SELECT id, username, cpf FROM users WHERE is_active = 1";
 $resultUsers = $conn->query($sqlUsers);
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel de Controle do Administrador</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Painel do Administrador</title>
 
-    <!-- Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Demais folders -->
+  <link rel="icon" href="noarlogo_small.png" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="reset.css" />
+   <!--CSS and Font Awesome, Bootstrap, etc. links -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,400i,700,700i&display=swap">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+<!--CSS and Font Awesome, Bootstrap, etc. links -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/maphilight/1.4.0/jquery.maphilight.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="index.js"></script>
+ 
+
 </head>
-<body class="container mt-4">
 
-    <h2>Painel de Controle do Administrador</h2>
+<body class="bg-light">
+  <!-- COMEÇO DA HEADER -->
 
-    <!-- Adiciona novos usuarios -->
-    <form method="post" action="adm.php" class="mb-4">
-        <div class="form-group">
+  <div class="container-fluid m-0 p-0" id="element-to-hide">
+    <header class="fixed-top">
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+
+          <div class="header__container">
+            <b class="header__title">Bombeiros Voluntários</b>
+            <p class="header__title">
+              Assoc. de Serviços Sociais Voluntários de Guaramirim
+            </p>
+          </div>
+
+          <img src="noarlogo_small.png" alt="logo" />
+        </div>
+      </nav>
+
+    </header>
+  </div>
+
+  <!-- FIM DA HEADER -->
+
+  <br /><br /><br /><br /><br /><br />
+
+        
+  <!-- Container das informações do usuario e logout -->
+  <div class="container">
+          <div class="bg-white bg-gradient p-2 ml-5 border p-3"">
+              <div class="col-md-6 fs-2 ">
+
+                  <?php
+                  // checa se o usuario tem dados da sessao já estabelecidos
+                  if (isset($_SESSION['user_id'], $_SESSION['username'])) {
+                      echo '<p class="mb-0">Bem-Vindo, ' . htmlspecialchars($_SESSION['username']) . '!</p>';
+                  } else {
+                      echo '<p class="mb-0">Usuário Não Logado</p>';
+                  }
+                  ?>
+              </div>
+
+              <div class="col-md-6 mt-3">
+                <div class="">
+                  <?php
+                  // checa se o user esta logado
+                  if (isset($_SESSION['user_id'], $_SESSION['username'])) {
+                      echo '<a href="logout.php" class="btn btn-danger">Logout</a>';
+                  } else {
+                      echo '<p class="mb-0">Usuário Não Logado</p>';
+                  }
+                  ?>
+                </div>
+              </div>
+          </div>
+      </div>
+
+
+    <br>
+    <br>
+
+  <body class="container mt-4">
+    <div class="container">
+        <div class="row">
+            <!-- "Painel de Controle" -->
+            <div class="col-md-6">
+                <div class="border p-3 bg-white bg-gradient">
+                    <h2>Painel de Controle do Administrador</h2>
+                    <!-- Adiciona novos usuarios -->
+                    <form method="post" action="adm.php" class="mb-4">
+                    <div class="form-group mt-3">
             <label for="new_username">Novo Usuário:</label>
             <input type="text" class="form-control" id="new_username" name="new_username" required>
         </div>
-        <div class="form-group">
+        <div class="form-group mt-3">
             <label for="new_cpf">CPF do Novo Usuário:</label>
             <input type="text" class="form-control" id="new_cpf" name="new_cpf" required oninput="mascara(this)">
         </div>
-        <div class="form-group">
+        <div class="form-group mt-3">
             <label for="new_password">Senha do Novo Usuário:</label>
             <input type="password" class="form-control" id="new_password" name="new_password" required>
         </div>
-        <button type="submit" class="btn btn-primary" name="add_user">Adicionar</button>
+        <button type="submit" class="btn btn-primary mt-3" name="add_user">Adicionar</button>
     </form>
-
-    <hr>
-
-    <!-- lista dos usuarios com botao para desativar-->
-    <h3>Lista de Usuários:</h3>
-    <ul class="list-group">
-        <?php
-        while ($rowUser = $resultUsers->fetch_assoc()) {
-            echo '<li class="list-group-item d-flex justify-content-between align-items-center">
-                    User ID: ' . $rowUser['id'] . ', Username: ' . $rowUser['username'] . ', CPF: ' . $rowUser['cpf'] . '
-                    <form method="post" action="adm.php">
-                        <input type="hidden" name="delete_user" value="' . $rowUser['id'] . '">
-                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Você quer mesmo desativar esse usuário?\')">Desativar</button>
+    
                     </form>
-                  </li>';
-        }
-        ?>
-    </ul>
+                </div>
+            </div>
 
+            <!-- "Lista de Usuarios" -->
+            <div class="col-md-6">
+                <div class="border p-3 bg-white bg-gradient">
+                    <h3 class="mt-3">Lista de Usuários:</h3>
+                    <ul class="list-group mb-3">
+                        <?php
+                        while ($rowUser = $resultUsers->fetch_assoc()) {
+                            echo '<li class="list-group-item d-flex justify-content-between align-items-center">
+                                   ID: ' . $rowUser['id'] . '<br> Nome: ' . $rowUser['username'] . '<br> CPF: ' . $rowUser['cpf'] . '
+                                    <form method="post" action="adm.php">
+                                        <input type="hidden" name="delete_user" value="' . $rowUser['id'] . '">
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Você quer mesmo desativar esse usuário?\')">Desativar</button>
+                                    </form>
+                                  </li>';
+                        }
+                        ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
     <script>
           function mascara(i) {
 
