@@ -169,7 +169,7 @@ font-family: Poppins;
   border-bottom-left-radius: 3px;
 }
 
-.thin__line__m-0__shorter{
+/* .thin__line__m-0__shorter2{
   background-color: #949494;
   height: 0.5vh;
   width: 50%;
@@ -177,7 +177,18 @@ font-family: Poppins;
   align-items: center;
   margin-left: 5%;
 }
-    
+     */
+
+#thin__line__homepage{
+  background-color: #949494;
+  height: 0.5vh;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+}
+
+
 .page-break {
   page-break-before: always;
 }

@@ -99,25 +99,39 @@ require_once('conexao.php');
       <br /><br /><br /><br /><br /><br />
 
       <div class="bg-light border border-2 container">
-        <br /><br /><br />
-        <div class="thin__line__m-0__shorter"></div>
+        
+      
+            <!-- Container das informações do usuario e logout -->
+            <div class="container bg-light p-2 ml-5  p-3">
+                    <div class="">
+                        <div class="col-md-6 fs-3 ">
+                            <?php
+                            // checa se o usuario tem dados da sessao já estabelecidos
+                            if (isset($_SESSION['user_id'], $_SESSION['username'])) {
+                                echo '<p class="mb-0">Bem-Vindo, ' . htmlspecialchars($_SESSION['username']) . '!</p>';
+                            } else {
+                                echo '<p class="mb-0">Usuário Não Logado</p>';
+                            }
+                            ?>
+                        </div>
 
-        <br /><br /><br />
+                        <hr>
+        <br />
 
-        <h1 class="text-center ">Tela inicial</h1>
+        <h1 class="text-center ">O Que Vai Ser Hoje?</h1>
 
         <br /><br />
 
         <div class="w-50 container justify-content-center align-items-center">
           <div class="row">
-            <button type="button" class="btn btn-secondary btn-lg fw-bolder">
+            <button type="button" class="btn btn-secondary btn-lg fw-bolder" onclick="window.location.href='index.php'">
               Preencher Ficha
             </button>
           </div>
 
           <br />
           <div class="row">
-            <button type="button" class="btn btn-secondary btn-lg fw-semibold">
+            <button type="button" class="btn btn-secondary btn-lg fw-semibold" onclick="window.location.href='pdfs.php'">
               Visualizar Ocorrências
             </button>
           </div>
@@ -126,7 +140,7 @@ require_once('conexao.php');
 
 
           <div class="row">
-            <button type="button" class="btn btn-danger btn-lg fw-semibold">Logout</button>
+            <button type="button" class="btn btn-danger btn-lg fw-semibold" onclick="window.location.href='logout.php'">Logout</button>
           </div>
         </div>
         <br />

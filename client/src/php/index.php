@@ -69,7 +69,7 @@ require_once('conexao.php');
               </p>
             </div>
 
-            <a href="homepage.php">
+            <a href="homepage.php" onclick="Confirmar()">
             <img src="noarlogo_small.png" alt="logo" />
             </a>
           </div>
@@ -301,11 +301,27 @@ require_once('conexao.php');
     </div>
 
     <!-- FIM DA HEADER -->
-
+<div id="element-to-hide">
     <br><br>
     <br>
     <br><br><br>
+    <div class="container m-2">
+<div class="container p-0">
+    <a href="homepage.php" class="btn btn-outline-dark btn-md mb-4 mr-4" onclick="Confirmar()">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
+        </div>
+        </div>
 
+        <script>
+        function Confirmar() {
+            var confirmation = confirm("Tem Certeza De Que Quer Voltar? Qualquer Progresso Não Salvo Será Descartado!");
+
+            if (confirmation) {
+                window.location.href = "homepage.php";
+            }
+        }
+    </script>
       
   <!-- Container das informações do usuario e logout -->
   <div class="container bg-light p-2 ml-5 border p-3">
@@ -341,7 +357,7 @@ require_once('conexao.php');
     <br>
 <br>
 
-
+</div>
     <div class="title__bar mt-2" id="seção1">
         <p class="title__text lead fw-semibold">Informações do Paciente:</p>
         <div class="title__box">
@@ -733,7 +749,7 @@ require_once('conexao.php');
     </div>
 
     <!-- FIM ANAMNESE DE EMERGÊNCIA -->
-    <div class="page-break"></div>
+    
     <!-- TIPO DE OCORRÊNCIA -->
     <br />
     <br />
@@ -2081,7 +2097,7 @@ require_once('conexao.php');
     <br /><br /><br />
 
     <!-- FIM SINAIS E SINTOMAS -->
-    <div class="page-break"></div>
+    
     <!-- COMEÇO TELA GLASGOW  -->
 
     <div class="title__bar" id="seção7">
@@ -2626,7 +2642,7 @@ require_once('conexao.php');
     <br /><br /><br />
 
     <!-- FIM GLASGOW -->
-
+<div class="page-break"></div>
     <!-- COMEÇO TELA CORPO  -->
 
     <div class="title__bar" id="seção8">
@@ -2754,7 +2770,7 @@ require_once('conexao.php');
 <br><br>
             
     <!-- FIM TELA CORPO  -->
-
+    <div class="page-break"></div>
     <!-- COMEÇO TELA FERIMENTOS/LUXAÇÕES -->
     <div class="title__bar" id="seção9">
        <p class="title__text lead fw-semibold">Ferimentos/Fraturas/Entorses/Luxação/Contusão</p>
@@ -2917,7 +2933,7 @@ elements.forEach((element) => {
 
     <!-- FIM TELA FERIMENTOS/LUXAÇÕES  -->
     <br /><br />
-    <div class="page-break"></div>
+    
     <!-- COMEÇO TELA QUEIMADURAS -->
     <div class="title__bar" id="seção10">
        <p class="title__text lead fw-semibold">Queimaduras</p>
@@ -3343,7 +3359,7 @@ function updateElementIds(container, uniqueId) {
     <br />
     <!-- FIM TELA FORMA DE CONDUÇÃO  -->
     <br /><br />
-    <div class="page-break"></div>
+    
     <!-- COMEÇO TELA DECISÃO DE CONDUÇÃO: -->
     <div class="title__bar" id="seção14">
        <p class="title__text lead fw-semibold">Decisão do Transporte:</p>
@@ -4973,8 +4989,6 @@ function toggleReanimador() {
 
 
 <br><br><br>
-
-<div class="page-break"></div>
 <div class="title__bar" id="seção18">
    <p class="title__text lead fw-semibold">Objetos Recolhidos:</p>
   <div class="title__box">
@@ -5057,9 +5071,6 @@ function toggleReanimador() {
   </form>
 </div>
 <br><br><br>
-
-
-<div class="page-break"></div>
 
 <div class="title__bar" id="seção21">
    <p class="title__text lead fw-semibold">Equipe de Atendimento:</p>
@@ -5215,7 +5226,7 @@ function toggleReanimador() {
   <form>
     <div class="form-group">
       <label for="btn__print">Gerar Relatório:</label>
-  <button onclick="window.print()" id="btn__print" class="btn btn-outline-secondary btn-sm">Gerar PDF</button>
+  <button id="btn__print" class="btn btn-outline-secondary btn-sm">Gerar PDF</button>
   <br><br>
 </div>
 <br>
@@ -5234,6 +5245,13 @@ function toggleReanimador() {
 </form>
 
 <script>
+        document.getElementById('btn__print').onclick = function(event) {
+            event.preventDefault(); // previne que a pagina reinicie quando gera o pdf
+            window.print(); 
+        };
+    </script>
+
+<script>
     function updateIndicator() {
         var input = document.getElementById('pdfInput');
         var indicator = document.getElementById('pdfIndicator');
@@ -5242,49 +5260,6 @@ function toggleReanimador() {
             indicator.style.display = 'block';
         } else {
             indicator.style.display = 'none';
-        }
-    }
-</script>
-
-<script>
-    function uploadPDF() {
-        var input = document.getElementById('pdfInput');
-
-        // Check if a file is selected
-        if (input.files.length > 0) {
-            var file = input.files[0];
-
-            // Check if the selected file is a PDF
-            if (file.type === 'application/pdf') {
-                // Create FormData object to send the file
-                var formData = new FormData();
-                formData.append('pdfFile', file);
-
-                // Create and configure the XMLHttpRequest object
-                var xhr = new XMLHttpRequest();
-                xhr.open('POST', '/upload', true);
-
-                // Event handler for successful upload
-                xhr.onload = function () {
-                    if (xhr.status === 200) {
-                        alert('PDF uploaded successfully!');
-                    } else {
-                        alert('Error uploading PDF. Please try again.');
-                    }
-                };
-
-                // Event handler for errors
-                xhr.onerror = function () {
-                    alert('Error uploading PDF. Please try again.');
-                };
-
-                // Send the FormData object to the server
-                xhr.send(formData);
-            } else {
-                alert('Please select a PDF file.');
-            }
-        } else {
-            alert('Please select a file.');
         }
     }
 </script>
@@ -5298,26 +5273,26 @@ function toggleReanimador() {
             
             <script>
               $(document).ready(function(){
-                // Add change event listener to the file input
+              
                 $("#imageInput").change(function(){
-                  // Get selected file
+                  // Pega a imagem anexada no input
                   var file = this.files[0];
             
-                  // Check if the selected file is an image
+                  // checa se o arquivo é uma imagem
                   if (file && file.type.startsWith('image')) {
-                    // Create a FileReader object
+                    // cria uma variavel que ira "ler" o arquivo
                     var reader = new FileReader();
             
-                    // Set the callback function when the file is loaded
+                  
                     reader.onload = function(e){
-                      // Display the image preview
+                      // mostra a imagem anexada na tela
                       $("#imagePreview").html('<img src="' + e.target.result + '" class="img-fluid" alt="Image Preview">');
                     };
             
-                    // Read the file as a data URL
+                   
                     reader.readAsDataURL(file);
                   } else {
-                    // Clear the image preview if the selected file is not an image
+                    
                     $("#imagePreview").html('');
                     alert("Por Favor Selecione Uma Imagem.");
                   }

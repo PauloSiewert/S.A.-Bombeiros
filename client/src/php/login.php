@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 if ($_SESSION['is_admin'] == 1) {
                     header('Location: adm.php');
                 } else {
-                    header('Location: index.php');
+                    header('Location: homepage.php');
                 }
 
                 exit();
@@ -104,7 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
   <form action="login.php" method="POST">
         <div class="container mt-12">
-            <div class="border p-4">
+            <div class="border p-4 bg-white bg-gradient">
                 <p class="fs-3 fw-bold justify-content-center text-center">Login</p>
                 <br />
                 <!-- mensagem de erro que só aparece após o submit errado -->
@@ -117,7 +117,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <!-- USUÁRIO -->
                     <div class="col-lg-12">
                         <label for="user_" class="form-label m-0">Usuário:</label>
-                        <input type="text" name="username" required class="form-control" id="user_"
+                        <input type="text" name="username" required class="form-control bg-light border-secondary" id="user_"
                             aria-describedby="emailHelp" />
                     </div>
                     <!-- FIM USUÁRIO -->
@@ -130,7 +130,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <!-- CPF -->
                     <div class="col-lg-12">
                         <label for="numero" class="form-label m-0">CPF:</label>
-                        <input type="text" name="cpf" required oninput="mascara(this)" class="form-control"
+                        <input type="text" name="cpf" required oninput="mascara(this)" class="form-control bg-light border-secondary"
                             id="numero" aria-describedby="emailHelp" />
                     </div>
                     <!-- FIM CPF -->
@@ -143,8 +143,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         <div class="col-lg-12">
                             <label for="senha" class="form-label m-0">Senha: </label>
                             <div class="input-group">
-                                <input type="password" name="password" required class="form-control" id="senha">
-                                <button type="button" class="btn btn-outline-secondary" id="togglePassword">
+                                <input type="password" name="password" required class="form-control bg-light border-secondary" id="senha">
+                                <button type="button" class="btn btn-outline-secondary bg-light " id="togglePassword">
                                     <i class="bi bi-eye"></i>
                                 </button>
                             </div>
