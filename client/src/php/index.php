@@ -384,7 +384,7 @@ require_once('conexao.php');
               <br /><br />
 
               <script>
-                // Function to handle radio button change event
+                // desativa tela da gestação quando o paciente é do sexo masculino
                 function handleRadioChange() {
                     if ($('#masculino__sexo').is(':checked')) {
                         $('#myDiv').css('display', 'none');

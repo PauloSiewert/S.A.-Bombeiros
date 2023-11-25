@@ -42,7 +42,7 @@ function mostrarCheckboxes() {
 // checkboxes adcionais
 
 function showAdditionalCheckboxes() {
-  // Toggle the visibility of additional checkboxes
+  //visibilidade das checkboxes dependentes de outras
   var additionalCheckboxes = document.getElementById("additionalCheckboxes");
   additionalCheckboxes.style.display =
     additionalCheckboxes.style.display === "none" ? "block" : "none";
