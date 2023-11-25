@@ -88,7 +88,9 @@ $resultUsers = $conn->query($sqlUsers);
             </p>
           </div>
 
-          <img src="noarlogo_small.png" alt="logo" />
+          <a href="homepage.php">
+            <img src="noarlogo_small.png" alt="logo" />
+            </a>
         </div>
       </nav>
 

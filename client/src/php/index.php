@@ -69,7 +69,9 @@ require_once('conexao.php');
               </p>
             </div>
 
+            <a href="homepage.php">
             <img src="noarlogo_small.png" alt="logo" />
+            </a>
           </div>
         </nav>
 
@@ -302,7 +304,7 @@ require_once('conexao.php');
 
     <br><br>
     <br>
-    <br><br>
+    <br><br><br>
 
       
   <!-- Container das informações do usuario e logout -->
@@ -337,7 +339,7 @@ require_once('conexao.php');
 
 
     <br>
-    <br>
+<br>
 
 
     <div class="title__bar mt-2" id="seção1">

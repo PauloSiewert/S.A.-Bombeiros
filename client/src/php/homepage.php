@@ -22,7 +22,7 @@ require_once('conexao.php');
 
     <!-- Demais folders -->
     <link rel="icon" href="noarlogo_small.png" />
-    <link rel="stylesheet" href="/client/src/php/index.css" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="stylesheet" href="reset.css" />
     <!--CSS and Font Awesome, Bootstrap, etc. links -->
     <link
