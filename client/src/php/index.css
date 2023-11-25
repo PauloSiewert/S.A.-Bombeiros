@@ -169,8 +169,15 @@ font-family: Poppins;
   border-bottom-left-radius: 3px;
 }
 
+.thin__line__m-0__shorter{
+  background-color: #949494;
+  height: 0.5vh;
+  width: 50%;
+  justify-content: center;
+  align-items: center;
+  margin-left: 5%;
+}
     
-
 .page-break {
   page-break-before: always;
 }
