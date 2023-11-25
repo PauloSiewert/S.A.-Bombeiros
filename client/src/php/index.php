@@ -14,9 +14,9 @@ require_once('conexao.php');
   <title>Ficha de Ocorrência</title>
 
   <!-- Demais folders -->
-  <link rel="icon" href="/client/src/assets/noarlogo.png" />
-  <link rel="stylesheet" href="/client/src/css/index.css" />
-  <link rel="stylesheet" href="/client/src/css/reset.css" />
+  <link rel="icon" href="noarlogo_small.png" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="reset.css" />
    <!--CSS and Font Awesome, Bootstrap, etc. links -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i&display=swap">
@@ -33,7 +33,7 @@ require_once('conexao.php');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-<script src="/client/src/javascript/index.js"></script>
+<script src="index.js"></script>
  
 
 </head>
@@ -62,7 +62,7 @@ require_once('conexao.php');
               </p>
             </div>
 
-            <img src="/client/src/assets/noarlogo_small.png" alt="logo" />
+            <img src="noarlogo_small.png" alt="logo" />
           </div>
         </nav>
 
@@ -2628,7 +2628,7 @@ require_once('conexao.php');
 <div class="container mt-5 p-3 border bg-white bg-gradient" id="container__1">
   <div class="row mt-3">
     <div class="col-md-12 justify-content-center" id="container__2">
-      <img src="/client/src/assets/corpo__humano.jpg" alt="Corpo" usemap="#corpo" id="map-image" class="img-fluid"> 
+      <img src="corpo__humano.jpg" alt="Corpo" usemap="#corpo" id="map-image" class="img-fluid"> 
      
       <map name="corpo">
 
@@ -5208,16 +5208,16 @@ function toggleReanimador() {
 <br>
 </form>
 <h4>Enviar PDF</h4>
-<form action="/upload" method="post" enctype="multipart/form-data">
+<form action="upload.php" method="post" enctype="multipart/form-data">
     <div class="form-group">
         <label for="pdfInput">Escolha o PDF:</label>
-        <input type="file" class="form-control-file" id="pdfInput" accept=".pdf" onchange="updateIndicator()">
+        <input type="file" class="form-control-file" id="pdfInput" accept=".pdf" onchange="updateIndicator()" name="pdf_file">
     </div>
     <div id="pdfIndicator" style="display: none;" class="alert alert-success mt-2">
         PDF Anexado!
     </div>
     <br><br>
-    <button type="submit" class="btn btn-primary btn-lg">Finalizar</button>
+    <button type="submit" class="btn btn-primary btn-lg" name="upload">Finalizar</button>
 </form>
 
 <script>

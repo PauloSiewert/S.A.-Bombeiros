@@ -52,9 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   <title>Ficha de Ocorrência</title>
 
   
-  <link rel="icon" href="/client/src/assets/noarlogo.png" />
-  <link rel="stylesheet" href="/client/src/css/index.css" />
-  <link rel="stylesheet" href="/client/src/css/reset.css" />
+  <link rel="icon" href="noarlogo_small.png" />
+  <link rel="stylesheet" href="index.css" />
+  <link rel="stylesheet" href="reset.css" />
 
   <!--CSS and Font Awesome, Bootstrap, etc. links -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </p>
           </div>
 
-          <img src="/client/src/assets/noarlogo_small.png" alt="logo" />
+          <img src="noarlogo_small.png" alt="logo" />
         </div>
       </nav>
 
