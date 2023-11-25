@@ -92,7 +92,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               </p>
             </div>
 
+            <a href="homepage.php">
             <img src="noarlogo_small.png" alt="logo" />
+            </a>
           </div>
         </nav>
 
