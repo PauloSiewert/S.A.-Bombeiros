@@ -295,13 +295,14 @@ require_once('conexao.php');
 
     <br><br>
     <br>
-    <br><br><br>
+    <br><br>
 
       
   <!-- Container das informações do usuario e logout -->
-  <div class="container-fluid bg-light p-2">
-          <div class="row">
-              <div class="col-md-6">
+  <div class="container bg-light p-2 ml-5 border p-3">
+          <div class="">
+              <div class="col-md-6 fs-2 ">
+
                   <?php
                   // checa se o usuario tem dados da sessao já estabelecidos
                   if (isset($_SESSION['user_id'], $_SESSION['username'])) {
@@ -311,7 +312,9 @@ require_once('conexao.php');
                   }
                   ?>
               </div>
-              <div class="col-md-6 text-end">
+
+              <div class="col-md-6 mt-3">
+                <div class="">
                   <?php
                   // checa se o user esta logado
                   if (isset($_SESSION['user_id'], $_SESSION['username'])) {
@@ -320,13 +323,14 @@ require_once('conexao.php');
                       echo '<p class="mb-0">Usuário Não Logado</p>';
                   }
                   ?>
+                </div>
               </div>
           </div>
       </div>
 
 
     <br>
-    <br><br><br>
+    <br>
 
 
     <div class="title__bar mt-2" id="seção1">
