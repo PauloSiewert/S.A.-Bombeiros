@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Tempo de geração: 24/11/2023 às 18:56
+-- Tempo de geração: 25/11/2023 às 15:31
 -- Versão do servidor: 10.4.28-MariaDB
 -- Versão do PHP: 8.2.4
 
@@ -20,6 +20,21 @@ SET time_zone = "+00:00";
 --
 -- Banco de dados: `noar_teste2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `relatorios`
+--
+
+CREATE TABLE `relatorios` (
+  `n°_do_relatorio` int(11) NOT NULL,
+  `id_preenchedor` int(11) DEFAULT NULL,
+  `nome_preenchedor` varchar(255) DEFAULT NULL,
+  `file_name` varchar(255) DEFAULT NULL,
+  `data_preenchimento` timestamp NOT NULL DEFAULT current_timestamp(),
+  `file_data` longblob DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -51,6 +66,12 @@ INSERT INTO `users` (`id`, `username`, `password`, `cpf`, `is_admin`, `is_active
 --
 
 --
+-- Índices de tabela `relatorios`
+--
+ALTER TABLE `relatorios`
+  ADD PRIMARY KEY (`n°_do_relatorio`);
+
+--
 -- Índices de tabela `users`
 --
 ALTER TABLE `users`
@@ -61,10 +82,16 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT de tabela `relatorios`
+--
+ALTER TABLE `relatorios`
+  MODIFY `n°_do_relatorio` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
 -- AUTO_INCREMENT de tabela `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
