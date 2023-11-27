@@ -589,7 +589,7 @@ require_once('conexao.php');
     const patientName = document.getElementById('nomepaciente').value;
 
     if (!date || !hospitalName || !sex || !patientName) {
-        alert('Please fill in all required fields.');
+        
         return;
     } 
     const data = {
@@ -625,7 +625,7 @@ require_once('conexao.php');
     if (!acontecimento || !ocorrenciasOutrasVezes.value || !tempoAnamnese || !problemaSaude.value ||
         (!problemaSaude.value && quaisProblemas) || !usoMedicacoes.value || (!usoMedicacoes.value && horarioUltimaMedicacao) ||
         !alergias.value || (!alergias.value && quaisAlergias) || !ingeriuAlimento.value || (!ingeriuAlimento.value && horasUltimoAlimento)) {
-        alert('Please fill in all required fields.');
+        
         return;
     }
 
@@ -700,7 +700,7 @@ function saveVitalSigns() {
     const status_final = document.getElementById('status_final').value;
 
     if (!pressao || !pulso || !bcmp || !satu || !hgt || !temp_vital || perfusao === 'Selecione:' || status_final === 'Selecione:') {
-        alert('Please fill in all required fields.');
+        
         return;
     }
 
@@ -727,7 +727,7 @@ function saveSignsAndSymptoms() {
         .map(checkbox => checkbox.id);
 
     if (selectedCheckboxes.length === 0 && !outrosSinaisInput) {
-        alert('Please select at least one sign or symptom or enter others.');
+       
         return;
     }
 

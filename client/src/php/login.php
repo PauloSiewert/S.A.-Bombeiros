@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 $_SESSION['is_admin'] = $row['is_admin'];
 
                 if ($_SESSION['is_admin'] == 1) {
-                    header('Location: adm.php');
+                    header('Location: homepageadmin.php');
                 } else {
                     header('Location: homepage.php');
                 }

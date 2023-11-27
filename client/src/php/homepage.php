@@ -7,6 +7,11 @@ if (!isset($_SESSION['user_id'])) {
     exit();
 }
 
+// checa se a sessao é de admin
+if ($_SESSION['is_admin'] = 1) {
+  header('Location: homepageadmin.php');
+  exit();
+}
 
 require_once('conexao.php');
 ?>

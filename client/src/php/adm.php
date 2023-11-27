@@ -100,11 +100,17 @@ $resultUsers = $conn->query($sqlUsers);
   <!-- FIM DA HEADER -->
 
   <br /><br /><br /><br /><br /><br />
-
+  <div class="container m-2">
+<div class="container p-0">
+    <a href="homepageadmin.php" class="btn btn-outline-dark btn-md mb-4 mr-4">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
+        </div>
+        </div>
         
   <!-- Container das informações do usuario e logout -->
   <div class="container">
-          <div class="bg-white bg-gradient p-2 ml-5 border p-3"">
+          <div class="bg-white bg-gradient p-2 ml-5 border p-3">
               <div class="col-md-6 fs-2 ">
 
                   <?php

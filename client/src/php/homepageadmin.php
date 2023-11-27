@@ -1,5 +1,13 @@
 <?php
+
 session_start();
+
+
+// checa se a sessao é de admin
+if ($_SESSION['is_admin'] != 1) {
+    header('Location: login.php');
+    exit();
+}
 
 
 if (!isset($_SESSION['user_id'])) {
@@ -124,8 +132,14 @@ require_once('conexao.php');
 
         <div class="w-50 container justify-content-center align-items-center">
           <div class="row">
-            <button type="button" class="btn btn-secondary btn-lg fw-bolder" onclick="window.location.href='index.php'">
+            <button type="button" class="btn btn-secondary btn-lg fw-bolder" onclick="window.location.href='adm.php'">
               Painel de Controle Admin
+            </button>
+          </div>
+                            <br>
+          <div class="row">
+            <button type="button" class="btn btn-secondary btn-lg fw-bolder" onclick="window.location.href='fichas.php'">
+              Visualizar Banco de Relatórios
             </button>
           </div>
 
@@ -137,7 +151,7 @@ require_once('conexao.php');
           </div>
           <br />
           <div class="row">
-            <button type="button" class="btn btn-secondary btn-lg fw-semibold" onclick="window.location.href='pdfs.php'">
+            <button type="button" class="btn btn-secondary btn-lg fw-semibold" onclick="window.location.href='index.php'">
               Preencher Ficha
             </button>
           </div>
