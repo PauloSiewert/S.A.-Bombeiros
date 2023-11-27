@@ -522,7 +522,7 @@ require_once('conexao.php');
   </div>
 
   <script>
-     function sendDataToPHP() {
+   function sendDataToPHP() {
     const userData = saveUserData();
     const healthData = saveHealthData();
     const incidentData = saveIncidentData();
@@ -535,7 +535,7 @@ require_once('conexao.php');
     const conductionData = saveConductionData();
     const patientStatus = savePatientStatus();
     const birthFormData = saveBirthFormData();
-    const proceData = saveProceData();
+    const proceData = saveProceData(); // Updated to get the object directly
     const tableData = collectTableData();
     const textareaData = collectTextareaData();
     const inputData = collectInputData();
@@ -555,14 +555,16 @@ require_once('conexao.php');
         conductionData: conductionData,
         patientStatus: patientStatus,
         birthFormData: birthFormData,
-        proceData: proceData,
+        proceData: proceData, // Include the result directly
         tableData: tableData,
         textareaData: textareaData,
         inputData: inputData,
         textarea2Data: textarea2Data,
         equipeData: equipeData,
     };
+
     console.log(allData);
+
     const xhr = new XMLHttpRequest();
     const url = 'upload_ficha.php';
 
@@ -820,13 +822,23 @@ function saveBirthFormData() {
 
    return formData;
 }
-
 function saveProceData() {
-    const ProceData = gatherCheckboxInformation('procedimentos__container');
+    const proceData = gatherCheckboxInformation('procedimentos__container');
     const additionalInformation = gatherAdditionalInformation('procedimentos__container');
 
-    // Use ProceData and additionalInformation as needed.
- 
+    // Do something with the gathered data if needed
+
+    // For example, you can combine both sets of data into a single object
+    const combinedData = {
+        ...proceData,
+        additionalInformation: additionalInformation,
+    };
+
+    // Log the combined data to the console
+    console.log(combinedData);
+
+    // Return the data if you need it elsewhere
+    return combinedData;
 }
 
 function gatherCheckboxInformation(containerId) {

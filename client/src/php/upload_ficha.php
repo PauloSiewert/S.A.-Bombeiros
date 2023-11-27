@@ -4,24 +4,40 @@ session_start();
 
 $data = json_decode(file_get_contents("php://input"), true);
 
-$userData = $data['userData'];
-$healthData = $data['healthData'];
-$incidentData = $data['incidentData'];
-$medicalData = $data['medicalData'];
-$vitalSigns = $data['vitalSigns'];
-$signsAndSymptoms = $data['signsAndSymptoms'];
-$results = $data['results'];
-$victimData = $data['victimData'];
-$cinematicData = $data['cinematicData'];
-$conductionData = $data['conductionData'];
-$patientStatus = $data['patientStatus'];
-$birthFormData = $data['birthFormData'];
-$proceData = $data['proceData'];
-$tableData = $data['tableData'];
-$textareaData = $data['textareaData'];
-$inputData = $data['inputData'];
-$textarea2Data = $data['textarea2Data'];
-$equipeData = $data['equipeData'];
+function prepareData($value) {
+    // Handle array data
+    if (is_array($value)) {
+        return "'" . addslashes(json_encode($value)) . "'";
+    }
+    
+    // Handle null values
+    if ($value === null) {
+        return 'NULL';
+    }
+
+    // Handle other values
+    return "'" . addslashes($value) . "'";
+}
+
+// Check if keys exist before using them
+$userData = isset($data['userData']) ? prepareData($data['userData']) : 'NULL';
+$healthData = isset($data['healthData']) ? prepareData($data['healthData']) : 'NULL';
+$incidentData = isset($data['incidentData']) ? prepareData($data['incidentData']) : 'NULL';
+$medicalData = isset($data['medicalData']) ? prepareData($data['medicalData']) : 'NULL';
+$vitalSigns = isset($data['vitalSigns']) ? prepareData($data['vitalSigns']) : 'NULL';
+$signsAndSymptoms = isset($data['signsAndSymptoms']) ? prepareData($data['signsAndSymptoms']) : 'NULL';
+$results = isset($data['results']) ? prepareData($data['results']) : 'NULL';
+$victimData = isset($data['victimData']) ? prepareData($data['victimData']) : 'NULL';
+$cinematicData = isset($data['cinematicData']) ? prepareData($data['cinematicData']) : 'NULL';
+$conductionData = isset($data['conductionData']) ? prepareData($data['conductionData']) : 'NULL';
+$patientStatus = isset($data['patientStatus']) ? prepareData($data['patientStatus']) : 'NULL';
+$birthFormData = isset($data['birthFormData']) ? prepareData($data['birthFormData']) : 'NULL';
+$proceData = isset($data['proceData']) ? prepareData($data['proceData']) : 'NULL';
+$tableData = isset($data['tableData']) ? prepareData($data['tableData']) : 'NULL';
+$textareaData = isset($data['textareaData']) ? prepareData($data['textareaData']) : 'NULL';
+$inputData = isset($data['inputData']) ? prepareData($data['inputData']) : 'NULL';
+$textarea2Data = isset($data['textarea2Data']) ? prepareData($data['textarea2Data']) : 'NULL';
+$equipeData = isset($data['equipeData']) ? prepareData($data['equipeData']) : 'NULL';
 $username = $_SESSION['username'];
 
 $servername = "localhost";
@@ -57,24 +73,24 @@ $sql = "INSERT INTO fichas (
             equipe_atendimento
         ) VALUES (
             '$username',
-            '$userData',
-            '$healthData',
-            '$incidentData',
-            '$medicalData',
-            '$vitalSigns',
-            '$signsAndSymptoms',
-            '$results',
-            '$victimData',
-            '$cinematicData',
-            '$conductionData',
-            '$patientStatus',
-            '$birthFormData',
-            '$proceData',
-            '$tableData',
-            '$textareaData',
-            '$inputData',
-            '$textarea2Data',
-            '$equipeData'
+            $userData,
+            $healthData,
+            $incidentData,
+            $medicalData,
+            $vitalSigns,
+            $signsAndSymptoms,
+            $results,
+            $victimData,
+            $cinematicData,
+            $conductionData,
+            $patientStatus,
+            $birthFormData,
+            $proceData,
+            $tableData,
+            $textareaData,
+            $inputData,
+            $textarea2Data,
+            $equipeData
         )";
 
 $conn->query($sql);
