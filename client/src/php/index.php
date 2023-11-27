@@ -312,18 +312,6 @@ require_once('conexao.php');
         </a>
         </div>
         </div>
-
-        <script>
-        function Confirmar() {
-            var confirmation = confirm("Tem Certeza De Que Quer Voltar? Qualquer Progresso Não Salvo Será Descartado!");
-
-            if (confirmation) {
-                window.location.href = "homepage.php";
-            }
-              
-          
-        }
-    </script>
       
   <!-- Container das informações do usuario e logout -->
   <div class="container bg-light p-2 ml-5 border p-3">
