@@ -538,7 +538,7 @@ require_once('conexao.php');
             savePatientStatus();
             saveBirthFormData();
             saveProceData();
-
+            gatherTableInformation();
         }
 
     function saveUserData() {
@@ -822,6 +822,7 @@ function gatherAdditionalInformation(containerId) {
 
     return additionalData;
 }
+
   </script>
     <!-- FIM INFORMAÇÕES DO PACIENTE -->
 
@@ -4813,7 +4814,7 @@ function toggleReanimador() {
                   
                   <!--  Bootstrap table-->
                   <div class="table-responsive">
-                      <table class="table">
+                      <table class="table" id="tabela__mat">
                           <thead>
                               <tr>
                                   
