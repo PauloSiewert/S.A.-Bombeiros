@@ -320,6 +320,8 @@ require_once('conexao.php');
             if (confirmation) {
                 window.location.href = "homepage.php";
             }
+              
+          
         }
     </script>
       
@@ -393,10 +395,10 @@ require_once('conexao.php');
         <div class="row mt-3">
           <div class="col-lg-6 mt-3">
               <label class="form-check-label" for="masculino__sexo">Sexo:</label><br />
-              <input class="form-check-input1" type="radio" value="" id="masculino__sexo" name="check1" onchange="handleRadioChange()">
+              <input class="form-check-input1" type="radio" value="1" id="masculino__sexo" name="check1" onchange="handleRadioChange()">
               <label class="form-check-label" for="masculino__sexo">Masculino</label>
              
-              <input class="form-check-input1" type="radio" value="" id="flexCheckDefault1" name="check1" onchange="handleRadioChange()">
+              <input class="form-check-input1" type="radio" value="2" id="flexCheckDefault1" name="check1" onchange="handleRadioChange()">
               <label class="form-check-label" for="flexCheckDefault1">Feminino</label>
           
               <br /><br />
@@ -515,9 +517,249 @@ require_once('conexao.php');
             />
           </div>
         </div>
+        <button onclick="saveAllData()">Save Data</button>
       </div>
     </div>
   </div>
+
+  <script>
+
+      function saveAllData() {
+            saveUserData();
+            saveHealthData();
+            saveIncidentData();
+            saveMedicalData();
+            saveVitalSigns();
+            saveSignsAndSymptoms();
+            saveResults();
+            saveVictimData();
+            saveCinematicData();
+            saveConductionData();
+            savePatientStatus();
+            
+        }
+
+    function saveUserData() {
+    
+    const date = document.getElementById('exampleInputEmail1').value;
+    const hospitalName = document.getElementById('nomedohospital').value;
+    const sex = document.querySelector('input[name="check1"]:checked');
+    const patientName = document.getElementById('nomepaciente').value;
+
+    if (!date || !hospitalName || !sex || !patientName) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+   
+    const data = {
+        date: date,
+        hospitalName: hospitalName,
+        sex: sex.value,
+        patientName: patientName,
+        telephone: document.getElementById('telefone').value,
+        rgcpf: document.getElementById('rgcpf').value,
+        occurrenceLocation: document.getElementById('local_ocorrencia').value,
+        patientAge: document.getElementById('idade_paciente').value,
+        companionName: document.getElementById('Acompanhante_paciente').value,
+        companionAge: document.getElementById('idade_acompanhante').value,
+    };
+
+    console.log(data);
+  }
+  function saveHealthData() {
+    // Validate required fields
+    const acontecimento = document.getElementById('acontecimento').value;
+    const ocorrenciasOutrasVezes = document.querySelector('input[name="check2"]:checked') || { value: null };
+    const tempoAnamnese = document.getElementById('tempoanamnese').value;
+    const problemaSaude = document.querySelector('input[name="check3"]:checked') || { value: null };
+    const quaisProblemas = document.getElementById('quais1').value;
+    const usoMedicacoes = document.querySelector('input[name="check4"]:checked') || { value: null };
+    const horarioUltimaMedicacao = document.getElementById('medicacao1').value;
+    const quaisMedicacoes = document.getElementById('quais2').value;
+    const alergias = document.querySelector('input[name="check5"]:checked') || { value: null };
+    const quaisAlergias = document.getElementById('quais3').value;
+    const ingeriuAlimento = document.querySelector('input[name="check6"]:checked') || { value: null };
+    const horasUltimoAlimento = document.getElementById('hrsmedicacao').value;
+
+    if (!acontecimento || !ocorrenciasOutrasVezes.value || !tempoAnamnese || !problemaSaude.value ||
+        (!problemaSaude.value && quaisProblemas) || !usoMedicacoes.value || (!usoMedicacoes.value && horarioUltimaMedicacao) ||
+        !alergias.value || (!alergias.value && quaisAlergias) || !ingeriuAlimento.value || (!ingeriuAlimento.value && horasUltimoAlimento)) {
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+    const data2 = {
+        acontecimento: acontecimento,
+        ocorrenciasOutrasVezes: ocorrenciasOutrasVezes.value,
+        tempoAnamnese: tempoAnamnese,
+        problemaSaude: problemaSaude.value,
+        quaisProblemas: quaisProblemas,
+        usoMedicacoes: usoMedicacoes.value,
+        horarioUltimaMedicacao: horarioUltimaMedicacao,
+        quaisMedicacoes: quaisMedicacoes,
+        alergias: alergias.value,
+        quaisAlergias: quaisAlergias,
+        ingeriuAlimento: ingeriuAlimento.value,
+        horasUltimoAlimento: horasUltimoAlimento,
+    };
+
+    console.log(data2);
+}
+function saveIncidentData() {
+   
+    const categories = ['A', 'C', 'D', 'E', 'I', 'Q', 'T'];
+
+    const data3 = {};
+
+    for (const category of categories) {
+        const checkboxes = document.querySelectorAll(`input[name="check1"]:checked`);
+
+        if (checkboxes.length > 0) {
+            data3[`category${category}`] = Array.from(checkboxes).map(checkbox => checkbox.id);
+        } else {
+            data3[`category${category}`] = null; // You can use false or null as a default value
+        }
+    }
+
+    const outrosInput = document.getElementById('outros_pre_hospitalar');
+    data3.outros = outrosInput ? outrosInput.value : null;
+
+    console.log(data3);
+}
+function saveMedicalData() {
+    const categories = ['Psiquiátrico', 'Respiratório', 'Diabetes', 'Obstétrico', 'Transporte'];
+
+    const data4 = {};
+
+    for (const category of categories) {
+        const checkboxes = document.querySelectorAll(`input[name="check1"][id^="flexCheckDefault"]`);
+
+        if (checkboxes.length > 0) {
+            data4[`category${category}`] = Array.from(checkboxes).map(checkbox => checkbox.id);
+        } else {
+            data4[`category${category}`] = null; // You can use false or null as a default value
+        }
+    }
+
+    // Handle "Outros" category
+    const outrosInput = document.getElementById('exampleInputEmail11');
+    data4.outros = outrosInput ? outrosInput.value : null;
+
+    console.log(data4);
+}
+function saveVitalSigns() {
+    const pressao = document.getElementById('pressao').value;
+    const pulso = document.getElementById('pulso').value;
+    const bcmp = document.getElementById('bcmp').value;
+    const satu = document.getElementById('satu').value;
+    const hgt = document.getElementById('hgt').value;
+    const temp_vital = document.getElementById('temp_vital').value;
+    const perfusao = document.getElementById('perfusao').value;
+    const status_final = document.getElementById('status_final').value;
+
+    if (!pressao || !pulso || !bcmp || !satu || !hgt || !temp_vital || perfusao === 'Selecione:' || status_final === 'Selecione:') {
+        alert('Please fill in all required fields.');
+        return;
+    }
+
+    const data5 = {
+        pressao: pressao,
+        pulso: pulso,
+        bcmp: bcmp,
+        satu: satu,
+        hgt: hgt,
+        temp_vital: temp_vital,
+        perfusao: perfusao,
+        status_final: status_final,
+    };
+
+    console.log(data5);
+}
+
+function saveSignsAndSymptoms() {
+    const checkboxes = document.querySelectorAll('.form-check-input1');
+    const outrosSinaisInput = document.getElementById('outros_sinais').value;
+
+    const selectedCheckboxes = Array.from(checkboxes)
+        .filter(checkbox => checkbox.checked)
+        .map(checkbox => checkbox.id);
+
+    if (selectedCheckboxes.length === 0 && !outrosSinaisInput) {
+        alert('Please select at least one sign or symptom or enter others.');
+        return;
+    }
+
+    const data6 = {
+        selectedCheckboxes: selectedCheckboxes,
+        outrosSinaisInput: outrosSinaisInput,
+    };
+
+    console.log(data6);
+}
+function saveResults() {
+    const resultInput = document.getElementById('result').value;
+    const result2Input = document.getElementById('result2').value;
+
+    const data7 = {
+        result: resultInput,
+        result2: result2Input,
+    };
+
+    console.log(data7);
+}
+
+function saveVictimData() {
+    const victimData = {
+        vitima1: document.getElementById('vitima1').checked,
+        vitima2: document.getElementById('vitima2').checked,
+        vitima3: document.getElementById('vitima3').checked,
+        vitima4: document.getElementById('vitima4').checked,
+        vitima5: document.getElementById('vitima5').checked,
+        vitima6: document.getElementById('vitima6').checked,
+        vitima7: document.getElementById('vitima7').checked,
+        vitima8: document.getElementById('vitima8').checked,
+        vitima9: document.getElementById('vitima9').checked,
+        vitima10: document.getElementById('vitima10').checked,
+    };
+
+    console.log(victimData);
+}
+function saveCinematicData() {
+    const cinematicData = {
+        cine1: document.getElementById('cine1').checked,
+        cine2: document.getElementById('cine2').checked,
+        cine3: document.getElementById('cine3').checked,
+        cine4: document.getElementById('cine4').checked,
+        cine5: document.getElementById('cine5').checked,
+        cine6: document.getElementById('cine6').checked,
+        cine7: document.getElementById('cine7').checked,
+    };
+
+    console.log(cinematicData);
+}
+function saveConductionData() {
+    const conductionData = {
+        conducao1: document.getElementById('conducao1').checked,
+        conducao2: document.getElementById('conducao2').checked,
+        conducao3: document.getElementById('conducao3').checked,
+    };
+
+    console.log(conductionData);
+}
+
+function savePatientStatus() {
+    const patientStatus = {
+        critico: document.querySelector('.btn-group .btn-outline-danger').getAttribute('aria-pressed') === 'true',
+        instavel: document.querySelector('.btn-group .btn-outline-warning').getAttribute('aria-pressed') === 'true',
+        potencialmenteInstavel: document.querySelector('.btn-group .btn-outline-primary').getAttribute('aria-pressed') === 'true',
+        estavel: document.querySelector('.btn-group .btn-outline-success').getAttribute('aria-pressed') === 'true',
+    };
+
+    console.log(patientStatus);
+}
+
+  </script>
     <!-- FIM INFORMAÇÕES DO PACIENTE -->
 
     <!-- ANAMNESE DE EMERGÊNCIA -->
@@ -556,7 +798,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="1"
               id="sim_vez"
               name="check2"
             />
@@ -564,7 +806,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="2"
               id="nao_vez"
               name="check2"
             />
@@ -595,7 +837,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="1"
               id="sim_previo"
               name="check3"
             />
@@ -603,7 +845,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="2"
               id="nao_previo"
               name="check3"
             />
@@ -632,7 +874,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="1"
               id="sim_med"
               name="check4"
             />
@@ -640,7 +882,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="2"
               id="nao_med"
               name="check4"
             />
@@ -681,7 +923,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="1"
               id="sim_aler"
               name="check5"
             />
@@ -689,7 +931,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="2"
               id="nao_aler"
               name="check5"
             />
@@ -718,7 +960,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="1"
               id="sim_aliment"
               name="check6"
             />
@@ -726,7 +968,7 @@ require_once('conexao.php');
             <input
               class="form-check-input1"
               type="radio"
-              value=""
+              value="2"
               id="nao_aliment"
               name="check6"
             />
@@ -1294,7 +1536,7 @@ require_once('conexao.php');
             <input
               type="text"
               class="form-control border-dark"
-              id="exampleInputEmail1"
+              id="exampleInputEmail11"
               aria-describedby="emailHelp"
             />
           </div>
