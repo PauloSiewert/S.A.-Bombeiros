@@ -517,32 +517,70 @@ require_once('conexao.php');
             />
           </div>
         </div>
-        <button onclick="saveAllData()">Save Data</button>
       </div>
     </div>
   </div>
 
   <script>
+     function sendDataToPHP() {
+    const userData = saveUserData();
+    const healthData = saveHealthData();
+    const incidentData = saveIncidentData();
+    const medicalData = saveMedicalData();
+    const vitalSigns = saveVitalSigns();
+    const signsAndSymptoms = saveSignsAndSymptoms();
+    const results = saveResults();
+    const victimData = saveVictimData();
+    const cinematicData = saveCinematicData();
+    const conductionData = saveConductionData();
+    const patientStatus = savePatientStatus();
+    const birthFormData = saveBirthFormData();
+    const proceData = saveProceData();
+    const tableData = collectTableData();
+    const textareaData = collectTextareaData();
+    const inputData = collectInputData();
+    const textarea2Data = collectTextarea2Data();
+    const equipeData = collectEquipeData();
 
-      function saveAllData() {
-            saveUserData();
-            saveHealthData();
-            saveIncidentData();
-            saveMedicalData();
-            saveVitalSigns();
-            saveSignsAndSymptoms();
-            saveResults();
-            saveVictimData();
-            saveCinematicData();
-            saveConductionData();
-            savePatientStatus();
-            saveBirthFormData();
-            saveProceData();
-            gatherTableInformation();
+    const allData = {
+        userData: userData,
+        healthData: healthData,
+        incidentData: incidentData,
+        medicalData: medicalData,
+        vitalSigns: vitalSigns,
+        signsAndSymptoms: signsAndSymptoms,
+        results: results,
+        victimData: victimData,
+        cinematicData: cinematicData,
+        conductionData: conductionData,
+        patientStatus: patientStatus,
+        birthFormData: birthFormData,
+        proceData: proceData,
+        tableData: tableData,
+        textareaData: textareaData,
+        inputData: inputData,
+        textarea2Data: textarea2Data,
+        equipeData: equipeData,
+    };
+    console.log(allData);
+    const xhr = new XMLHttpRequest();
+    const url = 'upload_ficha.php';
+
+    xhr.open('POST', url, true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log('Data sent successfully');
         }
+    };
 
+    // Convert the data to JSON before sending
+    const jsonData = JSON.stringify(allData);
+    xhr.send(jsonData);
+}
     function saveUserData() {
-    
+
     const date = document.getElementById('exampleInputEmail1').value;
     const hospitalName = document.getElementById('nomedohospital').value;
     const sex = document.querySelector('input[name="check1"]:checked');
@@ -551,9 +589,7 @@ require_once('conexao.php');
     if (!date || !hospitalName || !sex || !patientName) {
         alert('Please fill in all required fields.');
         return;
-    }
-
-   
+    } 
     const data = {
         date: date,
         hospitalName: hospitalName,
@@ -567,7 +603,7 @@ require_once('conexao.php');
         companionAge: document.getElementById('idade_acompanhante').value,
     };
 
-    console.log(data);
+   return data;
   }
   function saveHealthData() {
     // Validate required fields
@@ -606,7 +642,8 @@ require_once('conexao.php');
         horasUltimoAlimento: horasUltimoAlimento,
     };
 
-    console.log(data2);
+    return data2;
+  
 }
 function saveIncidentData() {
    
@@ -627,7 +664,7 @@ function saveIncidentData() {
     const outrosInput = document.getElementById('outros_pre_hospitalar');
     data3.outros = outrosInput ? outrosInput.value : null;
 
-    console.log(data3);
+      return data3;
 }
 function saveMedicalData() {
     const categories = ['Psiquiátrico', 'Respiratório', 'Diabetes', 'Obstétrico', 'Transporte'];
@@ -648,7 +685,7 @@ function saveMedicalData() {
     const outrosInput = document.getElementById('exampleInputEmail11');
     data4.outros = outrosInput ? outrosInput.value : null;
 
-    console.log(data4);
+      return data4;
 }
 function saveVitalSigns() {
     const pressao = document.getElementById('pressao').value;
@@ -676,7 +713,7 @@ function saveVitalSigns() {
         status_final: status_final,
     };
 
-    console.log(data5);
+       return data5;
 }
 
 function saveSignsAndSymptoms() {
@@ -697,7 +734,7 @@ function saveSignsAndSymptoms() {
         outrosSinaisInput: outrosSinaisInput,
     };
 
-    console.log(data6);
+    return data6;
 }
 function saveResults() {
     const resultInput = document.getElementById('result').value;
@@ -708,7 +745,7 @@ function saveResults() {
         result2: result2Input,
     };
 
-    console.log(data7);
+       return data7;
 }
 
 function saveVictimData() {
@@ -725,7 +762,7 @@ function saveVictimData() {
         vitima10: document.getElementById('vitima10').checked,
     };
 
-    console.log(victimData);
+       return victimData;
 }
 function saveCinematicData() {
     const cinematicData = {
@@ -738,7 +775,7 @@ function saveCinematicData() {
         cine7: document.getElementById('cine7').checked,
     };
 
-    console.log(cinematicData);
+   return cinematicData;
 }
 function saveConductionData() {
     const conductionData = {
@@ -747,7 +784,7 @@ function saveConductionData() {
         conducao3: document.getElementById('conducao3').checked,
     };
 
-    console.log(conductionData);
+    return conductionData;
 }
 
 function savePatientStatus() {
@@ -758,7 +795,7 @@ function savePatientStatus() {
         estavel: document.querySelector('.btn-group .btn-outline-success').getAttribute('aria-pressed') === 'true',
     };
 
-    console.log(patientStatus);
+       return patientStatus;
 }
 
 function saveBirthFormData() {
@@ -781,7 +818,7 @@ function saveBirthFormData() {
         nomeBebe: document.getElementById('Nome_do_Bebê').value.trim(),
     };
 
-    console.log(formData);
+   return formData;
 }
 
 function saveProceData() {
@@ -789,8 +826,7 @@ function saveProceData() {
     const additionalInformation = gatherAdditionalInformation('procedimentos__container');
 
     // Use ProceData and additionalInformation as needed.
-    console.log(ProceData);
-    console.log(additionalInformation);
+ 
 }
 
 function gatherCheckboxInformation(containerId) {
@@ -821,7 +857,102 @@ function gatherAdditionalInformation(containerId) {
     });
 
     return additionalData;
-}
+}   // Function to collect and prepare table data
+  function collectTableData() {
+    const tableRows = document.querySelectorAll('#tabela__mat tbody tr');
+
+    // Create an array to store the collected data
+    const tableData = [];
+
+    tableRows.forEach((row) => {
+      const quantidadeInput = row.querySelector('td:nth-child(3) input');
+      const quantidade = quantidadeInput.value.trim();
+
+      // Only include rows where "quantidade" has been inputed
+      if (quantidade !== '') {
+        const material = row.querySelector('td:nth-child(1)').textContent.trim();
+        const tipo = row.querySelector('td:nth-child(2) input:checked');
+
+        // If tipo checkbox is checked, get its value
+        const tipoValue = tipo ? tipo.id : '-';
+
+        // Create an object for each row and push it to the array
+        const rowData = {
+          material,
+          tipo: tipoValue,
+          quantidade,
+        };
+
+        tableData.push(rowData);
+      }
+    });
+
+    // Log the collected data to the console
+    return tableData;
+  }
+  
+  // Function to collect and prepare textarea data
+  function collectTextareaData() {
+    const textareaContent = document.getElementById('custom-textarea').value;
+
+    // Create an object to store the collected data
+    const textareaData = {
+      objetosRecolhidos: textareaContent,
+    };
+
+    // Log the collected data to the console
+    return textareaData;
+  }
+   // Function to collect and prepare input data
+   function collectInputData() {
+    const fichaValue = document.getElementById('ficha__').value;
+    const fibraValue = document.getElementById('fibra__').value;
+
+    // Create an object to store the collected data
+    const inputData = {
+      ficha: fichaValue,
+      fibra: fibraValue,
+    };
+
+    // Log the collected data to the console
+    return inputData;
+  }
+   // Function to collect and prepare textarea data
+   function collectTextarea2Data() {
+    const textarea2Content = document.getElementById('custom-textarea2').value;
+
+    // Create an object to store the collected data
+    const textarea2Data = {
+      observacoesImportantes: textarea2Content,
+    };
+
+    // Log the collected data to the console
+    return textarea2Data;
+  }
+   // Function to collect and prepare input data for equipe
+   function collectEquipeData() {
+    const mValue = document.getElementById('m__equipe').value;
+    const s1Value = document.getElementById('s1__equipe').value;
+    const s2Value = document.getElementById('s2__equipe').value;
+    const s3Value = document.getElementById('s3__equipe').value;
+    const demandanteValue = document.getElementById('Demandante').value;
+    const equipeValue = document.getElementById('Equipe').value;
+
+    // Create an object to store the collected data
+    const equipeData = {
+      m: mValue,
+      s1: s1Value,
+      s2: s2Value,
+      s3: s3Value,
+      demandante: demandanteValue,
+      equipe: equipeValue,
+    };
+
+    // Log the collected data to the console
+   
+    return equipeData;
+  }
+
 
   </script>
     <!-- FIM INFORMAÇÕES DO PACIENTE -->
@@ -2439,7 +2570,7 @@ function gatherAdditionalInformation(containerId) {
                           aria-labelledby="headingOne"
                           data-bs-parent="#accordion1"
                       >
-                          <div class="accordion-body">
+                          <div class="accordion-body" id="container__glasgow2">
                   <!-- Conteudo Accordion1 -->
 
                  
@@ -2655,21 +2786,22 @@ function gatherAdditionalInformation(containerId) {
       <br />
   </div>
 
-  <!-- Integrate the JavaScript code here -->
   <script>
-      function calculateSum() {
-          const checkboxes = document.querySelectorAll('.form-check-input1');
-          let sum = 0;
+    function calculateSum() {
+       
+        const container = document.getElementById('container__glasgow2');
+        const checkboxes = container.querySelectorAll('.form-check-input1');
+        let sum = 0;
 
-          checkboxes.forEach(checkbox => {
-              if (checkbox.checked) {
-                  sum += parseInt(checkbox.value || 0, 10);
-              }
-          });
+        checkboxes.forEach(checkbox => {
+            if (checkbox.checked) {
+                sum += parseInt(checkbox.value || 0, 10);
+            }
+        });
 
-          document.getElementById('result').value = sum;
-      }
-  </script>
+        document.getElementById('result').value = sum;
+    }
+</script>
 
   <div>
       
@@ -2709,7 +2841,7 @@ function gatherAdditionalInformation(containerId) {
                 aria-labelledby="headingTwo"
                 data-bs-parent="#accordion2"
               >
-                <div class="accordion-body">
+                <div class="accordion-body" id="container__glasg">
                   <!-- ConteudoAccordion2 -->
                   <h1 class="bold fs-5 m-0">Abertura Ocular</h1>
                   <div class="thin__line__m-0"></div>
@@ -2917,19 +3049,21 @@ function gatherAdditionalInformation(containerId) {
                     <br />
 
                     <script>
-                      function calcularBagos() {
-                          const checkboxes = document.querySelectorAll('.form-check-input1');
-                          let sum = 0;
-                
-                          checkboxes.forEach(checkbox => {
-                              if (checkbox.checked) {
-                                  sum += parseInt(checkbox.value || 0, 10);
-                              }
-                          });
-                
-                          document.getElementById('result2').value = sum;
-                      }
-                  </script>
+                        function calcularBagos() {
+                           
+                            const container = document.getElementById('container__glasg');
+                            const checkboxes = container.querySelectorAll('.form-check-input1');
+                            let sum = 0;
+
+                            checkboxes.forEach(checkbox => {
+                                if (checkbox.checked) {
+                                    sum += parseInt(checkbox.value || 0, 10);
+                                }
+                            });
+
+                            document.getElementById('result2').value = sum;
+                        }
+                    </script>
                 <br>
                   <div>
                       <br />
@@ -5547,7 +5681,7 @@ function toggleReanimador() {
         PDF Anexado!
     </div>
     <br><br>
-    <button type="submit" class="btn btn-primary btn-lg" name="upload">Finalizar</button>
+    <button type="submit" class="btn btn-primary btn-lg" name="upload" onclick="sendDataToPHP()">Finalizar</button>
 </form>
 
 <script>

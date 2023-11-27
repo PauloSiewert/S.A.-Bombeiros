@@ -47,7 +47,7 @@ require_once('conexao.php');
         }
         
         // redireciona para a homepage após alguns segundos
-        header("refresh:2;url=homepage.php");
+        // header("refresh:2;url=homepage.php");
     } else {
         echo '<div class="alert alert-danger" role="alert">Erro, tente novamente.</div>';
     }
