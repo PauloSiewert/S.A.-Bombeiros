@@ -536,7 +536,9 @@ require_once('conexao.php');
             saveCinematicData();
             saveConductionData();
             savePatientStatus();
-            
+            saveBirthFormData();
+            saveProceData();
+
         }
 
     function saveUserData() {
@@ -759,6 +761,67 @@ function savePatientStatus() {
     console.log(patientStatus);
 }
 
+function saveBirthFormData() {
+    const formData = {
+        periodoGestacao: document.getElementById('perio__gest').value.trim(),
+        nomeMedico: document.getElementById('nomedomedico').value.trim(),
+        fezPreNatal: document.getElementById('sim__prenatal').checked ? 'Sim' : (document.getElementById('nao__prenatal').checked ? 'Não' : ''),
+        complicacaoNatal: document.getElementById('compli__natal').checked ? 'Sim' : (document.getElementById('compli__natal2').checked ? 'Não' : ''),
+        primeiroFilho: document.getElementById('prim__filho').checked ? 'Sim' : (document.getElementById('prim__filho2').checked ? 'Não' : ''),
+        qtdFilhos: document.getElementById('qnts__filhos').value.trim(),
+        hrsContracoes: document.getElementById('hrs__cont').value.trim(),
+        tempoContracoes: document.getElementById('tmp__contra').value.trim(),
+        intervaloContracoes: document.getElementById('int__contra').value.trim(),
+        pressaoEvacuar: document.getElementById('evacuar__').checked ? 'Sim' : (document.getElementById('evacuar__2').checked ? 'Não' : ''),
+        rupturaBolsa: document.getElementById('ruptura__').checked ? 'Sim' : (document.getElementById('ruptura__2').checked ? 'Não' : ''),
+        inspecaoVisual: document.getElementById('inspec__').checked ? 'Sim' : (document.getElementById('inspec__2').checked ? 'Não' : ''),
+        partoRealizado: document.getElementById('parto__').checked ? 'Sim' : (document.getElementById('parto__2').checked ? 'Não' : ''),
+        sexoBebe: document.getElementById('sx__bebe').checked ? 'Feminino' : (document.getElementById('sx__bebe2').checked ? 'Masculino' : ''),
+        hrsParto: document.getElementById('hrs__parto').value.trim(),
+        nomeBebe: document.getElementById('Nome_do_Bebê').value.trim(),
+    };
+
+    console.log(formData);
+}
+
+function saveProceData() {
+    const ProceData = gatherCheckboxInformation('procedimentos__container');
+    const additionalInformation = gatherAdditionalInformation('procedimentos__container');
+
+    // Use ProceData and additionalInformation as needed.
+    console.log(ProceData);
+    console.log(additionalInformation);
+}
+
+function gatherCheckboxInformation(containerId) {
+    const checkboxData = {};
+
+    // Gather information from checkboxes within the specified container
+    const checkboxes = document.getElementById(containerId).querySelectorAll('input[type="checkbox"][name="check1"]');
+    checkboxes.forEach(function (checkbox) {
+        checkboxData[checkbox.id] = checkbox.checked;
+    });
+
+    return checkboxData;
+}
+
+function gatherAdditionalInformation(containerId) {
+    const additionalData = {};
+
+    // Gather information from additional checkboxes within the specified container
+    const additionalCheckboxes = document.getElementById(containerId).querySelectorAll('input[type="checkbox"][name="additionalCheckboxes[]"]');
+    additionalCheckboxes.forEach(function (checkbox) {
+        additionalData[checkbox.id] = checkbox.checked;
+    });
+
+    // Gather information from input fields within the specified container
+    const inputFields = document.getElementById(containerId).querySelectorAll('input[type="number"], input[type="text"]');
+    inputFields.forEach(function (inputField) {
+        additionalData[inputField.id] = inputField.value;
+    });
+
+    return additionalData;
+}
   </script>
     <!-- FIM INFORMAÇÕES DO PACIENTE -->
 
@@ -3944,7 +4007,7 @@ function updateElementIds(container, uniqueId) {
     </div>
     <br /><br />
 
-    <div class="container">
+    <div class="container" id="procedimentos__container">
       <div class="col-md-12 border p-3 bg-white bg-gradient">
         <h1 class="bold fs-3 m-0">A</h1>
         <div class="thin__line__m-0"></div>
