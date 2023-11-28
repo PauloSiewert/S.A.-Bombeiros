@@ -7,6 +7,11 @@
   align-items: center;
 }
 
+#red-x {
+  color: red;
+}
+
+
 .title__text {
   margin-bottom: 0%;
   margin-right: 2%;

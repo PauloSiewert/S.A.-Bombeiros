@@ -3091,71 +3091,13 @@ function gatherAdditionalInformation(containerId) {
         <b class="box__number">8</b>
       </div>
     </div>
-   
-
-    
-<div class="container mt-5 p-3 border bg-white bg-gradient" id="container__1">
+    <div class="container mt-5 p-3 border bg-white bg-gradient" id="container__1">
   <div class="row mt-3">
     <div class="col-md-12 justify-content-center" id="container__2">
-      <img src="corpo__humano.jpg" alt="Corpo" usemap="#corpo" id="map-image" class="img-fluid"> 
-     
+      <img src="corpo__humano.jpg" alt="Corpo" usemap="#corpo" id="map-image" class="img-fluid">
+
       <map name="corpo">
-
-        <script type="text/javascript">
-          $(document).ready(function() {
-            $('#map-image').maphilight();
-        
-            var clickedAreas = []; // Array to store clicked areas
-        
-            $('area').click(function(e) {
-              e.preventDefault();
-        
-              // Get the alt attribute of the clicked area
-              var areaAlt = $(this).attr('alt');
-        
-              // Toggle the clicked state for the area
-              var index = clickedAreas.indexOf(areaAlt);
-              if (index === -1) {
-                clickedAreas.push(areaAlt);
-              }
-        
-              // Update maphilight configuration for all areas
-              $('area').each(function() {
-                var areaAlt = $(this).attr('alt');
-                var isClicked = clickedAreas.indexOf(areaAlt) !== -1;
-                $(this).data('maphilight', { alwaysOn: isClicked }).trigger('alwaysOn.maphilight');
-              });
-        
-        
-              // Create a new div with a heading and a select element
-              var newDiv = $('<div>').append(
-                $('<h4>').text(areaAlt).addClass('mt-3'),
-                $('<select>').addClass('form-select border').attr({
-                  'aria-label': 'Default select example',
-                  'id': 'corpo__bagles'
-                }).append(
-                  $('<option>').prop('selected', true).text( 'Selecione:'),
-                  $('<option>').val('1').text('Fratura/Luxação/Entorse'),
-                  $('<option>').val('2').text('Ferimentos Diversos'),
-                  $('<option>').val('3').text('Hemorragia'),
-                  $('<option>').val('4').text('Evisceração'),
-                  $('<option>').val('5').text('F.A.B / F.A.P'),
-                  $('<option>').val('6').text('Amputação'),
-                  $('<option>').val('5').text('Queimadura 1°Grau'),
-                  $('<option>').val('5').text('Queimadura 2°Grau'),
-                  $('<option>').val('5').text('Queimadura 3°Grau')
-                )
-              );
-        
-              // Append the new div below the image
-              $('#container__2').append(newDiv);
-            });
-          });
-        </script>
-        
-
-
-       <!-- Partes da frente do corpo -->
+        <!-- Partes da frente do corpo -->
        <area shape="circle" coords='176,70,43' alt="Rosto"  href="#" title="Rosto">
        <area shape="poly" coords="132,135,222,135,196,122,196,105,184,116,167,116,157,109,157,122" alt="Pescoço" href="#" title="Pescoço">
        <area shape="circle" coords="178,179,50" alt="Peito" href="#" title="Peito">
@@ -3201,11 +3143,69 @@ function gatherAdditionalInformation(containerId) {
        <area shape="rect" coords='368,369,317,318' alt="Mão Esquerda (Trás)"  href="#" title="Mão Esquerda (Trás)">
        <area shape="rect" coords='560,318,506,367' alt="Mão Direita (Trás)"  href="#" title="Mão Direita (Trás)">
       </map>
-       </div>
+      
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $('#map-image').maphilight();
+
+          var clickedAreas = []; // Array to store clicked areas
+
+          $('area').click(function (e) {
+            e.preventDefault();
+
+            // Get the alt attribute of the clicked area
+            var areaAlt = $(this).attr('alt');
+
+            // Toggle the clicked state for the area
+            var index = clickedAreas.indexOf(areaAlt);
+            if (index === -1) {
+              clickedAreas.push(areaAlt);
+            }
+
+            // Update maphilight configuration for all areas
+            $('area').each(function () {
+              var areaAlt = $(this).attr('alt');
+              var isClicked = clickedAreas.indexOf(areaAlt) !== -1;
+              $(this).data('maphilight', { alwaysOn: isClicked }).trigger('alwaysOn.maphilight');
+            });
+
+            // Create a new div with a heading, a select element, and a red "x" button
+            var newDiv = $('<div>').append(
+              $('<div>').css('display', 'flex').append(
+                $('<h4>').text(areaAlt).addClass('mt-3').css('flex', '1'),
+                $('<button>').html('<i class="fas fa-times" id="red-x"></i>').addClass('btn btn-lg mt-2 red-x').on('click', function () {
+                  // Remove the div when the "x" button is clicked
+                  newDiv.remove();
+
+                  // Remove the area from clickedAreas
+                  clickedAreas.splice(clickedAreas.indexOf(areaAlt), 1);
+                })
+              ),
+              $('<select>').addClass('form-select border').attr({
+                'aria-label': 'Default select example',
+                'id': 'corpo__bagles'
+              }).append(
+                $('<option>').prop('selected', true).text('Selecione:'),
+                $('<option>').val('1').text('Fratura/Luxação/Entorse'),
+                $('<option>').val('2').text('Ferimentos Diversos'),
+                $('<option>').val('3').text('Hemorragia'),
+                $('<option>').val('4').text('Evisceração'),
+                $('<option>').val('5').text('F.A.B / F.A.P'),
+                $('<option>').val('6').text('Amputação'),
+                $('<option>').val('5').text('Queimadura 1°Grau'),
+                $('<option>').val('5').text('Queimadura 2°Grau'),
+                $('<option>').val('5').text('Queimadura 3°Grau')
+              )
+            );
+
+            // Append the new div below the image
+            $('#container__2').append(newDiv);
+          });
+        });
+      </script>
     </div>
   </div>
 </div>
-
 
 <br><br>
             
