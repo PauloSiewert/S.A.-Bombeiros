@@ -5770,9 +5770,18 @@ document.getElementById("UsoDeColar").addEventListener("change", function () {
 });
 </script>
 
+<script>
+    // Function to handle the beforeunload event
+    function handleBeforeUnload(event) {
+      // Display a confirmation dialog
+      const message = 'Are you sure you want to refresh the page?';
+      event.returnValue = message; // Standard for most browsers
+      return message; // For some older browsers
+    }
 
-
-
+    // Attach the function to the beforeunload event
+    window.onbeforeunload = handleBeforeUnload;
+  </script>
 
 <script>
   (() => {
