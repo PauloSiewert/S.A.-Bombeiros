@@ -3207,7 +3207,7 @@ function gatherAdditionalInformation(containerId) {
 </div>
 
 
-<br><br>
+<br>
             
     <!-- FIM TELA CORPO  -->
     <div class="page-break"></div>
@@ -3222,12 +3222,12 @@ function gatherAdditionalInformation(containerId) {
 
     <div id="container-wrapper" class="container-wrapper">
     <div class="container mt-5" id="container2">
-      <div class="border p-4  bg-white bg-gradient">
-        <div class="container mt-5">
-          <div class="border p-4">
+    
+        <div class="container bg-white border p-3">
+          <div class="">
             <div id="container2" class="container">
             <div class="row">
-              <div class="col-lg-6">
+              <div class="col-lg-6 m-0">
                 <label for="face__ferim" class="form-label">Face:</label>
                 <input
                   type="text"
@@ -3291,17 +3291,15 @@ function gatherAdditionalInformation(containerId) {
               </div>
             </div>
           </div>
-        </div>
-        <!-- Button to clone the container -->
-        <button
-          class="btn btn-primary mt-2 ml-5"
+          <button
+          class="btn btn-primary m-3"
           id="cloneContainerBtn"
         >
           +
         </button>
+        </div>
       </div>
     </div>
-</div>
 </div>
 
 <script>
@@ -3384,9 +3382,8 @@ elements.forEach((element) => {
    <br><br>
     
     <div id="container-wrapper2" class="container-wrapper2">
-    <div class="container border p-3 bg-white bg-gradient" id="container__4">
-      <div id="container22" class="container border mt-4 bg-white bg-gradient">
-      <div class="row mt-4">
+      <div id="container22" class="container border bg-white bg-gradient">
+      <div class="row mt-3">
         <div class="col-lg-6">
           <label for="local__queimadura" class="form-label">Local da Queimadura:</label>
           <select class="form-select border bg-white bg-gradient" aria-label="Default select example" id="local__queimadura">
@@ -3418,8 +3415,13 @@ elements.forEach((element) => {
               <label class="form-check-label" for="grau__queim3">3°Grau</label>
             </div>
           </div>
-          <button id="btn__clone" class="btn btn-primary d-flex justify-content-end"> + </button>
-</div>
+          <button
+          id="btn__clone" class="btn btn-primary d-flex justify-content-end m-3"
+        >
+          +
+        </button>
+          
+    
 </div>
 </div>
 </div>
