@@ -8,7 +8,7 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 // checa se a sessao é de admin
-if ($_SESSION['is_admin'] = 1) {
+if ($_SESSION['is_admin'] == 1) {
   header('Location: homepageadmin.php');
   exit();
 }

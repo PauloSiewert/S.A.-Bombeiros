@@ -36,6 +36,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_user'])) {
     }
 }
 
+// atualização de senha
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['change_password_user'])) {
+  $userIdToChangePassword = $_POST['change_password_user'];
+  $newPassword = $_POST['new_password_' . $userIdToChangePassword];
+
+  $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+
+  $sqlUpdatePassword = "UPDATE users SET password = '$hashedPassword' WHERE id = $userIdToChangePassword";
+  if ($conn->query($sqlUpdatePassword) === TRUE) {
+      echo "Senha Alterada Com Sucesso!";
+  } else {
+      echo "Erro, Não Foi Possivel Alterar a Senha: " . $conn->error;
+  }
+}
+
 // pega apenas usuarios com "is active" = 1 
 $sqlUsers = "SELECT id, username, cpf FROM users WHERE is_active = 1";
 $resultUsers = $conn->query($sqlUsers);
@@ -170,27 +185,40 @@ $resultUsers = $conn->query($sqlUsers);
                 </div>
             </div>
 
-            <!-- "Lista de Usuarios" -->
-            <div class="col-md-6">
-                <div class="border p-3 bg-white bg-gradient">
-                    <h3 class="mt-3">Lista de Usuários:</h3>
-                    <ul class="list-group mb-3">
-                        <?php
-                        while ($rowUser = $resultUsers->fetch_assoc()) {
-                            echo '<li class="list-group-item d-flex justify-content-between align-items-center">
-                                   ID: ' . $rowUser['id'] . '<br> Nome: ' . $rowUser['username'] . '<br> CPF: ' . $rowUser['cpf'] . '
-                                    <form method="post" action="adm.php">
-                                        <input type="hidden" name="delete_user" value="' . $rowUser['id'] . '">
-                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm(\'Você quer mesmo desativar esse usuário?\')">Desativar</button>
-                                    </form>
-                                  </li>';
-                        }
-                        ?>
-                    </ul>
-                </div>
-            </div>
-        </div>
+           <!-- "Lista de Usuarios" -->
+<!-- "Lista de Usuarios" -->
+<div class="col-md-6">
+    <div class="border p-3 bg-white bg-gradient">
+        <h3 class="mt-3">Lista de Usuários:</h3>
+        <ul class="list-group mb-3">
+            <?php
+            while ($rowUser = $resultUsers->fetch_assoc()) {
+                echo '<li class="list-group-item d-flex justify-content-between align-items-center">
+                       <div>
+                           ID: ' . $rowUser['id'] . '<br> Nome: ' . $rowUser['username'] . '<br> CPF: ' . $rowUser['cpf'] . '
+                           <form method="post" action="adm.php">
+                           <input type="hidden" name="delete_user" value="' . $rowUser['id'] . '">
+                           <button type="submit" class="btn btn-danger btn-sm mt-2" onclick="return confirm(\'Você quer mesmo desativar esse usuário?\')">Desativar</button>
+                       </form>
+                           </div>
+                       
+                       <div class="d-flex flex-column">
+                            <form method="post" action="adm.php">
+                                <input type="hidden" name="change_password_user" value="' . $rowUser['id'] . '">
+                                <div class="form-group mt-3">
+                                    <label for="new_password_' . $rowUser['id'] . '">Nova Senha:</label>
+                                    <input type="password" class="form-control mb-3" id="new_password_' . $rowUser['id'] . '" name="new_password_' . $rowUser['id'] . '" required>
+                                </div>
+                                <button type="submit" class="btn btn-success btn-sm mb-2" name="change_password">Alterar Senha</button>
+                            </form>
+                           
+                       </div>
+                      </li>';
+            }
+            ?>
+        </ul>
     </div>
+</div>
     <script>
           function mascara(i) {
 
