@@ -3101,57 +3101,65 @@ function gatherAdditionalInformation(containerId) {
      
       <map name="corpo">
 
-        <script type="text/javascript">
-          $(document).ready(function() {
-            $('#map-image').maphilight();
-        
-            var clickedAreas = []; // Array to store clicked areas
-        
-            $('area').click(function(e) {
-              e.preventDefault();
-        
-              // Get the alt attribute of the clicked area
+      <script type="text/javascript">
+        $(document).ready(function () {
+          $('#map-image').maphilight();
+
+          var clickedAreas = []; // Array to store clicked areas
+
+          $('area').click(function (e) {
+            e.preventDefault();
+
+            // Get the alt attribute of the clicked area
+            var areaAlt = $(this).attr('alt');
+
+            // Toggle the clicked state for the area
+            var index = clickedAreas.indexOf(areaAlt);
+            if (index === -1) {
+              clickedAreas.push(areaAlt);
+            }
+
+            // Update maphilight configuration for all areas
+            $('area').each(function () {
               var areaAlt = $(this).attr('alt');
-        
-              // Toggle the clicked state for the area
-              var index = clickedAreas.indexOf(areaAlt);
-              if (index === -1) {
-                clickedAreas.push(areaAlt);
-              }
-        
-              // Update maphilight configuration for all areas
-              $('area').each(function() {
-                var areaAlt = $(this).attr('alt');
-                var isClicked = clickedAreas.indexOf(areaAlt) !== -1;
-                $(this).data('maphilight', { alwaysOn: isClicked }).trigger('alwaysOn.maphilight');
-              });
-        
-        
-              // Create a new div with a heading and a select element
-              var newDiv = $('<div>').append(
-                $('<h4>').text(areaAlt).addClass('mt-3'),
-                $('<select>').addClass('form-select border').attr({
-                  'aria-label': 'Default select example',
-                  'id': 'corpo__bagles'
-                }).append(
-                  $('<option>').prop('selected', true).text( 'Selecione:'),
-                  $('<option>').val('1').text('Fratura/Luxação/Entorse'),
-                  $('<option>').val('2').text('Ferimentos Diversos'),
-                  $('<option>').val('3').text('Hemorragia'),
-                  $('<option>').val('4').text('Evisceração'),
-                  $('<option>').val('5').text('F.A.B / F.A.P'),
-                  $('<option>').val('6').text('Amputação'),
-                  $('<option>').val('5').text('Queimadura 1°Grau'),
-                  $('<option>').val('5').text('Queimadura 2°Grau'),
-                  $('<option>').val('5').text('Queimadura 3°Grau')
-                )
-              );
-        
-              // Append the new div below the image
-              $('#container__2').append(newDiv);
+              var isClicked = clickedAreas.indexOf(areaAlt) !== -1;
+              $(this).data('maphilight', { alwaysOn: isClicked }).trigger('alwaysOn.maphilight');
             });
+
+            // Create a new div with a heading, a select element, and a red "x" button
+            var newDiv = $('<div>').append(
+              $('<div>').css('display', 'flex').append(
+                $('<h4>').text(areaAlt).addClass('mt-3').css('flex', '1'),
+                $('<button>').html('<i class="fas fa-times" id="red-x"></i>').addClass('btn btn-lg mt-2 red-x').on('click', function () {
+                  
+                  newDiv.remove();
+
+                 
+                  clickedAreas.splice(clickedAreas.indexOf(areaAlt), 1);
+                })
+              ),
+              $('<select>').addClass('form-select border').attr({
+                'aria-label': 'Default select example',
+                'id': 'corpo__bagles'
+              }).append(
+                $('<option>').prop('selected', true).text('Selecione:'),
+                $('<option>').val('1').text('Fratura/Luxação/Entorse'),
+                $('<option>').val('2').text('Ferimentos Diversos'),
+                $('<option>').val('3').text('Hemorragia'),
+                $('<option>').val('4').text('Evisceração'),
+                $('<option>').val('5').text('F.A.B / F.A.P'),
+                $('<option>').val('6').text('Amputação'),
+                $('<option>').val('5').text('Queimadura 1°Grau'),
+                $('<option>').val('5').text('Queimadura 2°Grau'),
+                $('<option>').val('5').text('Queimadura 3°Grau')
+              )
+            );
+
+            // Append the new div below the image
+            $('#container__2').append(newDiv);
           });
-        </script>
+        });
+      </script>
         
 
 
@@ -3207,7 +3215,7 @@ function gatherAdditionalInformation(containerId) {
 </div>
 
 
-<br>
+<br><br>
             
     <!-- FIM TELA CORPO  -->
     <div class="page-break"></div>
