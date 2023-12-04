@@ -2581,7 +2581,7 @@ function gatherAdditionalInformation(containerId) {
   <div>
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="4"
           id="abdomen1"
           onclick= calculateSum()
@@ -2594,7 +2594,7 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="3"
           id="abdomen3"
           onclick= calculateSum()
@@ -2607,7 +2607,7 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="2"
           id="doloroso"
           onclick= calculateSum()
@@ -2620,7 +2620,7 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="1"
           id="nenhuma1"
           onclick= calculateSum()
@@ -2638,11 +2638,11 @@ function gatherAdditionalInformation(containerId) {
   <div>
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="5"
           id="Orientado"
           onclick= calculateSum()
-          name="check1"
+          name="check2"
       />
       <label class="form-check-label" for="Orientado">
           Orientado - 5
@@ -2651,11 +2651,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="4"
           id="Confuso"
           onclick= calculateSum()
-          name="check1"
+          name="check2"
       />
       <label class="form-check-label" for="Confuso">
           Confuso - 4
@@ -2664,11 +2664,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="3"
           id="Inapropriadas"
           onclick= calculateSum()
-          name="check1"
+          name="check2"
       />
       <label class="form-check-label" for="Inapropriadas">
           Palavras Inapropriadas - 3
@@ -2677,11 +2677,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="2"
           id="Incompreensíveis"
           onclick= calculateSum()
-          name="check1"
+          name="check2"
       />
       <label class="form-check-label" for="Incompreensíveis">
           Palavras Incompreensíveis - 2
@@ -2690,11 +2690,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="1"
           id="Nenhuma3"
           onclick= calculateSum()
-          name="check1"
+          name="check2"
       />
       <label class="form-check-label" for="Nenhuma3">
           Nenhuma - 1
@@ -2708,7 +2708,7 @@ function gatherAdditionalInformation(containerId) {
   <div>
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="6"
           id="comandos"
           onclick= calculateSum()
@@ -2721,11 +2721,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="5"
           id="Dor"
           onclick= calculateSum()
-          name="check1"
+          name="check3"
       />
       <label class="form-check-label" for="Dor">
           Localiza Dor - 5
@@ -2734,11 +2734,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="4"
           id="retirada"
           onclick= calculateSum()
-          name="check1"
+          name="check3"
       />
       <label class="form-check-label" for="retirada">
           Movimentos de Retirada - 4
@@ -2747,11 +2747,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="3"
           id="flex_anorml"
           onclick= calculateSum()
-          name="check1"
+          name="check3"
       />
       <label class="form-check-label" for="flex_anorml">
           Flexão Anormal - 3
@@ -2760,11 +2760,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="2"
           id="ext_anorml"
           onclick= calculateSum()
-          name="check1"
+          name="check3"
       />
       <label class="form-check-label" for="ext_anorml">
           Extensão Anormal - 2
@@ -2773,11 +2773,11 @@ function gatherAdditionalInformation(containerId) {
 
       <input
           class="form-check-input1"
-          type="checkbox"
+          type="radio"
           value="1"
           id="nenhuma4"
           onclick= calculateSum()
-          name="check1"
+          name="check3"
       />
       <label class="form-check-label" for="nenhuma4">
           Nenhuma - 1
@@ -2846,13 +2846,14 @@ function gatherAdditionalInformation(containerId) {
                   <h1 class="bold fs-5 m-0">Abertura Ocular</h1>
                   <div class="thin__line__m-0"></div>
                   <div>
+
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="4"
                       id="abdomen2"
                       onclick= calcularBagos()
-                      name="check2"
+                      name="check1"
                     />
                     <label class="form-check-label" for="abdomen2">
                       Espontânea - 4
@@ -2861,7 +2862,7 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="3"
                       id="abdomen4"
                       onclick= calcularBagos()
@@ -2874,7 +2875,7 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="2"
                       id="doloroso2"
                       onclick= calcularBagos()
@@ -2887,7 +2888,7 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="1"
                       id="nenhuma"
                       onclick= calcularBagos()
@@ -2902,13 +2903,14 @@ function gatherAdditionalInformation(containerId) {
                   <h1 class="bold fs-5 m-0">Resposta Verbal</h1>
                   <div class="thin__line__m-0"></div>
                   <div>
+
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="5"
                       id="apropiadas"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check2"
                     />
                     <label class="form-check-label" for="apropiadas">
                       Palavras e Frases Apropriadas - 5
@@ -2917,11 +2919,11 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="4"
                       id="Inapropriadas1"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check2"
                     />
                     <label class="form-check-label" for="Inapropriadas1">
                       Palavras Inapropriadas - 4
@@ -2930,11 +2932,11 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="3"
                       id="choro"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check2"
                     />
                     <label class="form-check-label" for="choro">
                       Choro Persistente ou Gritos - 3
@@ -2943,11 +2945,11 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="2"
                       id="Incompreensíveis1"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check2"
                     />
                     <label class="form-check-label" for="Incompreensíveis1">
                       Sons Incompreensíveis - 2
@@ -2956,11 +2958,11 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="1"
                       id="nenhuma5"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check2"
                     />
                     <label class="form-check-label" for="nenhuma5">
                       Nenhuma Resposta Verbal - 1
@@ -2971,13 +2973,14 @@ function gatherAdditionalInformation(containerId) {
                   <h1 class="bold fs-5 m-0">Resposta Motora</h1>
                   <div class="thin__line__m-0"></div>
                   <div>
+
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="6"
                       id="obedece1"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check3"
                     />
                     <label class="form-check-label" for="obedece1">
                       Obedece Prontamente - 6
@@ -2985,11 +2988,11 @@ function gatherAdditionalInformation(containerId) {
                     <br />
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="5"
                       id="tatil"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check3"
                     />
                     <label class="form-check-label" for="tatil">
                       Localiza Dor ou Estímulo Tátil- 5
@@ -2998,11 +3001,11 @@ function gatherAdditionalInformation(containerId) {
                     <br />
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="4"
                       id="segmento"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check3"
                     />
                     <label class="form-check-label" for="segmento">
                       Retirada do Segmento Estimulado- 4
@@ -3011,11 +3014,11 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="3"
                       id="decorticação"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check3"
                     />
                     <label class="form-check-label" for="decorticação">
                       Flexão Anormal (Decorticação)- 3
@@ -3024,11 +3027,11 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="2"
                       id="Decerebração1"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check3"
                     />
                     <label class="form-check-label" for="Decerebração1">
                       Extensão Anormal (Decerebração)- 2
@@ -3037,11 +3040,11 @@ function gatherAdditionalInformation(containerId) {
 
                     <input
                       class="form-check-input1"
-                      type="checkbox"
+                      type="radio"
                       value="1"
                       id="Nenhuma6"
                       onclick= calcularBagos()
-                      name="check1"
+                      name="check3"
                     />
                     <label class="form-check-label" for="Nenhuma6">
                       Ausência (Paralisía, Flácida, Hipotônia) - 1
