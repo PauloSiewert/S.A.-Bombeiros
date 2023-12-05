@@ -1,17 +1,18 @@
 <?php
 session_start();
 
+
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
 
+
 require_once('conexao.php');
 
-$sql = "SELECT * FROM fichas";
+$sql = "SELECT * FROM relatorios";
 $result = $conn->query($sql);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -70,71 +71,43 @@ $result = $conn->query($sql);
   <br /><br /><br /><br /><br /><br />
   <div class="container m-2">
 <div class="container p-0">
-    <a href="homepageadmin.php" class="btn btn-outline-dark btn-md mb-4 mr-4">
+    <a href="homepage.php" class="btn btn-outline-dark btn-md mb-4 mr-4">
             <i class="bi bi-arrow-left"></i> Voltar
         </a>
         </div>
         </div>
-
+<div class="container">
 </div>
-<div class="container p-4">
-    <h2>Central de Fichas:</h2>
+<div class="container border p-4">
+    <h2>Central de Relatórios:</h2>
 
     <table class="table table-bordered">
-    <thead>
+        <thead>
         <tr>
-            <th class="fw-bold">ID</th>
-            <th class="fw-bold">Preenchedor</th>
-            <th class="fw-bold">Info Paciente</th>
-            <th class="fw-bold">Anam Emer</th>
-            <th class="fw-bold">Tipo Ocorrencia</th>
-            <th class="fw-bold">Problemas Susp</th>
-            <th class="fw-bold">Sinais Vitais</th>
-            <th class="fw-bold">Sinais Sintomas</th>
-            <th class="fw-bold">Glasgow</th>
-            <th class="fw-bold">Viti Era</th>
-            <th class="fw-bold">Cinematica</th>
-            <th class="fw-bold">Conducao</th>
-            <th class="fw-bold">Dec Transporte</th>
-            <th class="fw-bold">Anam Gestacional</th>
-            <th class="fw-bold">Procedimentos</th>
-            <th class="fw-bold">Mate Descart</th>
-            <th class="fw-bold">Objetos</th>
-            <th class="fw-bold">Resp Preenchimento</th>
-            <th class="fw-bold">Observacoes</th>
-            <th class="fw-bold">Equipe Atendimento</th>
-           
-            </thead>
-    <br>
-    <tbody>
+            <th class="fw-bold">N° Do Relatório</th>
+            <th class="fw-bold">Id Do Preenchedor</th>
+            <th class="fw-bold">Nome Do Preenchedor</th>
+            <th class="fw-bold">Nome Do Relatório</th>
+            <th class="fw-bold">Horário Do Preenchimento</th>
+            <th class="fw-bold">Download:</th>
+        </tr>
+        </thead>
+        <br>
+        <tbody>
         <?php
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td style='height: 60px;'>{$row['id']}</td>";
-            echo "<td style='height: 60px;'>{$row['Preenchedor']}</td>";
-            echo "<td style='height: 60px;'>{$row['info_paciente']}</td>";
-            echo "<td style='height: 60px;'>{$row['anam_emer']}</td>";
-            echo "<td style='height: 60px;'>{$row['tipo_ocorrencia']}</td>";
-            echo "<td style='height: 60px;'>{$row['problemas_susp']}</td>";
-            echo "<td style='height: 60px;'>{$row['sinais_vitais']}</td>";
-            echo "<td style='height: 60px;'>{$row['sinais_sintomas']}</td>";
-            echo "<td style='height: 60px;'>{$row['glasgow']}</td>";
-            echo "<td style='height: 60px;'>{$row['viti_era']}</td>";
-            echo "<td style='height: 60px;'>{$row['cinematica']}</td>";
-            echo "<td style='height: 60px;'>{$row['conducao']}</td>";
-            echo "<td style='height: 60px;'>{$row['dec_transporte']}</td>";
-            echo "<td style='height: 60px;'>{$row['anam_gestacional']}</td>";
-            echo "<td style='height: 60px;'>{$row['procedimentos']}</td>";
-            echo "<td style='height: 60px;'>{$row['mate_descart']}</td>";
-            echo "<td style='height: 60px;'>{$row['objetos']}</td>";
-            echo "<td style='height: 60px;'>{$row['resp_preenchimento']}</td>";
-            echo "<td style='height: 60px;'>{$row['observacoes']}</td>";
-            echo "<td style='height: 60px;'>{$row['equipe_atendimento']}</td>";
+            echo "<td>{$row['n°_do_relatorio']}</td>";
+            echo "<td>{$row['id_preenchedor']}</td>";
+            echo "<td>{$row['nome_preenchedor']}</td>";
+            echo "<td>{$row['file_name']}</td>";
+            echo "<td>{$row['data_preenchimento']}</td>";
+            echo "<td><a href='download.php?id={$row['n°_do_relatorio']}' class='btn btn-primary'>Baixar Relatório</a></td>";
             echo "</tr>";
         }
         ?>
-    </tbody>
-</table>
+        </tbody>
+    </table>
 </div>
 
 <!-- Bootstrap JS and jQuery -->

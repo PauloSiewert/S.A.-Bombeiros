@@ -1,16 +1,24 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit();
 }
 
+// checa se a sessao é de admin
+if ($_SESSION['is_admin'] == 1) {
+  header('Location: pdfsadm.php');
+  exit();
+}
 
 require_once('conexao.php');
 
-$sql = "SELECT * FROM relatorios";
+
+$user_id = $_SESSION['user_id'];
+
+
+$sql = "SELECT * FROM relatorios WHERE id_preenchedor = $user_id";
 $result = $conn->query($sql);
 ?>
 
