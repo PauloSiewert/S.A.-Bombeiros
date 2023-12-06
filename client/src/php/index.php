@@ -2712,7 +2712,7 @@ function gatherAdditionalInformation(containerId) {
           value="6"
           id="comandos"
           onclick= calculateSum()
-          name="check1"
+          name="check3"
       />
       <label class="form-check-label" for="comandos">
           Obedece Comandos - 6
